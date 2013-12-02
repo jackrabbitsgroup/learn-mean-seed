@@ -125,6 +125,7 @@
 					"form.less",
 					"buttons.less",
 					"layout.less",
+					"lesson.less",
 					"margin-padding.less",
 					"layout-animate.less",
 					"list.less",
@@ -554,6 +555,45 @@
 										],
 										"less": [
 											"toc.less"
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "html",
+							"dirs": [
+								{
+									"name": "html-attributes",
+									"files": {
+										"html": [
+											"html-attributes.html"
+										],
+										"js": [
+											"HtmlAttributesCtrl.js"
+										],
+										"test": [
+											"HtmlAttributesCtrl.spec.js"
+										],
+										"less": [
+											"html-attributes.less"
+										]
+									}
+								},
+								{
+									"name": "html-intro",
+									"files": {
+										"html": [
+											"html-intro.html"
+										],
+										"js": [
+											"HtmlIntroCtrl.js"
+										],
+										"test": [
+											"HtmlIntroCtrl.spec.js"
+										],
+										"less": [
+											"html-intro.less"
 										]
 									}
 								}

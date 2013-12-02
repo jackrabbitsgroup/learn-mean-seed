@@ -1,0 +1,40 @@
+<div class = 'lesson' ng-controller='HtmlIntroCtrl'>
+	<div class = 'lesson-title'> HTML Introduction </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'html/html-intro'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		HTML is the most basic of all Web languages; it defines the page itself. It is possible to create a webpage that has no Javascript or CSS, but if a page has no HTML, it does not exist.
+		<br/>
+		<br/>
+		HTML is composed of things called elements. Each element begins with an opening tag and ends with a closing tag.
+		(There are a few elements, known as self-closing elements, that are exceptions to this rule; we'll cover them later.)
+		<br/>
+		An opening tag begins with a &lt; followed by the element name, and ends with &gt;. A closing tag begins with &lt;&#47;, followed by the element name and ending with &gt;.
+		Anything between the element's opening tag and ending tag is said to be inside the element.
+		<br/><br/>
+		Example: Say we wanted to create a "div" element containing the text 'Hello World!'. We could do this using the following code:<br/><br/>
+		<code>&lt;div&gt; Hello World! &lt;/div&gt;</code><br/><br/>
+		Elements may contain more than just text, of course - they can contain other elements, too. In this case, the container element is often called the 'parent' element, while the
+		contained element is known as the 'child'. There is no limit to the number of child elements that a parent may have; child elements of the same immediate parent are known as 'siblings'.
+		I say 'immediate parent' here because, as you have probably guessed, elements may be nested without limit.
+		That means that we could place a 'div' element inside of another div inside of a 'form' element inside of another div, and so on.
+		<br/><br/>
+		
+		Important side note: Elements must be completely inside of their parent. It is illegal to place an element half-in, half-out of another. For example:
+		<br/>
+		<code>
+			&lt;div&gt; &lt;p&gt; This is bad. The closing 'p' tag should come before the closing 'div' tag. &lt;/div&gt; &lt;/p&gt;<br/>
+			&lt;div&gt; &lt;p&gt; This is correct. &lt;/p&gt; &lt;/div&gt;
+		</code>
+		<br/><br/>
+		There are a wide variety of HTML elements, and they all behave a little bit differently. But every one of them is used to put some object on a webpage, be it a box with text, a link to another webpage, an image, or simply a blank line.
+		We'll learn more about these various elements and what we can do with them in future lessons.
+	</div>
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	
+	</div>
+	
+</div>

@@ -1,0 +1,43 @@
+<div class = 'lesson' ng-controller='HtmlAttributesCtrl'>
+	<div class = 'lesson-title'> HTML Attributes </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'html/html-attributes'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		HTML elements may be given attributes (also sometimes called properties) to specify additional information about that element. (AngularJS directives are also frequently written as attributes, using exactly the same syntax, but that's a lesson for another time.)<br/>
+		There are many attributes, some of which are specific to certain element types, but all attributes are coded using the following syntax:
+		<br/><br/>
+		<code>
+			&lt;element_name attribute_name = "attribute_value" &gt; (Interior of element goes here) &lt;/element_name&gt;<br/>
+			For example:<br/>
+			&lt;div class = "my-class" &gt;  &lt;/div&gt;
+		</code>
+		<br/><br/>
+		In the example above, the div is assigned a class called 'my-class'. 'class' is the name of an attribute that is recognized by div elements.
+		'my-class' is a value that we are assigning to this attribute. Attribute values in HTML always follow an '=' symbol and are always surrounded by a matching pair of quotation marks.
+		Either single or double quotes may be used, provided that they match, meaning that the following is also correct:<br/><br/>
+		<code>
+			&lt;div class = 'my-class' &gt;  &lt;/div&gt;
+		</code>
+		<br/><br/>
+		Attribute assignments are always made inside the element's opening tag, after the element name and before the closing &gt;.
+		Multiple attributes may be assigned to the same element as a space-separated list (you could even omit the spaces, actually, but that would be messy and harder to read):
+		<br/><br/>
+		<code>
+			&lt;div class = 'my-class' style = 'color:red;' &gt;  &lt;/div&gt;
+		</code>
+		<br/><br/>
+		Remember that not every attribute works with every element type ('class' and 'style' work with just about anything, but other attributes, like 'src' or 'href', work with only a select few elements), and attribute value syntax varies depending on the attribute.
+		The more important attributes will be covered in more detail by these lessons, but should you ever have any additional questions, a quick internet search or two on a given html element will show you all of the attributes it accepts and what they're for. 
+	</div>
+	
+	<div class = 'lesson-challenges'>
+		<h4> Challenges: </h4>
+		1. Try building a div in this page's sandbox yourself, and give it the class 'html-attributes-test'.
+		We've already created a CSS styling rule for this class, so if you're successful, your new div should have a big red border, and any text you place inside it should be green.
+	
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		
+	</div>
+</div>

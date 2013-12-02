@@ -185,7 +185,21 @@ $routeProvider.when(appPathRoute+'toc', {templateUrl: pagesPath+'toc/toc/toc.htm
 			}
 		}
 	});
-	//end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
+	$routeProvider.when(appPathRoute+'html-attributes', {templateUrl: pagesPath+'html/html-attributes/html-attributes.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'html-intro', {templateUrl: pagesPath+'html/html-intro/html-intro.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+//end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 
 	/**
