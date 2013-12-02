@@ -452,6 +452,43 @@
 									"design.less"
 								]
 							}
+						},
+						{
+							"name": "angular",
+							"dirs": [
+								{
+									"name": "directive",
+									"dirs": [
+										{
+											"name": "use",
+											"dirs": [
+												{
+													"name": "forminput",
+													"dirs": [
+														{
+															"name": "angular-forminput-basic",
+															"files": {
+																"html": [
+																	"angular-forminput-basic.html"
+																],
+																"js": [
+																	"AngularForminputBasicCtrl.js"
+																],
+																"test": [
+																	"AngularForminputBasicCtrl.spec.js"
+																],
+																"less": [
+																	"angular-forminput-basic.less"
+																]
+															}
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
 						}
 					]
 				}

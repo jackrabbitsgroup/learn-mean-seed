@@ -157,6 +157,13 @@ config(['$routeProvider', '$locationProvider', 'appConfigProvider', '$compilePro
 	*/
 	
 	//yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
+	$routeProvider.when(appPathRoute+'angular-forminput-basic', {templateUrl: pagesPath+'angular/directive/use/forminput/angular-forminput-basic/angular-forminput-basic.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
 	//end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 
