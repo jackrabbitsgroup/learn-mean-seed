@@ -72,6 +72,9 @@ var inst ={
 		},
 	*/
 	pagesRouteMap: {
+		docs: {
+			urlRegex: 'docs'
+		}
 	},
 	
 	/**
@@ -250,6 +253,10 @@ var inst ={
 		// this.pages.test.footer.classes ={
 			// cont: 'hidden'
 		// };
+		
+		//docs
+		this.pages.docs =jrgArray.copy(this.components.defaultNav);
+		this.pages.docs.header.title.html ='Docs';
 		
 		//end: CUSTOM nav definitions
 	}
