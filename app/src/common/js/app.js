@@ -164,6 +164,27 @@ config(['$routeProvider', '$locationProvider', 'appConfigProvider', '$compilePro
 			}
 		}
 	});
+$routeProvider.when(appPathRoute+'docs-angular', {templateUrl: pagesPath+'docs/angular/docs-angular/docs-angular.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'docs-angular-directive', {templateUrl: pagesPath+'docs/angular/docs-angular-directive/docs-angular-directive.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'toc', {templateUrl: pagesPath+'toc/toc/toc.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
 	//end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 

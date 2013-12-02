@@ -489,6 +489,72 @@
 									]
 								}
 							]
+						},
+						{
+							"name": "docs",
+							"dirs": [
+								{
+									"name": "angular",
+									"dirs": [
+										{
+											"name": "docs-angular",
+											"files": {
+												"html": [
+													"docs-angular.html"
+												],
+												"js": [
+													"DocsAngularCtrl.js"
+												],
+												"test": [
+													"DocsAngularCtrl.spec.js"
+												],
+												"less": [
+													"docs-angular.less"
+												]
+											}
+										},
+										{
+											"name": "docs-angular-directive",
+											"files": {
+												"html": [
+													"docs-angular-directive.html"
+												],
+												"js": [
+													"DocsAngularDirectiveCtrl.js"
+												],
+												"test": [
+													"DocsAngularDirectiveCtrl.spec.js"
+												],
+												"less": [
+													"docs-angular-directive.less"
+												]
+											}
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "toc",
+							"dirs": [
+								{
+									"name": "toc",
+									"files": {
+										"html": [
+											"toc.html"
+										],
+										"js": [
+											"TocCtrl.js"
+										],
+										"test": [
+											"TocCtrl.spec.js"
+										],
+										"less": [
+											"toc.less"
+										]
+									}
+								}
+							]
 						}
 					]
 				}
