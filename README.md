@@ -29,6 +29,20 @@
 
 ## Setup + Running (Longer Version)
 - see [setup-detailed.md](docs/setup-running/setup-detailed.md) and [running.md](docs/setup-running/running.md) in the `docs` folder
+
+
+## Updating
+You CAN and SHOULD keep your project up to date with the core (seed) generator you used as it goes through version upgrades. Just re-run:
+
+Ensure the generator is up to date:
+```
+npm install -g generator-mean-seed
+```
+
+Pull in updates to your project (core/seed - make sure to select the same core you used originally):
+```
+yo mean-seed
+```
 	
 	
 ## More Info
