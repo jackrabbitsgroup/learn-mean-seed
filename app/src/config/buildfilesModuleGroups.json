@@ -26,5 +26,16 @@
 	"testsProtractor": {
 		"modules":["_all"],
 		"skipModules": ["build", "buildTemp", "buildTempCss"]
+	},
+	"testsLessons": {
+		"comment": "Karma Unit tests will error if no tests passwordReset is to ensure there's at least one",
+		"xModulesFullList":[
+			"modules.pages.passwordReset",
+			"modules.pages.angular.directive.use.forminput.angular-forminput-basic"
+		],
+		"modules":[
+			"modules.pages.passwordReset",
+			"modules.pages.angular.directive.use.forminput.angular-forminput-basic"
+		]
 	}
 }

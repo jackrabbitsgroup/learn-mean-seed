@@ -49,17 +49,17 @@
 	},
 	"test_coverage":{
 		"jasmine_node":{
-			"failTask": true,
+			"failTask": false,
 			"branches": 40,
 			"functions": 60,
 			"statements": 60,
 			"lines": 60
 		},
 		"angular_karma":{
-			"branches": 10,
-			"functions": 30,
-			"statements": 30,
-			"lines": 30
+			"branches": 0,
+			"functions": 0,
+			"statements": 0,
+			"lines": 0
 		}
 	},
 	"ci":{

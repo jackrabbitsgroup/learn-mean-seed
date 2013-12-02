@@ -29,10 +29,10 @@
 		"optTestServerPort":3005,
 		"optTestSocketPort":3006,
 		"optTestDatabase":"test_temp",
-		"optNpmInstall":0,
-		"optBowerInstall":0,
+		"optNpmInstall": 1,
+		"optBowerInstall": 1,
 		"optSeleniumInstall":0,
-		"optGruntQ":1,
+		"optGruntQ": 1,
 		"optUseGitSeparateBranch": 1
 	}
 }

@@ -266,6 +266,13 @@ module.exports = function(grunt) {
 							testUnit: ['filePathsJsTestUnitNoPrefix']
 						}
 					},
+					//overwrite karma tests for lessons only
+					noPrefixLessons: {
+						moduleGroup: 'testsLessons',
+						outputFiles: {
+							testUnit: ['filePathsJsTestUnitNoPrefix']
+						}
+					},
 					//index.html file paths (have the static path prefix for use in <link rel="stylesheet" > and <script> tags)
 					indexFilePaths:{
 						prefix: cfgJson.server.staticPath,
@@ -339,6 +346,13 @@ module.exports = function(grunt) {
 					},
 					testProtractor: {
 						moduleGroup: 'testsProtractor',
+						outputFiles: {
+							testE2E: ['filePathsTestProtractor']
+						}
+					},
+					//overwrite Protractor tests for lessons only
+					testProtractorLessons: {
+						moduleGroup: 'testsLessons',
 						outputFiles: {
 							testE2E: ['filePathsTestProtractor']
 						}

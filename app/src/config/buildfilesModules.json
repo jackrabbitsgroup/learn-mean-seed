@@ -474,8 +474,11 @@
 																"js": [
 																	"AngularForminputBasicCtrl.js"
 																],
-																"test": [
+																"testUnit": [
 																	"AngularForminputBasicCtrl.spec.js"
+																],
+																"testE2E": [
+																	"AngularForminputBasic.scenarios.js"
 																],
 																"less": [
 																	"angular-forminput-basic.less"
@@ -505,7 +508,7 @@
 												"js": [
 													"DocsAngularCtrl.js"
 												],
-												"test": [
+												"testUnit": [
 													"DocsAngularCtrl.spec.js"
 												],
 												"less": [
@@ -522,7 +525,7 @@
 												"js": [
 													"DocsAngularDirectiveCtrl.js"
 												],
-												"test": [
+												"testUnit": [
 													"DocsAngularDirectiveCtrl.spec.js"
 												],
 												"less": [
@@ -546,7 +549,7 @@
 										"js": [
 											"TocCtrl.js"
 										],
-										"test": [
+										"testUnit": [
 											"TocCtrl.spec.js"
 										],
 										"less": [
