@@ -481,7 +481,7 @@
 				{
 					"name": "e2e",
 					"files": {
-						"test": [
+						"testE2E": [
 							"**/*.scenarios.js"
 						]
 					}

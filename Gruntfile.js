@@ -340,7 +340,7 @@ module.exports = function(grunt) {
 					testProtractor: {
 						moduleGroup: 'testsProtractor',
 						outputFiles: {
-							test: ['filePathsTestProtractor']
+							testE2E: ['filePathsTestProtractor']
 						}
 					}
 				},

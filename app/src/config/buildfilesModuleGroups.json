@@ -24,6 +24,7 @@
 		"skipModules":["build", "buildTemp", "buildTempCss", "bower.minified", "lib.minified", "bower.nonMinified", "lib.nonMinified", "test"]
 	},
 	"testsProtractor": {
-		"modules":["test.e2e"]
+		"modules":["_all"],
+		"skipModules": ["build", "buildTemp", "buildTempCss"]
 	}
 }
