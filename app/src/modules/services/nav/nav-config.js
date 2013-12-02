@@ -123,8 +123,8 @@ var inst ={
 				left: [
 					this.components.backButton,
 					{
-						html: "Test",
-						href: this.paths.appPathLink+'test'
+						html: "Contents",
+						href: this.paths.appPathLink+'toc'
 					}
 				],
 				right: [
