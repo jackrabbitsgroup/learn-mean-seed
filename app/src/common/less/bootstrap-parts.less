@@ -1,0 +1,235 @@
+/*
+This holds Twitter Bootstrap LESS styles/mixins/variables copied directly (to avoid including ALL of Twitter Bootstrap CSS - for both performance and over-ride reasons). It's a "take only what you need" approach.
+*/
+
+/* variables */
+@baseBorderRadius:      4px;
+@borderRadiusLarge:     6px;
+@borderRadiusSmall:     3px;
+
+@baseLineHeight:        20px;
+
+
+// Forms
+// -------------------------
+@inputBackground:               @white;
+@inputBorder:                   #ccc;
+@inputBorderRadius:             @baseBorderRadius;
+@inputDisabledBackground:       @grayLighter;
+@formActionsBackground:         #f5f5f5;
+@inputHeight:                   @baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+
+
+
+// Form states and alerts
+// -------------------------
+@warningText:             #c09853;
+@warningBackground:       #fcf8e3;
+@warningBorder:           darken(spin(@warningBackground, -10), 3%);
+
+@errorText:               #b94a48;
+@errorBackground:         #f2dede;
+@errorBorder:             darken(spin(@errorBackground, -10), 3%);
+
+@successText:             #468847;
+@successBackground:       #dff0d8;
+@successBorder:           darken(spin(@successBackground, -10), 5%);
+
+@infoText:                #3a87ad;
+@infoBackground:          #d9edf7;
+@infoBorder:              darken(spin(@infoBackground, -10), 7%);
+
+
+
+
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+
+@fontSizeLarge:         @baseFontSize * 1.25; // ~18px
+@fontSizeSmall:         @baseFontSize * 0.85; // ~12px
+@fontSizeMini:          @baseFontSize * 0.75; // ~11px
+
+@paddingLarge:          11px 19px; // 44px
+@paddingSmall:          2px 10px;  // 26px
+@paddingMini:           0 6px;   // 22px
+
+@baseBorderRadius:      4px;
+@borderRadiusLarge:     6px;
+@borderRadiusSmall:     3px;
+
+
+
+/* mixins */
+/* end: mixins */
+// Opacity
+.opacity(@opacity) {
+  opacity: @opacity / 100;
+  filter: ~"alpha(opacity=@{opacity})";
+}
+
+
+
+/* forms */
+label {
+	display:block;
+}
+
+input, textarea, select {
+	/*
+	display: inline-block;
+	height: @baseLineHeight;
+	padding: 4px 6px;
+	margin-bottom: @baseLineHeight / 2;
+	font-size: @baseFontSize;
+	line-height: @baseLineHeight;
+	*/
+	color: @gray;
+	.border-radius(@inputBorderRadius);
+	vertical-align: middle;
+  
+	background-color: @inputBackground;
+	border: 1px solid @inputBorder;
+	.box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+	.transition(border linear .2s, box-shadow linear .2s);
+
+	// Focus state
+	&:focus {
+		border-color: rgba(82,168,236,.8);
+		outline: 0;
+		outline: thin dotted \9; /* IE6-9 */
+		.box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6));
+	}
+}
+
+// Set the height of select and file controls to match text inputs
+select,
+input[type="file"] {
+	height: @inputHeight; /* In IE7, the height of the select element cannot be changed by height, only font-size */
+	*margin-top: 4px; /* For IE7, add top margin to align select with labels */
+	line-height: @inputHeight;
+}
+
+// Make select elements obey height by applying a border
+select {
+  width: 220px; // default input width + 10px of padding that doesn't get applied
+  border: 1px solid @inputBorder;
+  background-color: @inputBackground; // Chrome on Linux and Mobile Safari need background-color
+}
+/* end: forms */
+
+
+
+
+
+/* alerts */
+.alert {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: @baseLineHeight;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  background-color: @warningBackground;
+  border: 1px solid @warningBorder;
+  .border-radius(@baseBorderRadius);
+}
+.alert,
+.alert h4 {
+  // Specified for the h4 to prevent conflicts of changing @headingsColor
+  color: @warningText;
+}
+.alert h4 {
+  margin: 0;
+}
+
+// Adjust close link position
+.alert .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  line-height: @baseLineHeight;
+}
+
+
+// Alternate styles
+// -------------------------
+
+.alert-success {
+  background-color: @successBackground;
+  border-color: @successBorder;
+  color: @successText;
+}
+.alert-success h4 {
+  color: @successText;
+}
+.alert-danger,
+.alert-error {
+  background-color: @errorBackground;
+  border-color: @errorBorder;
+  color: @errorText;
+}
+.alert-danger h4,
+.alert-error h4 {
+  color: @errorText;
+}
+.alert-info {
+  background-color: @infoBackground;
+  border-color: @infoBorder;
+  color: @infoText;
+}
+.alert-info h4 {
+  color: @infoText;
+}
+
+
+// Block alerts
+// -------------------------
+
+.alert-block {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.alert-block > p,
+.alert-block > ul {
+  margin-bottom: 0;
+}
+.alert-block p + p {
+  margin-top: 5px;
+}
+
+/* end: alerts */
+
+
+/* close */
+//
+// Close icons
+// --------------------------------------------------
+
+
+.close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: @baseLineHeight;
+  color: black;
+  text-shadow: 0 1px 0 rgba(255,255,255,1);
+  .opacity(20);
+  &:hover,
+  &:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    .opacity(40);
+  }
+}
+
+// Additional properties for button version
+// iOS requires the button element instead of an anchor tag.
+// If you want the anchor version, it requires `href="#"`.
+button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+/* end: close */

@@ -1,0 +1,492 @@
+{
+	"dirs": [
+		{
+			"name": "buildTempCss",
+			"path": "build",
+			"comment": "Need this at top since the order of css matters and want the base.css file FIRST. Also, NEED this file in the same directory as 'main.css' for relative file paths - i.e. to font-awesome font so it works with EITHER base.css or main.css..",
+			"files": {
+				"css": [
+					"base.css"
+				]
+			}
+		},
+		{
+			"name": "bower",
+			"path": "bower_components",
+			"dirs": [
+				{
+					"name": "minified",
+					"path": "",
+					"comment": "directory paths are part of file lists/names",
+					"files": {
+						"js": [
+							"angular/angular.min.js",
+							"angular-route/angular-route.min.js",
+							"angular-sanitize/angular-sanitize.min.js",
+							"angular-touch/angular-touch.min.js",
+							"angular-animate/angular-animate.min.js",
+							"angular-cookies/angular-cookies.min.js",
+							"momentjs/min/moment.min.js",
+							"hammerjs/dist/hammer.min.js",
+							"angular-array/array.min.js",
+							"angular-string/string.min.js",
+							"angular-facebook-auth/facebook-auth.min.js",
+							"angular-google-auth/google-auth.min.js"
+						]
+					},
+					"dirs": [
+						{
+							"name": "lesshat",
+							"files": {
+								"less": [
+									"build/lesshat.less"
+								]
+							}
+						},
+						{
+							"name": "less-flexbox",
+							"files": {
+								"less": [
+									"flexbox.less"
+								]
+							}
+						},
+						{
+							"name": "font-awesome",
+							"files": {
+								"less": [
+									"less/font-awesome.less"
+								]
+							}
+						},
+						{
+							"name": "angular-forminput",
+							"files": {
+								"js": [
+									"forminput.min.js"
+								],
+								"less": [
+									"forminput.less"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "nonMinified",
+					"path": "",
+					"comment": "directory paths are part of file lists/names",
+					"files": {
+						"js": [
+							"angular-hammer/angular-hammer.js"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "lib",
+			"dirs": [
+				{
+					"name": "minified",
+					"path": "",
+					"comment": "directory paths are part of file lists/names. Also, 'facebook/facebook.all.js' is HUGE (170kb minified!) and is currently included for Facebook login but if you are NOT going to use that, make sure to REMOVE this file! In general it may be better to try to shift to just backend facebook calls since this seems like a waste just for login... Similarly (though it is not as large) with google - remove if you are not using it!",
+					"files": {
+						"js": [
+							"angular-ui-bootstrap/ui-bootstrap-custom-tpls-0.4.0.min.js",
+							"facebook/facebook.all.min.js",
+							"google/gapi-plusone.min.js"
+						]
+					}
+				},
+				{
+					"name": "nonMinified",
+					"path": "",
+					"comment": "directory paths are part of file lists/names",
+					"files": {
+						"js": [
+							"lawnchair/lawnchair-edit.js"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "commonLess",
+			"path": "common/less",
+			"comment": "Separated this from 'common' for ordering purposes",
+			"files": {
+				"less": [
+					"reset.less",
+					"fonts.less",
+					"typography.less",
+					"bootstrap-parts.less",
+					"body-other.less",
+					"form.less",
+					"buttons.less",
+					"layout.less",
+					"margin-padding.less",
+					"layout-animate.less",
+					"list.less",
+					"pop-up.less"
+				]
+			}
+		},
+		{
+			"name": "common",
+			"path": "common",
+			"dirs": [
+				{
+					"name": "js",
+					"path": "js",
+					"files": {
+						"js": [
+							"app.js"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "modules",
+			"dirs": [
+				{
+					"name": "services",
+					"dirs": [
+						{
+							"name": "models",
+							"dirs": [
+								{
+									"name": "user",
+									"files": {
+										"js": [
+											"UserModel.js"
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "config",
+							"files": {
+								"js": [
+									"config.js"
+								]
+							}
+						},
+						{
+							"name": "http",
+							"files": {
+								"js": [
+									"http.js"
+								],
+								"testUnit": [
+									"http.spec.js"
+								]
+							}
+						},
+						{
+							"name": "auth",
+							"files": {
+								"js": [
+									"auth.js"
+								],
+								"testUnit": [
+									"auth.spec.js"
+								]
+							}
+						},
+						{
+							"name": "storage",
+							"files": {
+								"js": [
+									"storage.js"
+								]
+							}
+						},
+						{
+							"name": "nav",
+							"files": {
+								"js": [
+									"nav-config.js",
+									"nav.js"
+								],
+								"less": [
+									"nav.less"
+								]
+							},
+							"dirs": [
+								{
+									"name": "header-centered",
+									"files": {
+										"html": [
+											"header-centered.html"
+										],
+										"less": [
+											"header-centered.less"
+										]
+									}
+								},
+								{
+									"name": "footer-flex",
+									"files": {
+										"html": [
+											"footer-flex.html"
+										],
+										"less": [
+											"footer-flex.less"
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "socialAuth",
+							"files": {
+								"js": [
+									"socialAuth.js"
+								],
+								"testUnit": [
+									"socialAuth.spec.js"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "directives",
+					"dirs": [
+						{
+							"name": "appalert",
+							"files": {
+								"js": [
+									"appalert.js"
+								],
+								"less": [
+									"appalert.less"
+								],
+								"testUnit": [
+									"appalert.spec.js"
+								]
+							}
+						},
+						{
+							"name": "login",
+							"files": {
+								"js": [
+									"login.js"
+								],
+								"less": [
+									"login.less"
+								]
+							}
+						},
+						{
+							"name": "signup",
+							"files": {
+								"js": [
+									"signup.js"
+								],
+								"less": [
+									"signup.less"
+								]
+							}
+						},
+						{
+							"name": "socialAuthBtn",
+							"files": {
+								"js": [
+									"socialAuthBtn.js"
+								],
+								"less": [
+									"social-auth-btn.less"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "pages",
+					"dirs": [
+						{
+							"name": "layout",
+							"files": {
+								"js": [
+									"LayoutCtrl.js"
+								]
+							}
+						},
+						{
+							"name": "header",
+							"files": {
+								"js": [
+									"HeaderCtrl.js"
+								],
+								"html": [
+									"header.html"
+								],
+								"less": [
+									"header.less"
+								],
+								"testUnit": [
+									"HeaderCtrl.spec.js"
+								]
+							}
+						},
+						{
+							"name": "footer",
+							"files": {
+								"js": [
+									"FooterCtrl.js"
+								],
+								"html": [
+									"footer.html"
+								],
+								"less": [
+									"footer.less"
+								]
+							}
+						},
+						{
+							"name": "home",
+							"files": {
+								"js": [
+									"HomeCtrl.js"
+								],
+								"html": [
+									"home.html"
+								]
+							}
+						},
+						{
+							"name": "login",
+							"files": {
+								"js": [
+									"LoginCtrl.js"
+								],
+								"html": [
+									"login.html"
+								],
+								"less": [
+									"login.less"
+								]
+							}
+						},
+						{
+							"name": "signup",
+							"files": {
+								"js": [
+									"SignupCtrl.js"
+								],
+								"html": [
+									"signup.html"
+								],
+								"less": [
+									"signup.less"
+								]
+							}
+						},
+						{
+							"name": "passwordReset",
+							"files": {
+								"js": [
+									"PasswordResetCtrl.js"
+								],
+								"html": [
+									"password-reset.html"
+								],
+								"less": [
+									"password-reset.less"
+								],
+								"testUnit": [
+									"PasswordResetCtrl.spec.js"
+								]
+							}
+						},
+						{
+							"name": "logout",
+							"files": {
+								"js": [
+									"LogoutCtrl.js"
+								],
+								"html": [
+									"logout.html"
+								],
+								"testUnit": [
+									"LogoutCtrl.spec.js"
+								]
+							}
+						},
+						{
+							"name": "userDelete",
+							"files": {
+								"js": [
+									"UserDeleteCtrl.js"
+								],
+								"html": [
+									"user-delete.html"
+								]
+							}
+						},
+						{
+							"name": "test",
+							"files": {
+								"js": [
+									"TestCtrl.js"
+								],
+								"html": [
+									"test.html"
+								]
+							}
+						},
+						{
+							"name": "design",
+							"files": {
+								"js": [
+									"DesignCtrl.js"
+								],
+								"html": [
+									"design.html"
+								],
+								"less": [
+									"design.less"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "build",
+			"path": "build",
+			"files": {
+				"css": [
+					"main.css"
+				]
+			}
+		},
+		{
+			"name": "buildTemp",
+			"path": "build/temp",
+			"files": {
+				"js": [
+					"custom.min.js"
+				]
+			}
+		},
+		{
+			"name": "test",
+			"dirs": [
+				{
+					"name": "e2e",
+					"files": {
+						"test": [
+							"**/*.scenarios.js"
+						]
+					}
+				}
+			]
+		}
+	]
+}

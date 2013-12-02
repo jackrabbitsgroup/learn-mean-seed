@@ -1,0 +1,11 @@
+{
+    "name": "learn-mean-seed",
+    "description": "Learn Angular (AngularJS). Learn Node (node.js). Learn HTML5, CSS3, Javascript. Learn to build responsive, cross-platform (mobile) apps and websites using Mean Seed / generator-mean-seed.",
+    "version": "0.0.0",
+    "url": "https://github.com/jackrabbitsgroup/learn-mean-seed",
+    "options": {
+        "paths": ".",
+        "outdir": "yuidocs/backend",
+        "exclude": "node_modules,public,src"
+    }
+}

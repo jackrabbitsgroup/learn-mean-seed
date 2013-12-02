@@ -1,0 +1,97 @@
+{
+	"versions":{
+		"cfg": "0.0.0",
+		"pkg": "0.0.0"
+	},
+	"env": "development",
+	"operatingSystem":"windows",
+	"operatingSystemComment":"One of: 'windows', 'mac', 'linux'",
+	"forever": 0,
+	"app": {
+		"name": "learn-mean-seed",
+		"title": "Learn Mean Seed"
+	},
+	"platform":"",
+	"server": {
+		"domain": "localhost",
+		"port": 3000,
+		"httpsPort": 443,
+		"socketPort": 3001,
+		"serverPath": "/",
+		"appPath": "/",
+		"staticFilePath": "/src/",
+		"staticPath": "/src/"
+	},
+	"cors": {
+		"domains": ["localhost"],
+		"frontendUseCors": 0
+	},
+	"db": {
+		"fullURI": "",
+		"host": "localhost",
+		"port": 27017,
+		"database": "learn-mean-seed",
+		"username": false,
+		"password": false
+	},
+	"logKey": "dev",
+	"cookie": {
+		"secret": "o@:&M<ZN PF(s.T)3?*;^1~TDjNE}=3xy$SpB7dE%dA-}fAn.b[RRU{cg+P#[):/"
+	},
+	"ssl": {
+		"enabled": false,
+		"key": "/etc/apache2/conf.d/ssl.key",
+		"cert": "/etc/apache2/conf.d/ssl.crt"
+	},
+	"rpc": {
+		"autoDoc": true,
+		"autoDocUrl": "help"
+	},
+	"test_coverage":{
+		"jasmine_node":{
+			"failTask": true,
+			"branches": 40,
+			"functions": 60,
+			"statements": 60,
+			"lines": 60
+		},
+		"angular_karma":{
+			"branches": 10,
+			"functions": 30,
+			"statements": 30,
+			"lines": 30
+		}
+	},
+	"ci":{
+		"server": {
+			"port": 3009,
+			"portCiServer": 3010
+		},
+		"emails_failed":[
+		]
+	},
+	"email":{
+		"from": "admin@learn-mean-seed.com",
+		"from_name": "Admin",
+		"mandrillApiKey": "8X-1bNRWtA4rbneppkqahw",
+		"mandrillApiKeyComment":"Make sure to CHANGE this!"
+	},
+	"sms":{
+	},
+	"facebook":{
+		"appId": "195380783916970",
+		"appIdComment":"Make sure to CHANGE this!"
+	},
+	"less":{
+		"dirPathRootPrefix": ""
+	},
+	"google":{
+		"clientId": "486630891328.apps.googleusercontent.com",
+		"clientIdComment":"Make sure to CHANGE this!",
+		"clientSecret": ""
+	},
+	"sauceLabs":{
+		"user": "",
+		"key": ""
+	}
+}

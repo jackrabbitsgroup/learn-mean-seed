@@ -1,0 +1,261 @@
+/* spacing */
+/*
+this allows giving margin and/or padding to an element - the idea is that margin and padding are common so with this, should never have to manually set margin/padding styles on individual pages since can just leverage these pre-defined classes everywhere
+- direction suffix:
+no suffix is for margin (or padding) on ALL sides.
+'tb' is for top and bottom margin (or padding) only.
+'lr' is for left and right margin (or padding) only.
+'t' is top padding/margin only
+'b' is bottom padding/margin only
+'l' is left padding/margin only
+'r' is right padding/margin only
+
+- sizing suffix (comes BEFORE direction suffix)
+'small'
+'large'
+'xlarge'
+
+examples:
+<div class='margin padding-small-lr'>&nbsp;</div> <!-- equivalent to: margin:10px; padding-left:5px; padding-right:5px; -->
+*/
+
+//sizes
+@spacing: 10px;
+@spacing-small: 5px;
+@spacing-large: 20px;
+@spacing-xlarge: 30px;
+
+
+//margin
+//mixins
+.margin-t(@amount:10px) {
+	margin-top:@amount;
+}
+.margin-b(@amount:10px) {
+	margin-bottom:@amount;
+}
+.margin-l(@amount:10px) {
+	margin-left:@amount;
+}
+.margin-r(@amount:10px) {
+	margin-right:@amount;
+}
+.margin-tb(@amount:10px) {
+	.margin-t(@amount);
+	.margin-b(@amount);
+}
+.margin-lr(@amount:10px) {
+	.margin-l(@amount);
+	.margin-r(@amount);
+}
+.margin(@amount:10px) {
+	.margin-tb(@amount);
+	.margin-lr(@amount);
+}
+//classes
+//regular
+.margin {
+	.margin(@spacing);
+}
+.margin-lr {
+	.margin-lr(@spacing);
+}
+.margin-tb {
+	.margin-tb(@spacing);
+}
+.margin-l {
+	.margin-l(@spacing);
+}
+.margin-r {
+	.margin-r(@spacing);
+}
+.margin-t {
+	.margin-t(@spacing);
+}
+.margin-b {
+	.margin-b(@spacing);
+}
+//small
+.margin-small {
+	.margin(@spacing-small);
+}
+.margin-small-lr {
+	.margin-lr(@spacing-small);
+}
+.margin-small-tb {
+	.margin-tb(@spacing-small);
+}
+.margin-small-t {
+	.margin-t(@spacing-small);
+}
+.margin-small-b {
+	.margin-b(@spacing-small);
+}
+.margin-small-l {
+	.margin-l(@spacing-small);
+}
+.margin-small-r {
+	.margin-r(@spacing-small);
+}
+//large
+.margin-large {
+	.margin(@spacing-large);
+}
+.margin-large-lr {
+	.margin-lr(@spacing-large);
+}
+.margin-large-tb {
+	.margin-tb(@spacing-large);
+}
+.margin-large-t {
+	.margin-t(@spacing-large);
+}
+.margin-large-b {
+	.margin-b(@spacing-large);
+}
+.margin-large-l {
+	.margin-l(@spacing-large);
+}
+.margin-large-r {
+	.margin-r(@spacing-large);
+}
+//xlarge
+.margin-xlarge {
+	.margin(@spacing-xlarge);
+}
+.margin-xlarge-lr {
+	.margin-lr(@spacing-xlarge);
+}
+.margin-xlarge-tb {
+	.margin-tb(@spacing-xlarge);
+}
+.margin-xlarge-t {
+	.margin-t(@spacing-xlarge);
+}
+.margin-xlarge-b {
+	.margin-b(@spacing-xlarge);
+}
+.margin-xlarge-l {
+	.margin-l(@spacing-xlarge);
+}
+.margin-xlarge-r {
+	.margin-r(@spacing-xlarge);
+}
+
+
+
+//padding
+//mixins
+.padding-t(@amount:10px) {
+	padding-top:@amount;
+}
+.padding-b(@amount:10px) {
+	padding-bottom:@amount;
+}
+.padding-l(@amount:10px) {
+	padding-left:@amount;
+}
+.padding-r(@amount:10px) {
+	padding-right:@amount;
+}
+.padding-tb(@amount:10px) {
+	.padding-t(@amount);
+	.padding-b(@amount);
+}
+.padding-lr(@amount:10px) {
+	.padding-l(@amount);
+	.padding-r(@amount);
+}
+.padding(@amount:10px) {
+	.padding-tb(@amount);
+	.padding-lr(@amount);
+}
+//classes
+//regular
+.padding {
+	.padding(@spacing);
+}
+.padding-lr {
+	.padding-lr(@spacing);
+}
+.padding-tb {
+	.padding-tb(@spacing);
+}
+.padding-l {
+	.padding-l(@spacing);
+}
+.padding-r {
+	.padding-r(@spacing);
+}
+.padding-t {
+	.padding-t(@spacing);
+}
+.padding-b {
+	.padding-b(@spacing);
+}
+//small
+.padding-small {
+	.padding(@spacing-small);
+}
+.padding-small-lr {
+	.padding-lr(@spacing-small);
+}
+.padding-small-tb {
+	.padding-tb(@spacing-small);
+}
+.padding-small-t {
+	.padding-t(@spacing-small);
+}
+.padding-small-b {
+	.padding-b(@spacing-small);
+}
+.padding-small-l {
+	.padding-l(@spacing-small);
+}
+.padding-small-r {
+	.padding-r(@spacing-small);
+}
+//large
+.padding-large {
+	.padding(@spacing-large);
+}
+.padding-large-lr {
+	.padding-lr(@spacing-large);
+}
+.padding-large-tb {
+	.padding-tb(@spacing-large);
+}
+.padding-large-t {
+	.padding-t(@spacing-large);
+}
+.padding-large-b {
+	.padding-b(@spacing-large);
+}
+.padding-large-l {
+	.padding-l(@spacing-large);
+}
+.padding-large-r {
+	.padding-r(@spacing-large);
+}
+//xlarge
+.padding-xlarge {
+	.padding(@spacing-xlarge);
+}
+.padding-xlarge-lr {
+	.padding-lr(@spacing-xlarge);
+}
+.padding-xlarge-tb {
+	.padding-tb(@spacing-xlarge);
+}
+.padding-xlarge-t {
+	.padding-t(@spacing-xlarge);
+}
+.padding-xlarge-b {
+	.padding-b(@spacing-xlarge);
+}
+.padding-xlarge-l {
+	.padding-l(@spacing-xlarge);
+}
+.padding-xlarge-r {
+	.padding-r(@spacing-xlarge);
+}

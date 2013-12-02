@@ -1,0 +1,28 @@
+/* Styles specific to the particular app or particular components of it. Pretty much all miscellaneous or one-off classes or things that don't fit elsewhere go here :) */
+
+body {
+	z-index:1;
+	font: 14px/1.25 Helvetica, sans-serif;
+	line-height:20px;
+	color:@grayDark;
+	-webkit-tap-highlight-color: rgb(255,255,158);
+	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+	//-webkit-text-size-adjust: none;		//prevent iOS from changing (scaling up) font-size when switch to landscape or change orientation
+}
+
+#content >div {
+	padding:10px 15px;
+}
+#content >div.content-no-top-padding
+{
+	padding-top:0;
+}
+#content >div.content-no-padding
+{
+	padding:0;
+}
+
+.app-appalert-cont {
+	position:fixed;
+	z-index:99999;
+}

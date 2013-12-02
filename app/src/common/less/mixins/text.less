@@ -1,0 +1,8 @@
+/* @type ="ellipsis" or "clip" */
+.text-overflow(@type)
+{
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:@type;
+	min-width:1px;		//flexbox fix
+}

@@ -1,0 +1,6 @@
+<div class='nav-footer flexbox row {{nav.classes.cont}}'>
+	<div ng-repeat='button in nav.buttons' class='flex1 nav-footer-button-cont {{button.classes.cont}}'>
+		<a ng-show='button.href' class='nav-footer-button' ng-href = '{{button.href}}' ng-bind-html='button.html'></a>
+		<div ng-hide='button.href' class='nav-footer-button' ng-click = 'button.click()' ng-bind-html='button.html'></div>
+	</div>
+</div>

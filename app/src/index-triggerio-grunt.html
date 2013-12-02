@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta content='True' name='HandheldFriendly' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=160dpi' />
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="utf-8">
+<%
+var cfgJson = grunt.config('cfgJson');
+%>
+    <title><% print(cfgJson.app.title); %></title>
+
+<%
+var filePath =grunt.config('filePathMinCss');
+var filePath =grunt.config('filePathConcatCss');
+print('\t<link rel="stylesheet" href="' + filePath + '"/>\n');
+%>
+
+</head>
+<!-- apparently putting stuff on the <body> tag throws errors - timing issue? so moved to an inner div element and it works.. -->
+<!--
+<body class='body {{classes.loggedIn}} {{classes.layout}}' ng-controller='LayoutCtrl'>
+-->
+<body>
+    <div class='body {{classes.loggedIn}} {{classes.layout}}' ng-controller='LayoutCtrl'>
+
+    <div id="fb-root"></div>
+
+    <div id='{{ids.header}}' ng-include='staticPath+"modules/pages/header/header.html"'></div>
+	
+	<div class='app-appalert-cont' app-appalert></div>
+
+	<div id='{{ids.content}}' ng-view ng-animate="{enter:'view-enter', leave:'view-leave'}" class='{{classes.loggedIn}} {{classes.layout}}'></div>
+
+    <div id='{{ids.footer}}' ng-include='staticPath+"modules/pages/footer/footer.html"'></div>
+
+	<!--
+<%
+var cfgJson = grunt.config('cfgJson');
+    print('\t<script type="text/javascript" src="http://'+cfgJson.server.domain+':'+cfgJson.server.socketPort+'/socket.io/socket.io.js"></script>\n');
+%>
+	-->
+
+<%
+var filePath =grunt.config('filePathConcatJs');
+print('\t<!-- 2013.06.14 - min version throwing error on AJAX call so have to use non min version for now.. //UPDATE: nope it was just an error? -->\n');
+print('\t<!--\n');
+print('\t<script type="text/javascript" src="' + filePath + '"></script>\n');
+print('\t-->\n');
+var filePath =grunt.config('filePathMinJs');
+print('\t<script type="text/javascript" src="' + filePath + '"></script>\n');
+%>
+	
+	<%
+var rootPath = grunt.config('buildPathIndexHtml');
+	print('\t<script type="text/javascript" src="' + rootPath + 'templates.js"></script>\n');
+%>
+	<!--
+	TODO - add this back in and test
+	<script type="text/javascript" src="https://static.wepay.com/min/js/tokenization.v2.js"></script>
+	<script type="text/javascript">
+		WePay.set_endpoint("stage"); // change to "production" when live
+	</script>
+	-->
+	
+
+    </div><!-- body div -->
+</body>
+</html>

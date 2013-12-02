@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta content='True' name='HandheldFriendly' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=160dpi' />
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="utf-8">
+<%
+var cfgJson = grunt.config('cfgJson');
+%>
+    <title><% print(cfgJson.app.title); %></title>
+
+<%
+var filePath =grunt.config('filePathConcatCss');
+var filePath =grunt.config('filePathMinCss');
+print('\t<link rel="stylesheet" href="' + filePath + '"/>\n');
+%>
+
+</head>
+<body class='body {{classes.loggedIn}} {{classes.layout}}' ng-controller='LayoutCtrl'>
+    <script type='text/javascript'>
+        //window.location ="live.php";
+        //check for IE
+        var ie = -1; // Return value assumes failure.
+        if (navigator.appName == 'Microsoft Internet Explorer')
+        {
+            var ua = navigator.userAgent;
+            var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+            if (re.exec(ua) != null)
+                ie = parseFloat( RegExp.$1 );
+        }
+        if(ie >-1 && ie <10)		//IE less than 10 (only >=10 supports flexbox)
+        {
+            window.location ="src/ie.html";
+            //alert("redirect");
+        }
+    </script>
+
+    <div id="fb-root"></div>
+
+    <div id='{{ids.header}}' ng-include='staticPath+"modules/pages/header/header.html"'></div>
+	
+	<div class='app-appalert-cont' app-appalert></div>
+
+	<div id='{{ids.content}}' ng-view ng-animate="{enter:'view-enter', leave:'view-leave'}" class='{{classes.loggedIn}} {{classes.layout}}'></div>
+
+    <div id='{{ids.footer}}' ng-include='staticPath+"modules/pages/footer/footer.html"'></div>
+
+<!--
+<%
+var cfgJson = grunt.config('cfgJson');
+    print('\t<script type="text/javascript" src="http://'+cfgJson.server.domain+':'+cfgJson.server.socketPort+'/socket.io/socket.io.js"></script>\n');
+%>
+-->
+
+<%
+var filePath =grunt.config('filePathConcatJs');
+var filePath =grunt.config('filePathMinJs');
+print('\t<script type="text/javascript" src="' + filePath + '"></script>\n');
+%>
+
+<%
+var rootPath = grunt.config('buildPathIndexHtml');
+	print('\t<script type="text/javascript" src="' + rootPath + 'templates.js"></script>\n');
+%>
+
+	<!--
+	<script type='text/javascript' src='https://connect.facebook.net/en_US/all.js'></script>
+    <script type='text/javascript' src='//assets.pinterest.com/js/pinit.js'></script>
+    <script type='text/javascript' src='http://platform.twitter.com/widgets.js'></script>
+    -->
+	<!--
+	<script type="text/javascript" src="https://static.wepay.com/min/js/tokenization.v2.js"></script>
+	<script type="text/javascript">
+		WePay.set_endpoint("stage"); // change to "production" when live
+	</script>
+	-->
+	
+	<!-- Google Auth -->
+	<!-- Place this asynchronous JavaScript just before your </body> tag -->
+	<!--
+    <script type="text/javascript">
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+    </script>
+	-->
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+.nav-footer {
+	background-color:@gray;
+	color:white;
+}
+.nav-footer.hidden {
+	display:none;
+}
+
+.nav-footer-button {
+	line-height:52px;		//vertical center icons
+	text-align:center;
+	cursor:pointer;
+	font-size:1.35em;
+	display:block;		//so <a> tags take full width and are centered (make them act like <div> tags)
+	color:white;		//needed to overwrite <a> styles
+}
+.nav-footer-button-cont {
+	position:relative;
+}
+//must do the PARENT as background so the step arrows can be z-index'ed ON TOP of the background
+.nav-footer-button-cont.selected {
+	background-color:@grayDark;
+}
+.nav-footer-button {
+	/*opacity:0.8;*/		//this makes the overlapping step arrows very hard to match colors
+	z-index:1;		//necessary to allow step arrows to show up ON TOP of this
+	position:relative;		//necessary for z-index to work
+}
+.selected .nav-footer-button {
+	/*opacity:1;*/
+}
+
+//steps (show arrow on left)
+.nav-footer.steps >div a::before {
+	.triangle-right(12px; 23px; @grayDark);
+	top:0;
+	right:-15px;
+	z-index:99;		//so step arrows show up on TOP of background color
+}
+.nav-footer.steps >div a::after {
+	.triangle-right(12px; 23px; @gray);
+	top:0;
+	right:-14px;
+	z-index:99;		//so step arrows show up on TOP of background color
+}
+//no arrow on last one
+.nav-footer.steps >div:last-child a::before, .nav-footer.steps >div:last-child a::after {
+	border:none;
+}
+//selected
+.nav-footer.steps .nav-footer-button-cont.selected a::after {
+	border:none;
+}

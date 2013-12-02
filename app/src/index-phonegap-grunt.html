@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta content='True' name='HandheldFriendly' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=160dpi' />
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="telephone=no">
+	<!--<meta name="apple-mobile-web-app-capable" content="yes" />-->
+    <meta charset="utf-8">
+<%
+var cfgJson = grunt.config('cfgJson');
+%>
+    <title><% print(cfgJson.app.title); %></title>
+
+<%
+var cfgJson = grunt.config('cfgJson');
+%>
+
+<%
+var filePath =grunt.config('filePathMinCss');
+var filePath =grunt.config('filePathConcatCss');
+print('\t<link rel="stylesheet" href="' + filePath + '"/>\n');
+%>
+
+</head>
+<!-- apparently putting stuff on the <body> tag throws errors - timing issue? so moved to an inner div element and it works.. -->
+<!--
+<body class='body {{classes.loggedIn}} {{classes.layout}}' ng-controller='LayoutCtrl'>
+-->
+<body>
+    <div class='body {{classes.loggedIn}} {{classes.layout}}' ng-controller='LayoutCtrl'>
+
+    <div id="fb-root"></div>
+
+    <div id='{{ids.header}}' ng-include='staticPath+"modules/pages/header/header.html"'></div>
+	
+	<div class='app-appalert-cont' app-appalert></div>
+
+	<div id='{{ids.content}}' ng-view ng-animate="{enter:'view-enter', leave:'view-leave'}" class='{{classes.loggedIn}} {{classes.layout}}'></div>
+
+    <div  id='{{ids.footer}}' ng-include='staticPath+"modules/pages/footer/footer.html"'></div>
+
+	<!--
+<%
+var cfgJson = grunt.config('cfgJson');
+    print('\t<script type="text/javascript" src="http://'+cfgJson.server.domain+':'+cfgJson.server.socketPort+'/socket.io/socket.io.js"></script>\n');
+%>
+	-->
+
+<%
+var filePath =grunt.config('filePathConcatJs');
+var filePath =grunt.config('filePathMinJs');
+print('\t<script type="text/javascript" src="' + filePath + '"></script>\n');
+%>
+	
+	<%
+var rootPath = grunt.config('buildPathIndexHtml');
+	print('\t<script type="text/javascript" src="' + rootPath + 'templates.js"></script>\n');
+%>
+
+    <script type="text/javascript" src="cordova.js"></script>
+
+
+<script type="text/javascript" charset="utf-8">
+// phonegap stuff & initialize angular app
+var globalPhoneGap =true;
+
+// Wait for PhoneGap to connect with the device
+var phoneGapReady =false;
+document.addEventListener("deviceready",onDeviceReady,false);
+function onDeviceReady() {
+//alert("device ready");
+console.log("device ready");
+    phoneGapReady =true;
+	//app.initialize();
+    //angular.bootstrap(document, ['myApp']);
+}
+</script>
+    </div><!-- body div -->
+</body>
+</html>

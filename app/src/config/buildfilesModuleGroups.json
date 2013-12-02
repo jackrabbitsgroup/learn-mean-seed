@@ -1,0 +1,29 @@
+{
+	"all": {
+		"modules":["_all"]
+	},
+	"allNoBuild": {
+		"modules":["_all"],
+		"comment":"'_all' is a special/reserved word for getting ALL modules",
+		"skipModules": ["build", "buildTemp", "buildTempCss", "test"]
+	},
+	"allNoBuildCss": {
+		"modules":["_all"],
+		"comment":"like 'allNoBuild' except we WANT 'buildTempCss', which has compiled 'base.css' (from '_base.less') in it",
+		"skipModules": ["build", "buildTemp", "test"]
+	},
+	"allMinified": {
+		"modules":["bower.minified", "lib.minified", "buildTemp", "test"]
+	},
+	"nonMinified": {
+		"modules":["_all"],
+		"skipModules":["build", "buildTemp", "buildTempCss", "bower.minified", "lib.minified", "test"]
+	},
+	"nonMinifiedLint": {
+		"modules":["_all"],
+		"skipModules":["build", "buildTemp", "buildTempCss", "bower.minified", "lib.minified", "bower.nonMinified", "lib.nonMinified", "test"]
+	},
+	"testsProtractor": {
+		"modules":["test.e2e"]
+	}
+}

@@ -1,0 +1,49 @@
+# generic (system) files/extensions we don't want
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+.idea/*
+*.DS_Store
+lib-cov
+pids
+logs
+results
+
+# node and node packages (local installs that should not be tracked)
+npm-debug.log
+node_modules
+
+# bower components (local installs that should not be tracked)
+app/src/bower_components
+#.bowerrc		//DO want to track this
+
+# testing stuff
+## selenium server
+selenium
+
+# code coverage reports
+coverage
+coverage-node
+coverage-angular
+
+# configuration files
+/config_environment.json
+
+# ignore auto generated documentation (YUIDoc) files
+yuidocs
+
+# ignore files compiled / built by grunt
+app/src/build
+app/src/common/less/_base.less
+_dir-paths.less
+app/src/modules/services/config/config.js
+app/src/config/karma.conf.js
+app/src/index.html
+app/src/config/protractor/*
+
+# ignore deploys (i.e. PhoneGap, TriggerIO build folder/files)
+app/src/deploys

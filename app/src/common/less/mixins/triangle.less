@@ -1,0 +1,33 @@
+/*
+*/
+.triangle-right(@width:40px; @height:40px; @color:black)
+{
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(0,0,0,0);		/* all that matters is that it's 0 transparency */
+	
+	border-left-color: @color;
+	border-left-width: @width;
+	border-top-width: @height;
+	border-bottom-width: @height;
+}
+
+.triangle-left(@width:40px; @height:40px; @color:black)
+{
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(0,0,0,0);		/* all that matters is that it's 0 transparency */
+	
+	border-right-color: @color;
+	border-right-width: @width;
+	border-top-width: @height;
+	border-bottom-width: @height;
+}

@@ -1,0 +1,64 @@
+/* inline font sizing */
+h1,h2,h3,h4,h5,h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-weight:bold;
+	line-height:1em;
+}
+h1,h2,h3 {
+	line-height:40px;
+}
+h4,h5,h6 {
+	line-height:20px;
+}
+
+@baseFontSize: 15px;
+h1, .h1, .font-xxxlarge { font-size: @baseFontSize * 2.75; }
+h2, .h2, .font-xxlarge { font-size: @baseFontSize * 2.25; }
+h3, .h3, .font-xlarge { font-size: @baseFontSize * 1.75; }
+h4, .h4, .font-large { font-size: @baseFontSize * 1.25; }
+h5, .h5, .font-normal { font-size: @baseFontSize; }
+h6, .h6, .font-small { font-size: @baseFontSize * 0.85; }
+
+.bold {
+	font-weight:bold;
+}
+
+
+.ellipsis {
+	.text-overflow(ellipsis);
+}
+.clip {
+	.text-overflow(clip);
+}
+
+.capitalize {
+	text-transform:capitalize;
+}
+.uppercase {
+	text-transform:uppercase;
+}
+
+
+/* colored text */
+.muted, .text-muted {
+	color: @grayLight;
+}
+.text-warning {
+	//color: @yellow;
+	color: @warningText;
+}
+.text-error, .text-danger {
+	//color:@red;
+	color: @errorText;
+}
+.text-info {
+	//color: @blue;
+	color: @infoText;
+}
+.text-success {
+	//color: @green;
+	color: @successText;
+}
+.white {
+	color:@white;
+}
+/* end: colored text */

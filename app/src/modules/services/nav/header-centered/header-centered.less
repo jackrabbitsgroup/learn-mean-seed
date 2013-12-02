@@ -1,0 +1,31 @@
+.nav-header {
+	background-color:@gray;
+	color:white;
+	border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+.nav-header.hidden {
+	display: none;
+}
+
+.nav-header-button, .nav-header-title {
+	line-height:45px;
+}
+.nav-header-left-cont, .nav-header-right-cont {
+}
+.nav-header-left, .nav-header-right {
+	text-align:center;
+	cursor:pointer;
+	font-size:1.35em;
+	width:45px;
+	//margin-top:2px;		//vertical center
+}
+.nav-header-button {
+	display:block;		//so <a> tags take full width and are centered (make them act like <div> tags)
+	color:white;		//needed to overwrite <a> styles
+}
+.nav-header-text-button {
+	font-size:10pt;
+	white-space:nowrap;
+	margin-top:2px;
+	margin-right:5px;
+}

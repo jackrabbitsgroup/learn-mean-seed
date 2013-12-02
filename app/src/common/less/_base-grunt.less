@@ -1,0 +1,17 @@
+//variable definitions
+@font-dir: '../common/font/';		//hardcoded - NOTE: this is relative to the compiled css file, NOT this file
+
+//mixins
+@import url('mixins/text.less');
+@import url('mixins/triangle.less');
+
+//variables
+@import url('variables/colors.less');
+@import url('variables/_dir-paths.less');
+
+<%
+var filePaths = grunt.config('filePathsLess');
+for(var ii=0; ii<filePaths.length; ii++) {
+	print("@import url('" + filePaths[ii] + "');\n");
+}
+%>

@@ -1,0 +1,47 @@
+{
+	"name": "learn-mean-seed",
+	"version": "0.0.0",
+	"homepage": "https://github.com/jackrabbitsgroup/learn-mean-seed",
+	"authors": [
+		"Luke Madera <luke.madera@gmail.com>"
+	],
+	"description": "Learn Angular (AngularJS). Learn Node (node.js). Learn HTML5, CSS3, Javascript. Learn to build responsive, cross-platform (mobile) apps and websites using Mean Seed / generator-mean-seed.",
+	"keywords": [
+		"mean-seed",
+		"javascript",
+		"html",
+		"css",
+		"angular",
+		"node",
+		"app",
+		"web",
+		"jackrabbitsgroup",
+		"training",
+		"learning",
+		"tutorial",
+		"angularjs",
+		"node.js",
+		"learn",
+		"generator-mean-seed"
+	],
+	"dependencies": {
+		"angular":"~1.2.2",
+		"angular-animate":"~1.2.2",
+		"angular-sanitize":"~1.2.2",
+		"angular-touch":"~1.2.2",
+		"angular-route":"~1.2.2",
+		"angular-cookies":"~1.2.2",
+		"lesshat":"latest",
+		"font-awesome":"latest",
+		"less-flexbox":"latest",
+		"momentjs":"latest",
+		"hammerjs":"latest",
+		"angular-hammer":"latest",
+		"angular-string":"latest",
+		"angular-array":"latest",
+		"angular-facebook-auth":"latest",
+		"angular-google-auth":"latest",
+		"angular-forminput":"latest"
+	},
+	"license": "MIT"
+}

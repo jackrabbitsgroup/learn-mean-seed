@@ -1,0 +1,18 @@
+<div class='nav-header flexbox row {{nav.classes.cont}}'>
+	<div class='nav-header-left-cont left flex1'>
+		<div ng-repeat='button in nav.buttons.left' class='nav-header-left inline-block {{button.classes.cont}}'>
+			<a ng-show='button.href' class='nav-header-button' ng-href = '{{button.href}}' ng-bind-html='button.html'></a>
+			<div ng-hide='button.href' class='nav-header-button' ng-click = 'button.click()' ng-bind-html='button.html'></div>
+		</div>
+	</div>
+	<h3 class='flex3 center nav-header-title-cont {{nav.title.classes.cont}}'>
+		<a ng-show='nav.title.href' class='nav-header-title' ng-href = '{{nav.title.href}}' ng-bind-html='nav.title.html'></a>
+		<div ng-hide='nav.title.href' class='nav-header-title' ng-click = 'nav.title.click()' ng-bind-html='nav.title.html'></div>
+	</h3>
+	<div class='nav-header-right-cont right flex1'>
+		<div ng-repeat='button in nav.buttons.right' class='nav-header-right inline-block {{button.classes.cont}}'>
+			<a ng-show='button.href' class='nav-header-button' ng-href = '{{button.href}}' ng-bind-html='button.html'></a>
+			<div ng-hide='button.href' class='nav-header-button' ng-click = 'button.click()' ng-bind-html='button.html'></div>
+		</div>
+	</div>
+</div>

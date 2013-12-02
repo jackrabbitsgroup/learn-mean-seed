@@ -1,0 +1,23 @@
+input, textarea, select {
+	.box-sizing(border-box);
+	padding: 5px 6px;
+	height:auto;
+	width:100%;
+	
+	//prevent browser defaults by inheriting
+	font-family: inherit;
+	font-size: inherit;
+}
+//remove native appearance for date/time inputs (so they respect width, etc.)
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+label {
+	padding-top:4px;
+}
+
