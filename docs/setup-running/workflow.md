@@ -42,6 +42,29 @@ There are a lot of tools we leverage but they're virtually all assimilated in wi
 
 
 
+## Grunt Dev/Test tasks
+
+These are to auto build/run tests/reload as you're working to avoid having to type things like `grunt q` all the time.
+
+For each separate (grunt) command, you'll need another command window open to run it. A typical workflow would be as following:
+
+1. `node run.js` in command window 1 (this runs the actual server so you can view the site)
+2. open a browser (i.e. Firefox, Chrome) to `http://localhost:3000` (or whatever domain/port you've set in `config.json`) to see the site
+	1. turn on the LiveReload browser extension [see below]
+3. `grunt dev` in command window 2 (this will auto build, test, and reload your app in the browser for you)
+4. [optional] `grunt dev-karma-cov` to write frontend unit test coverage reports
+
+See [running.md](../setup-running/running.md) and `Gruntfile.js` for more info.
+
+### Live Reload
+[Live Reload](http://livereload.com/) auto-refreshes your browser for you when files change so you don't have to constantly press reload (or `F5` or `Ctrl+F5` to clear cache and reload the page to see your changes).
+Grunt (with the `grunt dev` tasks) is set up to use live reload with the browser extensions so you just need to install them and activate them - then grunt will do the rest!
+	- to "activate" the browser extension, just click it (just like Firebug) each time you open a new browser window.
+
+- http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-
+
+
+
 ## Best practices with GIT
 
 - commit, pull, and push often. At least once a day, often more. Each time you make changes and have a stable, bug free, complete version of the code, push/sync it - usually only a few or even just one file change(s) at a time. This will reduce frequeny of manual merge conflicts.

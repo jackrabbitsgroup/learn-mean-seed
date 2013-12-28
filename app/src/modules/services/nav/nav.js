@@ -25,7 +25,8 @@ Sets up the header and footer navigation buttons / displays.
 'use strict';
 
 angular.module('app').
-factory('appNav', ['$rootScope', 'jrgArray', 'appNavConfig', function($rootScope, jrgArray, appNavConfig) {
+factory('appNav', ['$rootScope', 'jrgArray', 'appNavConfig', '$window', 
+function($rootScope, jrgArray, appNavConfig, $window) {
 var selfGlobal;		//set to be able to reference THIS function/service even if the 'this' keyword is for something else - i.e. for historyBack overwriting from appNavConfig
 
 var inst ={
@@ -44,10 +45,10 @@ var inst ={
 	pages :{},		//will hold all the navigation page objects for defining the nav (header and footer)
 
 	/**
-	@property curPage Will hold the current navigation object/page
+	@property curNav Will hold the current navigation object/page
 	@type Object
 	*/
-	curPage: false,
+	curNav: false,
 	/**
 	@property curPageKey Will hold the key for the the current navigation/page (i.e. 'login')
 	@type String
@@ -112,7 +113,7 @@ var inst ={
 			@param {String} page i.e. 'login'
 			@param {String} queryParams i.e. 'yes=1&no=2'
 			@param {Object} queryParamsObj Object of parsed URL GET query params (i.e. {yes:'1', no:'2'})
-			@param {String} pageToUse The actual nav page key - this will skip any url checks and just use this given page. This MUST exactly match a this.pages nav item (i.e. 'eventviewinfo')!
+		@param {String} pageToUse The actual nav page key - this will skip any url checks and just use this given page. This MUST exactly match a this.pages nav item (i.e. 'eventviewinfo')!
 	@return {String} unique identifier for this page
 	*/
 	updateNav: function(params) {
@@ -127,15 +128,18 @@ var inst ={
 		}
 		// console.log('updateNav: curPage: '+curPage);
 		this.curPageKey =curPage;		//save
-		this.curPage =this.pages[curPage];		//save
+		this.curNav =this.pages[curPage];		//save
 		
 		this.broadcastNavUpdates({});
 		this.updateRouteChangeCounter({});
 		
 		//return a unique identifier for this page/view/nav (that takes into account the URL/query params)
-		var pageToReturn =curPage;
+		var pageToReturn;
 		if(curPage =='defaultPage') {		//if no nav defined for this page/URL params combination, just use the page (without query params)
 			pageToReturn =params.urlInfo.page;
+		}
+		else {
+			pageToReturn =curPage;
 		}
 		return pageToReturn;
 	},
@@ -145,8 +149,8 @@ var inst ={
 	@method broadcastNavUpdates
 	*/
 	broadcastNavUpdates: function(params) {
-		$rootScope.$broadcast('appNavHeaderUpdate', {nav: this.curPage});		//update header
-		$rootScope.$broadcast('appNavFooterUpdate', {nav: this.curPage});		//update footer
+		$rootScope.$broadcast('appNavHeaderUpdate', {nav: this.curNav});		//update header
+		$rootScope.$broadcast('appNavFooterUpdate', {nav: this.curNav});		//update footer
 		var layoutClass ='layout-'+this.curPageKey;
 		$rootScope.$broadcast('changeLayoutEvt', layoutClass);		//update content class
 	},
@@ -168,26 +172,28 @@ var inst ={
 	@toc 5.3.
 	@method extendNav
 	*/
+	/*
 	extendNav: function(newNavParts, params) {
-		this.curPage =angular.extend(this.curPage, newNavParts);
+		this.curNav =angular.extend(this.curNav, newNavParts);
 		this.broadcastNavUpdates({});
 		this.updateRouteChangeCounter({});
 	},
+	*/
 	
 	/**
 	@toc 6.
 	@method getNav
 	*/
 	getNav: function(params) {
-		return jrgArray.copy(this.curPage, {});		//must return COPY otherwise changes will overwrite objects here!
+		return jrgArray.copy(this.curNav, {});		//must return COPY otherwise changes will overwrite objects here!
 	},
 	
 	/**
 	@toc 6.5.
 	@method setNav
 	*/
-	setNav: function(newPage, params) {
-		this.curPage =newPage;
+	setNav: function(newNav, params) {
+		this.curNav =newNav;
 		this.broadcastNavUpdates({});
 		this.updateRouteChangeCounter({});
 	},
@@ -255,7 +261,7 @@ var inst ={
 		var self =selfGlobal;		//can't use 'this' keyword since that refers to appNavConfig where the button components were originally declared
 		// console.log('historyCounter: '+self.historyCounter);
 		if(self.historyCounter >0) {
-			history.back();
+			$window.history.back();		//use $window for test mocking
 			self.historyCounter =self.historyCounter -2;		//have to subtract 2 since going back will cause a route change that will increment the counter again
 		}
 	}

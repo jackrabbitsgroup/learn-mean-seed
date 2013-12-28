@@ -12,15 +12,17 @@ angular.module('myApp').controller('LogoutCtrl', ['$scope', '$location', '$cooki
 	var user =UserModel.load();
 	var sessId =$cookieStore.get('sess_id');
 	
-	var promise1 =appHttp.go({}, {url: 'auth/logout', data: {user_id:user._id, sess_id:sessId}}, {suppressErrorAlert:true});
-	promise1.then( function(data) {
-		clearData({});
-		$rootScope.$broadcast('loginEvt', {'loggedIn':false});
-	}, function(data) {
-		clearData({});
-		//logout anyway..
-		$rootScope.$broadcast('loginEvt', {'loggedIn':false});
-	});
+	function init(params) {
+		var promise1 =appHttp.go({}, {url: 'auth/logout', data: {user_id:user._id, sess_id:sessId}}, {suppressErrorAlert:true});
+		promise1.then( function(data) {
+			clearData({});
+			$rootScope.$broadcast('loginEvt', {'loggedIn':false});
+		}, function(data) {
+			clearData({});
+			//logout anyway..
+			$rootScope.$broadcast('loginEvt', {'loggedIn':false});
+		});
+	}
 	
 	/**
 	Clear all (user) data - in javascript memory and localStorage. As more frontend / memory data is added, make sure to clear/destroy them here!
@@ -34,4 +36,6 @@ angular.module('myApp').controller('LogoutCtrl', ['$scope', '$location', '$cooki
 		appStorage.delete1();
 		// appStorage.delete1('user');		//the above wasn't working..
 	}
+	
+	init({});
 }]);

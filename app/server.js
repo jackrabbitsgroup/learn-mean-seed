@@ -33,6 +33,12 @@ var mongodb    = require('mongodb');
 
 var Database = require('./database');
 
+var dependency =require('./dependency.js');
+var pathParts =dependency.buildPaths(__dirname, {});
+
+//site-specific
+var RealtimeMod =require(pathParts.services+'realtime/realtime.js');
+
 // CORS support middleware factory
 var allowCors = function(domains){
     if(lodash.isString(domains)){
@@ -107,6 +113,11 @@ function Server(cfg){
 		thisObj.app = expressApp.app;
 		thisObj.server = expressApp.server;
 		thisObj.db = expressApp.db;
+		
+		//site-specific
+		//set up realtime
+		RealtimeMod =RealtimeMod.init({db:db});
+		
 		deferred.resolve(thisObj);
 	}, function(err) {
 		console.log('error: '+err);
