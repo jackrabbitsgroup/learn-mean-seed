@@ -202,49 +202,49 @@ $routeProvider.when(appPathRoute+'html-intro', {templateUrl: pagesPath+'html/htm
 $routeProvider.when(appPathRoute+'html-div', {templateUrl: pagesPath+'html/html-div/html-div.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'html-img', {templateUrl: pagesPath+'html/html-img/html-img.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'html-self-closing', {templateUrl: pagesPath+'html/html-self-closing/html-self-closing.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'html-br', {templateUrl: pagesPath+'html/html-br/html-br.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'html-input', {templateUrl: pagesPath+'html/html-input/html-input.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'html-a', {templateUrl: pagesPath+'html/html-a/html-a.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'html-hpspan', {templateUrl: pagesPath+'html/html-hpspan/html-hpspan.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
