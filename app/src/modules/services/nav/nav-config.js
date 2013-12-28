@@ -114,8 +114,7 @@ var inst ={
 		//NOTE: this references a function in THIS file/service, which is NOT what we want, we want to reference appNav SO we need to overwrite/set the historyBack function here from appNav later so this will work!
 		this.components.backButton ={
 			html: "<span class='fa fa-arrow-left'></span>",
-			// click: function() {self.historyBack({}); }
-			click: false		//will be set in appNav
+			click: function() {self.historyBack({}); }
 		};
 		
 		this.components.headerCentered ={
