@@ -1,32 +1,43 @@
 'use strict';
 
 describe('HeaderCtrl', function(){
-	var ctrl, scope ={}, appConfig;
-
-	/*
-	beforeEach(function(){
-		headerCtrl = new HeaderCtrl(scope);
-	});
-	*/
+	var $ctrl, $scope ={}, appNav;
+	var createController;
 	
 	beforeEach(module('myApp'));
-	beforeEach(module('app'));
 	
-	beforeEach(inject(function(_$httpBackend_, $rootScope, $controller, _appConfig_) {
-		/*
-		$httpBackend = _$httpBackend_;
-		$httpBackend.expectGET('phones/phones.json').
-				respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
-		*/
-		
-		appConfig =_appConfig_;
-		scope = $rootScope.$new();
-		ctrl = $controller('HeaderCtrl', {$scope: scope});
-		
-		//ctrl =new HeaderCtrl(scope);		//this does NOT work - gives a "cannot call method findArrayIndex of undefined"..
+	beforeEach(inject(function(_$rootScope_, _$controller_, _appNav_) {
+		$scope = _$rootScope_.$new();
+		appNav =_appNav_;
+		createController =function() {
+			return $ctrl = _$controller_('HeaderCtrl', {$scope: $scope});
+		};
 	}));
 	
-	it('should start with user logged out', function() {
-		expect(appConfig.state.loggedIn).toBe(false);
+	it('should be called and set nav', function() {
+		appNav.updateNav({urlInfo: {page:'home'} });
+		createController();
+	});
+	
+	it('should listen for appNavHeaderUpdate event', function() {
+		createController();
+		var nav ={
+			header: undefined
+		};
+		$scope.$emit('appNavHeaderUpdate', {nav: nav});
+		expect($scope.classes.cont).toBe('');
+	});
+	
+	it('should set classes.cont to hidden appropriately', function() {
+		createController();
+		var nav ={
+			header: {
+				classes: {
+					cont: 'hidden'
+				}
+			}
+		};
+		$scope.$emit('appNavHeaderUpdate', {nav: nav});
+		expect($scope.classes.cont).toBe(nav.header.classes.cont);
 	});
 });

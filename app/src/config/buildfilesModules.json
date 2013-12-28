@@ -78,7 +78,11 @@
 					"comment": "directory paths are part of file lists/names",
 					"files": {
 						"js": [
-							"angular-hammer/angular-hammer.js"
+							"angular-hammer/angular-hammer.js",
+							"angular-socket-io/socket.js"
+						],
+						"testUnit": [
+							"angular-socket-io/mock/socket-io.js"
 						]
 					}
 				}
@@ -142,6 +146,9 @@
 					"files": {
 						"js": [
 							"app.js"
+						],
+						"testUnit": [
+							"app.spec.js"
 						]
 					}
 				}
@@ -161,6 +168,9 @@
 									"files": {
 										"js": [
 											"UserModel.js"
+										],
+										"testUnit": [
+											"UserModel.spec.js"
 										]
 									}
 								}
@@ -171,6 +181,9 @@
 							"files": {
 								"js": [
 									"config.js"
+								],
+								"testUnit": [
+									"config.spec.js"
 								]
 							}
 						},
@@ -201,6 +214,9 @@
 							"files": {
 								"js": [
 									"storage.js"
+								],
+								"testUnit": [
+									"storage.spec.js"
 								]
 							}
 						},
@@ -213,6 +229,9 @@
 								],
 								"less": [
 									"nav.less"
+								],
+								"testUnit": [
+									"nav.spec.js"
 								]
 							},
 							"dirs": [
@@ -250,6 +269,17 @@
 									"socialAuth.spec.js"
 								]
 							}
+						},
+						{
+							"name": "socket",
+							"files": {
+								"js": [
+									"socket.js"
+								],
+								"testUnit": [
+									"socket.spec.js"
+								]
+							}
 						}
 					]
 				},
@@ -278,6 +308,9 @@
 								],
 								"less": [
 									"login.less"
+								],
+								"testUnit": [
+									"login.spec.js"
 								]
 							}
 						},
@@ -289,6 +322,9 @@
 								],
 								"less": [
 									"signup.less"
+								],
+								"testUnit": [
+									"signup.spec.js"
 								]
 							}
 						},
@@ -300,6 +336,23 @@
 								],
 								"less": [
 									"social-auth-btn.less"
+								],
+								"testUnit": [
+									"socialAuthBtn.spec.js"
+								]
+							}
+						},
+						{
+							"name": "layout",
+							"files": {
+								"js": [
+									"layout.js"
+								],
+								"less": [
+									"layout.less"
+								],
+								"testUnit": [
+									"layout.spec.js"
 								]
 							}
 						}
@@ -313,6 +366,9 @@
 							"files": {
 								"js": [
 									"LayoutCtrl.js"
+								],
+								"testUnit": [
+									"LayoutCtrl.spec.js"
 								]
 							}
 						},
@@ -344,6 +400,9 @@
 								],
 								"less": [
 									"footer.less"
+								],
+								"testUnit": [
+									"FooterCtrl.spec.js"
 								]
 							}
 						},
@@ -355,6 +414,9 @@
 								],
 								"html": [
 									"home.html"
+								],
+								"testUnit": [
+									"HomeCtrl.spec.js"
 								]
 							}
 						},
@@ -369,6 +431,9 @@
 								],
 								"less": [
 									"login.less"
+								],
+								"testUnit": [
+									"LoginCtrl.spec.js"
 								]
 							}
 						},
@@ -383,6 +448,9 @@
 								],
 								"less": [
 									"signup.less"
+								],
+								"testUnit": [
+									"SignupCtrl.spec.js"
 								]
 							}
 						},
@@ -425,33 +493,64 @@
 								],
 								"html": [
 									"user-delete.html"
+								],
+								"testUnit": [
+									"UserDeleteCtrl.spec.js"
 								]
 							}
 						},
 						{
-							"name": "test",
-							"files": {
-								"js": [
-									"TestCtrl.js"
-								],
-								"html": [
-									"test.html"
-								]
-							}
-						},
-						{
-							"name": "design",
-							"files": {
-								"js": [
-									"DesignCtrl.js"
-								],
-								"html": [
-									"design.html"
-								],
-								"less": [
-									"design.less"
-								]
-							}
+							"name": "dev-test",
+							"dirs": [
+								{
+									"name": "test",
+									"files": {
+										"js": [
+											"TestCtrl.js"
+										],
+										"html": [
+											"test.html"
+										],
+										"testUnit": [
+											"TestCtrl.spec.js"
+										]
+									}
+								},
+								{
+									"name": "design",
+									"files": {
+										"js": [
+											"DesignCtrl.js"
+										],
+										"html": [
+											"design.html"
+										],
+										"less": [
+											"design.less"
+										],
+										"testUnit": [
+											"DesignCtrl.spec.js"
+										]
+									}
+								},
+								{
+									"name": "socketio",
+									"files": {
+										"html": [
+											"socketio.html"
+										],
+										"js": [
+											"SocketioCtrl.js"
+										],
+										"testUnit": [
+											"SocketioCtrl.spec.js"
+										],
+										"less": [
+											"socketio.less"
+										]
+									}
+								}
+							]
 						}
 					]
 				}

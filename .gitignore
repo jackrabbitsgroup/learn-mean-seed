@@ -42,6 +42,7 @@ app/src/common/less/_base.less
 _dir-paths.less
 app/src/modules/services/config/config.js
 app/src/config/karma.conf.js
+app/src/config/karma-no-coverage.conf.js
 app/src/index.html
 app/src/config/protractor/*
 

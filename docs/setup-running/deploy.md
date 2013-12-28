@@ -9,7 +9,7 @@ If you haven't done so already, purchase a (new) Linux server (i.e. from Digital
 2. [locally on your computer / original server] create a new set of configs (regular and test) in `app/configs` for the new server environment by copying the existing `config.json` and renaming it `config-[new-server-environment].json` and updating it accordingly, i.e. for a production or staging linux server change/set at least the following:
 	1. `operatingSystem` to `linux`
 	2. `forever` to `1` so it will auto restart forever on code changes
-	3. `server.domain` to the domain (or IP address) of the new server
+	3. `server.domain` and `email.domain` to the domain (or IP address) of the new server
 	4. `sauceLabs` credentials (if you don't already have a Sauce Labs account, create one (they have free tiers) since the selenium standalone server with chrome doesn't currently work on linux (while we could try to get phantom-js working, it's better to run on multiple platforms anyway)
 	5. [should also update unique keys and credentials, such as facebook app id, google app id, etc.]
 	6. then copy this new config file to make the test config, which should be named `config-[new-server-environment].test.json` and edit it to change at least:
@@ -42,6 +42,8 @@ RECOMMENDED approach!
 	1. clone the github repo (we'll just have to do this manually once) - `git clone [repo URL] [/path/to/cloned/repo]` - make sure to use the HTTPS git url - otherwise will get a 'Permission denied (publickey).' error!
 		1. set permissions on this folder (especially if you cloned with `sudo`)
 		2. go into the repo - `cd /path/to/cloned/repo`
+		3. if it prompts you for a username and/or password during git pull or other commands, the CI won't work so set your username and password by doing: `git config remote.origin.url https://{USERNAME}:{PASSWORD}@github.com/{GITHUB USERNAME}/{REPONAME}.git` (basically just prepend [username]:[password] to your existing remote url).
+			1. http://superuser.com/questions/199507/how-do-i-ensure-git-doesnt-ask-me-for-my-github-username-and-password
 	2. copy and set the `config_environment.json` to use this environment with: `cp app/config_environment.json config_environment.json` and then edit the file to set the `environment` key to your new environment (the SAME name you used when creating the new `config-[new-server-environment].json` file earlier - these MUST match!)
 	3. add the concrete runner to the git config so concrete will run: `git config --add concrete.runner "npm install && bower update && bower install && grunt --type=prod"`
 	4. configure git hooks for worked and failed

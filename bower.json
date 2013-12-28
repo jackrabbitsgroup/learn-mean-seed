@@ -25,23 +25,27 @@
 		"generator-mean-seed"
 	],
 	"dependencies": {
-		"angular":"~1.2.2",
-		"angular-animate":"~1.2.2",
-		"angular-sanitize":"~1.2.2",
-		"angular-touch":"~1.2.2",
-		"angular-route":"~1.2.2",
-		"angular-cookies":"~1.2.2",
-		"lesshat":"latest",
-		"font-awesome":"latest",
-		"less-flexbox":"latest",
-		"momentjs":"latest",
-		"hammerjs":"latest",
-		"angular-hammer":"latest",
-		"angular-string":"latest",
-		"angular-array":"latest",
-		"angular-facebook-auth":"latest",
-		"angular-google-auth":"latest",
-		"angular-forminput":"latest"
+		"angular": "1.2.5",
+		"angular-animate": "1.2.5",
+		"angular-sanitize": "1.2.5",
+		"angular-touch": "1.2.5",
+		"angular-route": "1.2.5",
+		"angular-cookies": "1.2.5",
+		"lesshat": "latest",
+		"font-awesome": "latest",
+		"less-flexbox": "latest",
+		"momentjs": "latest",
+		"hammerjs": "latest",
+		"angular-hammer": "latest",
+		"angular-string": "latest",
+		"angular-array": "latest",
+		"angular-facebook-auth": "latest",
+		"angular-google-auth": "latest",
+		"angular-forminput": "latest",
+		"angular-socket-io": "latest"
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"resolutions": {
+		"angular": "1.2.5"
+	}
 }

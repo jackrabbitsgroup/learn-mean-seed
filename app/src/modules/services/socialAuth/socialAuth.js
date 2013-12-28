@@ -53,8 +53,8 @@ var inst ={
 		}
 		else {		//have to authenticate
 			//initialize google auth with client id
-			//jrgGoogleAuth.init({'client_id':appConfig.info.googleClientId, 'scope':'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email'});
-			jrgGoogleAuth.init({'client_id':appConfig.info.googleClientId, 'scopeHelp':['login', 'email', 'contacts'] });
+			//jrgGoogleAuth.init({'client_id':appConfig.cfgJson.google.clientId, 'scope':'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email'});
+			jrgGoogleAuth.init({'client_id':appConfig.cfgJson.google.clientId, 'scopeHelp':['login', 'email', 'contacts'] });
 			
 			//handle actual google login
 			var evtGoogleLogin ="evtGoogleLogin";
@@ -111,7 +111,7 @@ var inst ={
 		}
 		else {		//have to authenticate
 			//initialize facebook auth with app id
-			jrgFacebookAuth.init({'fbAppId':appConfig.info.fbAppId, 'fbPerms':appConfig.info.fbPerms});
+			jrgFacebookAuth.init({'fbAppId':appConfig.cfgJson.facebook.appId, 'fbPerms':appConfig.cfgJson.facebook.scope});
 			
 			//$timeout(function() {
 				//handle actual facebook login

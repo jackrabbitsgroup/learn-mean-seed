@@ -38,11 +38,12 @@ var inst ={
 	//2.
 	load: function(key, params)
 	{
-		if(!key || key =='all')
+		if(!key || key =='all') {
 			return this.data;
-		else
+		}
+		else {
 			return this.data[key];
-		return false;
+		}
 	}
 
 };

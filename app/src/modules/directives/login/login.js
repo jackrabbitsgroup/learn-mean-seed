@@ -15,6 +15,21 @@ partial / html:
 <div app-login forgot-pass='forgotPass' login='login'></div>
 
 controller / js:
+	// @method $scope.login
+	// @param {Object} params
+		// @param {Object} vals The form input values to login with
+	// @param {Function} callback
+	$scope.login =function(params, callback) {
+		//do stuff here
+	};
+	
+	// @method $scope.forgotPass
+	// @param {Object} params
+		// @param {String} email
+	// @param {Function} callback
+	$scope.forgotPass =function(params, callback) {
+		//do stuff here
+	};
 
 //end: EXAMPLE usage
 */
@@ -58,7 +73,7 @@ angular.module('app').directive('appLogin', ['appConfig', function (appConfig) {
 		},
 		
 		controller: function($scope, $element, $attrs) {
-			$scope.appTitle =appConfig.info.appTitle;
+			$scope.appTitle =appConfig.cfgJson.app.title;
 			$scope.appPathLink =appConfig.dirPaths.appPathLink;
 			
 			$scope.formVals = {};
@@ -77,6 +92,12 @@ angular.module('app').directive('appLogin', ['appConfig', function (appConfig) {
 						$scope.login()(ppSend, function() {
 						});
 					}
+					else {
+						console.log('$scope.login function undefined or not valid');
+					}
+				}
+				else {
+					$scope.$emit('evtAppalertAlert', {type:'error', msg:'Please fill in all values!'});
 				}
 			};
 			
@@ -99,6 +120,9 @@ angular.module('app').directive('appLogin', ['appConfig', function (appConfig) {
 						};
 						$scope.forgotPass()(ppSend, function() {
 						});
+					}
+					else {
+						console.log('$scope.forgotPass function undefined or not valid');
 					}
 				}
 				else {
