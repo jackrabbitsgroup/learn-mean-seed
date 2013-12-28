@@ -1,0 +1,58 @@
+<div class = 'lesson' ng-controller='HtmlInputCtrl'>
+	<div class = 'lesson-title'> HTML: The input Element </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'html/html-input'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		The <code>input</code> element is primarily used to build forms where users can input data.
+		There are many types of inputs, each with their own rules, and constructing and retrieving a user's data from them can become difficult very quickly.
+		For these reasons and others, inputs are by far the most complicated html element you'll deal with.
+		<br/><br/>
+		The good news for us is that Angular makes retrieving data from inputs much, much easier,
+		and Mean Seed's angular forminput directive helps simplify things even more, so for now we can just focus on the basics.
+		<br/><br/>
+		The simplest type of input is the text input. Take a look at this page's .html file to see how it's done:
+		<br/><br/>
+		<input type = 'text' placeholder = 'You can type here!' style='width:auto;'/>
+		<br/><br/>
+		Note that this element is <a ng-href = '{{appPathLink + "html-self-closing"}}'><i>self-closing</i></a>.
+		<br/><br/>
+		Text inputs are actually quite simple to work with (especially with Angular's ng-model), which is fortunate because they are by far the most common.
+		You can give them classes and apply CSS styles, among other things.
+		<br/><br/>
+		There are also password inputs, which work just like text inputs except that the characters are hidden:
+		<br/><br/>
+		<input type = 'password' placeholder = 'Password' style='width:auto;'/>
+		<br/><br/>
+		For multi-line text inputs, use the special <code>textarea</code> element. It's technically not an <code>input</code>, but it looks a lot like one:<br/>
+		<textarea rows = '2' cols = '20' style='width:auto;'> </textarea>
+		<br/><br/>
+		Other types of inputs include radio buttons, checkboxes, and <code>select</code> inputs (which are again technically not an input element), to name a few.
+		We're not going to worry about these in too much detail here, since Mean Seed's forminput directive handles a lot of the grunt work.
+		If you need more information, of course, you can always ask the internet for examples of any particular type of input.
+		<br/><br/>
+		
+		<input type="radio" name="radio_example" value="1" style='width:auto;'/>Radio 1 <br/>
+		<input type="radio" name="radio_example" value="2" style='width:auto;'/>Radio 2 <br/><br/>
+		
+		<input type="checkbox" name="check_example" value="1" style='width:auto;'/>Checkbox 1<br/>
+		<input type="checkbox" name="check_example" value="2" style='width:auto;'/>Checkbox 2<br/><br/>
+		
+		<select name="select_example" style='width:auto;'>
+			<option value="1">Option 1</option>
+			<option value="2">Option 2</option>
+			<option value="3">Option 3</option>
+			<option value="4">Option 4</option>
+		</select>
+	</div>
+	
+	<div class = 'lesson-challenges'>
+		<h4> Challenges: </h4>
+		1. Create a text input and a password input in the Sandbox.<br/>
+		2. Create a checkbox in the sandbox.<br/>
+		3. Create a radio button with 4 options in the sandbox.
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		
+	</div>
+</div>

@@ -596,6 +596,125 @@
 											"html-intro.less"
 										]
 									}
+								},
+								{
+									"name": "html-div",
+									"files": {
+										"html": [
+											"html-div.html"
+										],
+										"js": [
+											"HtmlDivCtrl.js"
+										],
+										"testUnit": [
+											"HtmlDivCtrl.spec.js"
+										],
+										"less": [
+											"html-div.less"
+										]
+									}
+								},
+								{
+									"name": "html-img",
+									"files": {
+										"html": [
+											"html-img.html"
+										],
+										"js": [
+											"HtmlImgCtrl.js"
+										],
+										"testUnit": [
+											"HtmlImgCtrl.spec.js"
+										],
+										"less": [
+											"html-img.less"
+										]
+									}
+								},
+								{
+									"name": "html-self-closing",
+									"files": {
+										"html": [
+											"html-self-closing.html"
+										],
+										"js": [
+											"HtmlSelfClosingCtrl.js"
+										],
+										"testUnit": [
+											"HtmlSelfClosingCtrl.spec.js"
+										],
+										"less": [
+											"html-self-closing.less"
+										]
+									}
+								},
+								{
+									"name": "html-br",
+									"files": {
+										"html": [
+											"html-br.html"
+										],
+										"js": [
+											"HtmlBrCtrl.js"
+										],
+										"testUnit": [
+											"HtmlBrCtrl.spec.js"
+										],
+										"less": [
+											"html-br.less"
+										]
+									}
+								},
+								{
+									"name": "html-input",
+									"files": {
+										"html": [
+											"html-input.html"
+										],
+										"js": [
+											"HtmlInputCtrl.js"
+										],
+										"testUnit": [
+											"HtmlInputCtrl.spec.js"
+										],
+										"less": [
+											"html-input.less"
+										]
+									}
+								},
+								{
+									"name": "html-a",
+									"files": {
+										"html": [
+											"html-a.html"
+										],
+										"js": [
+											"HtmlACtrl.js"
+										],
+										"testUnit": [
+											"HtmlACtrl.spec.js"
+										],
+										"less": [
+											"html-a.less"
+										]
+									}
+								},
+								{
+									"name": "html-hpspan",
+									"files": {
+										"html": [
+											"html-hpspan.html"
+										],
+										"js": [
+											"HtmlHpspanCtrl.js"
+										],
+										"testUnit": [
+											"HtmlHpspanCtrl.spec.js"
+										],
+										"less": [
+											"html-hpspan.less"
+										]
+									}
 								}
 							]
 						}

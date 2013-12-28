@@ -1,0 +1,45 @@
+<div class = 'lesson' ng-controller='HtmlDivCtrl'>
+	<div class = 'lesson-title'> HTML: The Div Element </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'html/html-div'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		The 'div' element is easily the most common of all html elements. Divs are used to segment a page into pieces, which you can then move around and style using CSS.
+		<br/><br/>
+		This makes divs ideal for setting up your page's layout; you can wrap any piece of a page inside a div, and then move the piece about the page by manipulating the div.
+		It's entirely possible (and in fact, quite common) to set up your page's basic layout using nothing but divs and CSS.
+		<br/><br/>
+		By default, a div is simply a rectangular box that spans the entire width of its container.
+		Its height is determined by the height of whatever is placed inside it, and it will begin immediately below whatever element came before it.
+		That's really all there is to it - the rest is CSS.
+		<br/><br/>
+		Protip: You can never have too many divs. Oftentimes, what seems like a difficult layout problem can become easy simply by wrapping the problem area(s) in an extra div or two.
+		The div's ability to segment the page allows you isolate problems, separating them from interference from the rest of your html.
+		It may help to think of each div as cordoning off a section of the screen, and within that cordoned-off space you are essentially working in a new (albeit smaller) blank page.
+		<br/><br/>
+		Take a look at this page's html file to see how the following simple example divs were written. They've all been given different background colors so that you can see how they are placed.
+		<br/><br/>
+		<div style = 'background-color: gray;'>
+			Here's a div with 3 divs inside it. The third div is empty, though, so it has no height and therefore you can't see it.
+			<div style = 'background-color: skyblue;'> Div 1 </div>
+			<div style = 'background-color: green;'> Div 2<br/>This div spans two lines. </div>
+			<div style = 'background-color: red;'></div>
+		</div>
+		<br/><br/>
+		Here's the same four divs again, but this time the outer one has some padding so you can see that it really does contain the others.
+		<br/><br/>
+		<div style = 'background-color: gray; padding: 10px;'>
+			Here's a div with 3 divs inside it. The third div is empty, though, so it has no height and therefore you can't see it.
+			<div style = 'background-color: skyblue;'> Div 1 </div>
+			<div style = 'background-color: green;'> Div 2. This div spans two lines of text,<br/>so it's taller.</div>
+			<div style = 'background-color: red;'></div>
+		</div>
+	</div>
+	
+	<div class = 'lesson-challenges'>
+
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		
+	</div>
+</div>

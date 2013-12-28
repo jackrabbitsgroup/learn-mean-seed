@@ -55,7 +55,7 @@ angular.module('myApp').controller('LayoutCtrl', ['$scope', 'appConfig', '$locat
 	@type String
 	@usage <img ng-src='{{appPathImg}}/ie-chrome-logo.png' />		<!-- assumes there's an image file named 'ie-chrome-logo.png' in the common/img folder -->
 	*/
-	$scope.appPathImg =appConfig.dirPaths.appPath+'src/common/img';
+	$scope.appPathImg =appConfig.dirPaths.appPath+'src/common/img/';
 	
 	/**
 	For use in referencing static files like partials

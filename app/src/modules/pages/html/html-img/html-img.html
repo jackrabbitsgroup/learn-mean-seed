@@ -1,0 +1,73 @@
+<div class = 'lesson' ng-controller='HtmlImgCtrl'>
+	<div class = 'lesson-title'> HTML: The Image Element </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'html/html-img'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		As you've probably guessed, the <code>img</code> tag is used to display an image (like a <code>.jpg</code>, <code>.png</code>, or <code>.gif</code> file) on the page.
+		Img tags have three improtant attributes: <code>src</code>, <code>height</code>, and <code>width</code>.
+		<br/><br/>
+		Src, which is short for 'source', holds the path to the image. This is the property that tells the page what image file to display. All images should have an <code>src</code> attribute defined, because an image element with no image doesn't make sense!
+		<br/><br/>
+		Example usage:
+		<br/>
+		<code>
+			&lt;img src = 'path/to/my-image.jpg' /&gt;
+		</code>
+		<br/>
+		Note that the img tag is <a ng-href = '{{appPathLink + "html-self-closing"}}'><i>self-closing</i>.</a>
+		<br/><br/>
+		The code above tells the browser to look up the file named <code>my-image.jpg</code> in the folder <code>to</code> in the folder <code>path</code> and display it on the page.
+		You can use relative paths or absolute paths to get to your image, but relative paths can be tricky if you're not sure where you're starting from.
+		Absolute paths are more reliable in the sense that there is no ambuiguity about where they point to, but they can often be much more of a hassle to create.
+		<br/><br/>
+		If you're working with our MEAN seed, though, you shouldn't have any trouble getting to your images - Angular and its $scope variables make that easy:
+		<br/><br/>
+		<code>
+			&lt;img ng-src = 'appPathImg + "loading.gif"' /&gt;
+		</code>
+		<br/>
+		<img ng-src = '{{appPathImg + "loading.gif"}}' />
+		<br/><br/>
+		If you don't know what Angular is yet, don't worry - just know that <code>appPathImg</code> is a variable that MEAN seed has defined for you, and it will get you to the <code>app/src/common/img</code> folder, so you can put your image files there and write your paths relative to that.
+		<code>ng-src</code> is an Angular thing that works just like <code>src</code>, except that it lets us use Angular variables like <code>appPathImg</code>.
+		
+		<!-- ATTENTION: The double curly brackets, {{ }}, are also important. They tell Angular to treat the stuff inside as an expression, as opposed to looking for a folder named 'appPathImg'. -->
+		
+		<br/><br/>
+		If you want to display an externally hosted image (meaning that the image file is not stored with the rest of your website files), then you need to use an absolute url.
+		I found the Angular logo below at <code>http://angularjs.org/img/AngularJS-large.png<code>, so I can use that url to display the image on this page.
+		<br/>
+		<code>
+			&lt;img src = 'http://angularjs.org/img/AngularJS-large.png' /&gt;
+		</code><br/>
+		<img src = 'http://angularjs.org/img/AngularJS-large.png' />
+		<br/><br/>
+		If, however, that image is ever taken down, or if for any other reason that url stops leading to that image, then the image will not show up here anymore.
+		The image will also fail to display if you are not connected to the internet, since your browser won't be able to reach that url.
+		<br/><br/>
+		The img tag's other special attributes, <code>width</code> and <code>height</code>, are exactly what you think - they let you specify the size that the image is displayed at, in pixels.
+		You'll typically do this with CSS instead, but these attributes are there if you need them.<br/>
+		If omitted and there's no CSS active to alter the image's size, then the image will display at its normal resolution.
+		If only one of these attributes is specified, the other attribute will scale itself accordingly.
+		
+		Here are some examples, using that same loading gif from before. Take a look at the code to see how these were done.
+		<br/>
+		
+		<img ng-src = '{{appPathImg + "loading.gif"}}' width = '125' />
+		<img ng-src = '{{appPathImg + "loading.gif"}}' height = '30'/>
+		<img ng-src = '{{appPathImg + "loading.gif"}}' width = '100' height = '50'/>
+		
+	</div>
+	
+	<div class = 'lesson-challenges'>
+		<h4> Challenges: </h4>
+		1. Find an image on the Internet and get it to display in the Sandbox.<br/>
+		2. Put a new image in your <code>app/src/common/img</code> folder and get it to display in the Sandbox.<br/>
+		3. Display one of your above images a second time, and make it half as wide as the original.<br/>
+	
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		
+	</div>
+</div>

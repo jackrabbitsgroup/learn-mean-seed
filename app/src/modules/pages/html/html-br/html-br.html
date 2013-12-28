@@ -1,0 +1,35 @@
+<div class = 'lesson' ng-controller='HtmlBrCtrl'>
+	<div class = 'lesson-title'> HTML: The br Element </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'html/html-br'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		The <code>br</code> element, short for 'break', as in 'line break', is probably the simplest of all html elements.
+		It moves you to the next line of the page, as if you typed the 'Enter' key in a word processor - no more, no less.
+		<br/><br/>
+		This can be very convenient in html, especially when typing lots of text.
+		Two <code>&lt;br /&gt;</code> tags were used on this very page to create the blank line above this piece of text.
+		<br/><br/>
+		We use this element because browsers condense continuous white space in an HTML file down to a single space when they render the page,
+		which means that newlines and tabs are completely ignored.
+		We coders are actually very glad of this fact, since it means we can safely format our files using as many tabs or blank lines as we want.
+		This allows us to keep our code readable without worrying about messing up our webpage.
+		<br/><br/>
+		And so we have the <code>&lt;br /&gt;</code> element, then, to tell the browser that we actually want it to go to the next line.
+		That's all there is to it.
+		<br/><br/>
+		Break tags are most commonly used between blocks of text, but they work just as well between divs or other html elements. However,
+		you'll more likely use CSS margin or padding as a separator in those cases.
+		<br/><br/>
+		Note that this element is <a ng-href = '{{appPathLink + "html-self-closing"}}'><i>self-closing</i></a>.
+		
+		
+	</div>
+	
+	<div class = 'lesson-challenges'>
+	
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		
+	</div>
+</div>

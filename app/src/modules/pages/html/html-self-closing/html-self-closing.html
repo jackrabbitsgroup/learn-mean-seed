@@ -1,0 +1,34 @@
+<div class = 'lesson' ng-controller='HtmlSelfClosingCtrl'>
+	<div class = 'lesson-title'> HTML: Self-Closing Elements </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'html/html-self-closing'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		You should know by now that most html elements have an opening tag (like <code>&lt;div&gt;</code>) and a closing tag (<code>&lt;/div&gt;</code>),
+		which mark the start and end of the element, respectively. Some elements, however, do not follow this rule. They are called <i>self-closing</i>.
+		<br/><br/>
+		A self-closing element does not have a closing tag; instead, the opening tag closes itself, ending with <code>/&gt;</code>. Here is an example:
+		<br/><br/>
+		<code> &lt;br /&gt; </code>
+		<br/><br/>
+		It is impossible to nest any other text or html inside of a self-closing element, because self-closing elements do not have an inside.
+		They may have attributes defined in the opening tag just like other html elements, but there is no closing tag, and therefore no space to put anything inside the element.
+		<br/><br/>
+		Here is a quick list of self-closing elements that you should be aware of, along with a brief description of each:
+		<br/><br/>
+		<a ng-href = '{{appPathLink + "html-br"}}'><code> &lt;br /&gt; </code></a> Puts a blank line on the page, like a newline character.<br/>
+		<a ng-href = '{{appPathLink + "html-img"}}'><code> &lt;img src = 'path/to/image.jpg' /&gt; </code></a> Displays an image on the page.<br/>
+		<a ng-href = '{{appPathLink + "html-input"}}'><code> &lt;input type = 'text' /&gt; </code></a> Creates an input where a user can type or interact, like for a login form.
+		<br/><br/>
+		There are other self-closing elements, but you'll rarely, if ever, have to deal with them.
+		
+		
+	</div>
+	
+	<div class = 'lesson-challenges'>
+	
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		
+	</div>
+</div>

@@ -1,0 +1,44 @@
+<div class = 'lesson' ng-controller='HtmlHpspanCtrl'>
+	<div class = 'lesson-title'> HTML: Headings, Paragraphs, and Spans </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'html/html-hpspan'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		The <code>h</code> (heading), <code>p</code> (paragraph), and <code>span</code> elements are are used almost exclusively for placing text on the page.
+		They are typically not used very often, though, because there is nothing that a heading, paragraph, or span can do that a well-styled <code>div</code> cannot.
+		Neverthless, it is good to know that these elements exist.
+		<br/><br/>
+		Headings are fairly simple and come in 6 types, <code>h1</code> through <code>h6</code>. They are intended for creating single lines of large text:
+		<br/>
+		<h1>This is heading 1</h1>
+		<h2>This is heading 2</h2>
+		<h3>This is heading 3</h3>
+		<h4>This is heading 4</h4>
+		<h5>This is heading 5</h5>
+		<h6>This is heading 6</h6>
+		<br/>
+		If a heading's size and styling is suitable for your needs, then headings are a very quick and easy way to place header text on a page.
+		If not, then you're probably better off creating a div and styling it yourself instead.
+		<br/><br/>
+		Paragraphs do exactly what you'd expect - they place a block of text on the page, starting on a new line:
+		<p> Here's a paragraph. </p>
+		<br/>
+		<p> Here's another paragraph. As with headings, paragraphs can be a very efficient way to place text if their default styling works for you,
+		but otherwise you might as well use a div. (Here's some more filler text, just to make sure this paragraph fills multiple lines.)</p>
+		<br/>
+		Spans are usually much more useful than headings and paragraphs, because they can allow you to apply different styles to particular words in a block of text
+		without interrupting the flow of the text. Though a div <span class = 'span-example1'>COULD</span> be used for this sort of thing, spans are much easier.
+		Simply put the <span class = 'span-example2'>text you want to target</span> in a span, give it a class, and write some CSS for that class.
+		<br/><br/>
+		Spans can be thought of, to some extent, as an inline div (meaning they do not start on a new line, and do not take up more width than necessary).
+		But though spans could be used for more than simply styling bits of text in a sentence, we do not recommend it.
+		Spans do not always respond to styling like divs do, and can quickly become more trouble than they're worth in such cases.
+		They're perfect for targeting pieces of text blocks, but I caution against trying to use them for much more than that. Try a <code>div</code> instead.
+	</div>
+	
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		
+	</div>
+</div>

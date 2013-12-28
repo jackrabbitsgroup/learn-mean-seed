@@ -1,0 +1,45 @@
+<div class = 'lesson' ng-controller='HtmlACtrl'>
+	<div class = 'lesson-title'> HTML: The a Element </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'html/html-a'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		The <code>a</code> element, short for 'anchor', is used to create links to other pages. Its most important attribute is <code>href</code>, which tells the tag where to link to.
+		<br/><br/>
+		
+		<a href = 'http://angularjs.org/'> This is a link to the AngularJS home page. </a>
+		
+		<br/></br>
+		The anchor tag creates a clickable block on the page; clicking that block directs the browser to the URL specified by the <code>href</code>.
+		Anchors can contain more than just text, too - in fact, you can put just about anything inside of one.
+		The image below is wrapped in an anchor tag that points to Google's home page.<br/>
+		<a href = 'https://www.google.com/'>
+			<img ng-src = '{{appPathImg + "ie-chrome-logo.png"}}' height = '60' width = '60'/>
+		</a>
+		<br/><br/>
+		The <code>a</code> element also has a <code>target</code> attribute, which specifies where to open the link.
+		Setting <code>target = '_blank'</code> is the most common, and will cause the link to open in a new tab.
+		<br/><br/>
+		<a href = 'http://angularjs.org/' target = '_blank'> This is a link to the AngularJS home page. It will open in a new tab, so clicking here won't make you leave this page. </a>
+		<br/><br/>
+		In Angular, we often use <code>ng-href</code> instead of <code>href</code>, because this allows us to safely use Angular variables in our links.
+		This is particularly useful for creating links to other pages on your own website,
+		and in Mean Seed we have a variable defined for you called <code>appPathLink</code> for precisely this purpose. Observe:
+		<br/><br/>
+		
+		<a ng-href = '{{appPathLink + "html-div"}}' target = '_blank'> This is a link to this site's lesson on the <code>div</code> element. <code>appPathLink</code> takes care of the annoying beginning part of the link, so I only have to add the part that comes after the <code>/</code> in the url; in this case, <code>html-div</code>.</a>
+		
+		<br/><br/>
+		<code>ng-href</code> can do everything <code>href</code> can do, so if you're working in Angular there's no reason not to use it.
+		
+	</div>
+	
+	<div class = 'lesson-challenges'>
+		<h4> Challenges: </h4>
+		1. Create a link in the Sandbox to your favorite website. Make it open in a new tab.<br/>
+		2. Create a link in the Sandbox to another lesson on this website by using ng-href.
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		
+	</div>
+</div>
