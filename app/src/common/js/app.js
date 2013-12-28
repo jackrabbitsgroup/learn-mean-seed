@@ -160,42 +160,42 @@ config(['$routeProvider', '$locationProvider', 'appConfigProvider', '$compilePro
 	$routeProvider.when(appPathRoute+'angular-forminput-basic', {templateUrl: pagesPath+'angular/directive/use/forminput/angular-forminput-basic/angular-forminput-basic.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'docs-angular', {templateUrl: pagesPath+'docs/angular/docs-angular/docs-angular.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'docs-angular-directive', {templateUrl: pagesPath+'docs/angular/docs-angular-directive/docs-angular-directive.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'toc', {templateUrl: pagesPath+'toc/toc/toc.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 	$routeProvider.when(appPathRoute+'html-attributes', {templateUrl: pagesPath+'html/html-attributes/html-attributes.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'html-intro', {templateUrl: pagesPath+'html/html-intro/html-intro.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
