@@ -1,70 +1,127 @@
 /**
-@todo test form submission XHR call?
+@todo
+- better event ($emit) testing - be able to use $scope.$on and test/expect individual params rather than requiring an EXACT match or just expecting that the event got called..
 */
 
 'use strict';
 
 describe('PasswordResetCtrl', function(){
-	var ctrl, scope ={}, $routeParams;
-
+	var $ctrl, $scope ={}, $httpBackend, $timeout, $controller, $routeParams;
+	
 	beforeEach(module('myApp'));
-	beforeEach(module('app'));		//all need appConfig for appConfig provider in app.js
 	
-	/*
-	beforeEach(inject(function($rootScope, $controller, $routeParams) {
-		$routeParams.email ='test@gmail.com';
-		scope = $rootScope.$new();
-		ctrl = $controller(PasswordResetCtrl, {$scope: scope});
-	}));
-	*/
-	
-	/**
-	@param {Object} params
-		@param {Object} [routeParams ={}]
-	*/
-	var doSetup =function(params) {
-	//beforeEach(inject(function($rootScope, $controller, _$routeParams_) {
-	inject(function($rootScope, $controller, _$routeParams_) {
+	beforeEach(inject(function(_$rootScope_, _$controller_, _$httpBackend_, _$timeout_, _$routeParams_) {
+		$httpBackend =_$httpBackend_;
 		$routeParams =_$routeParams_;
-		//$routeParams.email ='test@gmail.com';
+		$timeout =_$timeout_;
+		// $rootScope =_$rootScope_;
+		$scope = _$rootScope_.$new();
+		$controller =_$controller_;
+	}));
+	
+	function setup(params) {
 		/*
 		//this does NOT work - apparently have to set keys individually; can't assign the entire object
 		if(params.routeParams) {
 			$routeParams =params.routeParams;
 		}
 		*/
-		//$routeParams.email ='test@gmail.com';
 		if(params.routeParams !=undefined) {
 			for(var xx in params.routeParams) {
 				$routeParams[xx] =params.routeParams[xx];
 			}
 		}
-		scope = $rootScope.$new();
-		ctrl = $controller('PasswordResetCtrl', {$scope: scope});
-	//}));
+		
+		$ctrl = $controller('PasswordResetCtrl', {$scope: $scope});
+	}
+	
+	it('should have working submitForm function', function() {
+		setup({});
+		var user ={
+			_id: '2l3kdla',
+			sess_id: '82823ka',
+			first_name: 'First',
+			last_name: 'Last'
+		};
+		$httpBackend.expectPOST('/api/auth/resetPassword').respond({result: {user: user}});
+		
+		$scope.formVals ={
+			email: 'some@email.com',
+			password_reset_key: 'kleae',
+			password: 'password',
+			password_confirm: 'password'
+		};
+		$scope.$digest();		//validate form - UPDATE: this doesn't work without $compile function (i.e. works for unit testing directives but not controllers.. unless you want to mock out all the template HTML & $compile it too..
+		// http://stackoverflow.com/questions/17106201/angularjs-how-to-mock-a-formcontroller-injected-in-scope
+		// http://stackoverflow.com/questions/19156613/unit-test-controller-that-depends-on-form-validation-in-angularjs
+		//manually make form valid
+		$scope.passResetForm ={
+			$valid: true
+		};
+		$scope.submitForm();
+		
+		// expect($scope.$emit).toHaveBeenCalledWith('evtAppalertAlert', {close:true});
+		
+		//this works ONLY because it's inside an http request.. otherwise events have timing issues..
+		$scope.$on('loginEvt', function(evt, params) {
+			expect(params.loggedIn).toBe(true);
+			expect(params.user_id).toBe(user._id);
+			expect(params.sess_id).toBe(user.sess_id);
+		});
+		
+		$httpBackend.flush();
+		$scope.$digest();
+		
+		$httpBackend.verifyNoOutstandingExpectation();
+		$httpBackend.verifyNoOutstandingRequest();
 	});
-	/*
-		beforeEach(inject(function($routeParams) {
-			$routeParams.email ='test@gmail.com';
-		}));
-		*/
-	};
+	
+	it('should not validate with mis-matching passwords', function() {
+		setup({});
+		spyOn($scope, '$emit');
+		
+		var errorCalled =false;
+		$scope.formVals ={
+			email: 'some@email.com',
+			password_reset_key: 'kleae',
+			password: 'password',
+			password_confirm: 'NOTpassword'
+		};
+		
+		$scope.passResetForm ={
+			$valid: true
+		};
+		$scope.submitForm();
+
+		//doesn't work.. apparently testing events is tricky and has timing issues. People recommend using spyOn but that doesn't allow fine grained expect statements..
+		// $scope.$on('evtAppalertAlert', function(evt, params) {
+			// errorCalled =true;
+		// });
+		// $timeout(function() {
+		// }, 100);
+		// $timeout.flush();
+		
+		$scope.$digest();
+		// expect(errorCalled).toBe(true);
+		// $timeout.flush();
+		
+		// expect($scope.$emit).toHaveBeenCalledWith('evtAppalertAlert', {type:'error'});
+		expect($scope.$emit).toHaveBeenCalled();
+	});
 	
 	describe('route params', function() {
 		it('should have empty scope form vals by default', function() {
-			doSetup({});
-			expect(scope.formVals.email).not.toBeDefined();
-			expect(scope.formVals.password_reset_key).not.toBeDefined();
+			setup({});
+			expect($scope.formVals.email).not.toBeDefined();
+			expect($scope.formVals.password_reset_key).not.toBeDefined();
 		});
 		
 		it('should fill email and password reset key if set in route params', function() {
 			var routeParams ={'email':'test@gmail.com', 'reset_key':'keo345'};
-			doSetup({'routeParams':routeParams});
-			//expect($routeParams).toEqual({});
-			//$routeParams.email ='test@gmail.com';
-			//expect($routeParams.email).toBe('test@gmail.com');
-			expect(scope.formVals.email).toBe('test@gmail.com');
-			expect(scope.formVals.password_reset_key).toBe('keo345');
+			setup({'routeParams':routeParams});
+			
+			expect($scope.formVals.email).toBe('test@gmail.com');
+			expect($scope.formVals.password_reset_key).toBe('keo345');
 		});
 
 	});

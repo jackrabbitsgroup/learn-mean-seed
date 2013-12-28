@@ -25,6 +25,9 @@ angular.module('myApp').controller('FooterCtrl', ['$scope', 'appNav', function($
 				$scope.classes.cont ='';		//reset to default
 			}
 		}
+		// else {
+			// console.log('FooterCtrl: nav undefined');
+		// }
 	}
 	
 	/**

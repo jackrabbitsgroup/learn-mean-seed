@@ -73,7 +73,7 @@ var inst ={
 		var deferred =$q.defer();
 		var self =this;
 		new Lawnchair(function() {
-			if(!key || key ===undefined) {		//remove all
+			if(key ===undefined || !key) {		//remove all
 				// this.nuke();		//bug - apparently nuke doesn't work..
 				var ii;
 				//doesn't work either.. lawnchair seems to have some serious bugs...
@@ -88,10 +88,9 @@ var inst ={
 					// this.remove(self.keys[ii]);
 				}
 				if(promises.length >0) {
+					//no way to get to reject/error promise since removeOne ALWAYS resolves
 					$q.all(promises).then(function(ret1) {
 						deferred.resolve({});
-					}, function(err) {
-						deferred.reject(err);
 					});
 				}
 				else {
@@ -100,10 +99,9 @@ var inst ={
 			}
 			else {
 				var promise1 =self.removeOne(key, {});
+				//no way to get to reject/error promise since removeOne ALWAYS resolves
 				promise1.then(function(ret1) {
 					deferred.resolve({});
-				}, function(err) {
-					deferred.reject(err);
 				});
 			}
 		});

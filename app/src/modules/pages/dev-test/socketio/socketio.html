@@ -1,0 +1,17 @@
+<div ng-controller='SocketioCtrl'>
+	socketio (chat) demo
+	<br />
+	Try opening up a second browser (tab/window) and talking to yourself!
+	<br />
+	<br />
+	
+	Add new message:
+	<br />
+	<input type='text' ng-model='formVals.socketMsg' placeholder='new message here' />
+	<br />
+	<button class='btn' ng-click='addMessage({})'>Add It!</button>
+	
+	<br />
+	<br />
+	<div ng-repeat='data in socketData'>{{data.msg}}</div>
+</div>

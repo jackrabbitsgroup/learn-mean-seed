@@ -56,10 +56,10 @@
 			"lines": 60
 		},
 		"angular_karma":{
-			"branches": 10,
-			"functions": 30,
-			"statements": 30,
-			"lines": 30
+			"branches": 85,
+			"functions": 85,
+			"statements": 85,
+			"lines": 85
 		}
 	},
 	"ci":{
@@ -70,7 +70,14 @@
 		"emails_failed":[
 		]
 	},
+	"less":{
+		"dirPathRootPrefix": ""
+	},
 	"email":{
+		"domain": "localhost",
+		"addresses": {
+			"noReply": "noreply"
+		},
 		"from": "admin@learn-mean-seed.com",
 		"from_name": "Admin TEST",
 		"mandrillApiKey": "8X-1bNRWtA4rbneppkqahw",
@@ -79,11 +86,12 @@
 	"sms":{
 	},
 	"facebook":{
+		"scope": "email,user_birthday",
 		"appId": "195380783916970",
 		"appIdComment":"Make sure to CHANGE this!"
 	},
-	"less":{
-		"dirPathRootPrefix": ""
+	"twitter": {
+		"handle": ""
 	},
 	"google":{
 		"clientId": "486630891328.apps.googleusercontent.com",

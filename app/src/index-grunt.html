@@ -38,26 +38,26 @@ for(var ii=0; ii<filePaths.length; ii++) {
         }
     </script>
 
-	<!-- ng-include ng-view doesn't seem to work - pages don't display on first load of page.. It also introduces another extra / un-needed div/element for the ng-include itself? -->
-	<!--
-	<div ng-include='staticPath+"modules/pages/layout/layout.html"'></div>
-	-->
-	<div id="fb-root"></div>
+	<div app-layout ids='ids' content-min-height='contentMinHeight'>
+		<!-- ng-include ng-view doesn't seem to work - pages don't display on first load of page.. It also introduces another extra / un-needed div/element for the ng-include itself? -->
+		<!--
+		<div ng-include='staticPath+"modules/pages/layout/layout.html"'></div>
+		-->
+		<div id="fb-root"></div>
 
-	<div id='{{ids.header}}' ng-include='staticPath+"modules/pages/header/header.html"'></div>
+		<div id='{{ids.header}}' ng-include='staticPath+"modules/pages/header/header.html"'></div>
 
-	<div class='app-appalert-cont' app-appalert></div>
+		<div class='app-appalert-cont' app-appalert></div>
 
-	<div id='{{ids.content}}' ng-view ng-animate="{enter:'view-enter', leave:'view-leave'}" class='{{classes.loggedIn}} {{classes.layout}}'></div>
+		<div id='{{ids.content}}' ng-view ng-animate="{enter:'view-enter', leave:'view-leave'}" class='{{classes.loggedIn}} {{classes.layout}}'></div>
 
-	<div id='{{ids.footer}}' ng-include='staticPath+"modules/pages/footer/footer.html"'></div>
+		<div id='{{ids.footer}}' ng-include='staticPath+"modules/pages/footer/footer.html"'></div>
+	</div>
 
-<!--
 <%
 var cfgJson = grunt.config('cfgJson');
     print('\t<script type="text/javascript" src="http://'+cfgJson.server.domain+':'+cfgJson.server.socketPort+'/socket.io/socket.io.js"></script>\n');
 %>
--->
 
 <%
 var filePaths = grunt.config('filePathsJs');

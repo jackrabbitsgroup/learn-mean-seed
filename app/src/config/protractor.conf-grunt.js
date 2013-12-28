@@ -17,7 +17,7 @@ exports.config = {
 	// 3. sauceUser/sauceKey - to use remote Selenium servers via SauceLabs.
 
 	// The location of the selenium standalone server .jar file.
-	seleniumServerJar: './selenium/selenium-server-standalone-2.35.0.jar',
+	// seleniumServerJar: './selenium/selenium-server-standalone-2.35.0.jar',
 	// The port to start the selenium server on, or null if the server should
 	// find its own unused port.
 	// seleniumPort: null,
@@ -47,9 +47,15 @@ exports.config = {
 
 	// The address of a running selenium server. If specified, Protractor will
 	// connect to an already running instance of selenium. This usually looks like
-	seleniumAddress: null,
 	// seleniumAddress: 'http://192.168.1.6:4444/wd/hub',
-	// seleniumAddress: 'http://localhost:4444/wd/hub',
+	<%
+	if(cfgJson.sauceLabs.user && cfgJson.sauceLabs.key) {
+	print("seleniumAddress: null,\n");
+	}
+	else {
+	print("\tseleniumAddress: 'http://localhost:4444/wd/hub',\n");
+	}
+	%>
 
 	// ----- What tests to run -----
 	//

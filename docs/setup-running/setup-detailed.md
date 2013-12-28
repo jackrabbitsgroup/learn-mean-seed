@@ -28,8 +28,10 @@
 cd /path/to/project
 npm install && bower install
 ```
-	1. NOTE: If you get an EACCESS error on `npm install`, try it with `sudo` in front..
-	2. NOTE: If you are on Windows and get a bson error (or any errors, for that matter), try it with Cygwin. Sometimes it doesn't work on Git Bash, but it will on Cygwin due to permissions issues. See http://stackoverflow.com/questions/14100027/cant-install-js-bson for more information.
+	1. NOTE: Sometimes some bower packages timeout; just re-run `bower update && bower install` until it works (typically should work first or second time). You can also try `bower cache clean` and or `bower uninstall [package name]`.
+	2. NOTE: If npm errors (can use `npm list` to see if all dependencies were installed correctly), run `npm cache clean` (and optionally delete the troublesome package folders from the `node_modules` folder) then re-run `npm install`
+	3. NOTE: If you get an EACCESS error on `npm install`, try it with `sudo` in front..
+	4. NOTE: If you are on Windows and get a bson error (or any errors, for that matter), try it with Cygwin. Sometimes it doesn't work on Git Bash, but it will on Cygwin due to permissions issues. See http://stackoverflow.com/questions/14100027/cant-install-js-bson for more information.
 
 4. [OPTIONAL] Use a different / non-default config.json file
 	1. All the config.json files for ALL environments should be in version control in the `app/configs` folder. To determine which file is used, the `config_environment.json` file is checked and IF it exists AND the `environment` key exists, that environment will be used. The naming conventions are: `config-[your environment].json` for the config (i.e. `config-triggerio.json`) and `config-[your environment].test.json` for the accompanying test config (for running tests, which should run on a DIFFERENT, dummy database as it will be wiped clean each time!). So if you want to use the non-default environment, do the steps below:

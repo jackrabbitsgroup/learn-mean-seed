@@ -25,6 +25,23 @@ node run.js
 		2. backend: open `/yuidocs/backend/index.html` in a browser
 	
 
+
+	
+### Development (Grunt Watch)
+
+Grunt is the main automation / workflow tool. See `Gruntfile.js` for more info and all commands, but the most common ones are:
+
+- `grunt dev` to watch and auto build and test code as you're working
+	- `grunt dev-test` to watch and run ONLY tests as you're working
+		- `grunt dev-karma-cov` to generate frontend coverage reports as well (due to a grunt karma limitation, need 2 separate commands unfortunately..)
+	- `grunt dev-build` to watch and ONLY build as you're working (basically it auto-runs `grunt q` for you on file changes)
+- `grunt` prior to ANY git commits & pushes - always ensure your code quality is high (tests, etc.) BEFORE pushing changes to ensure you don't break the build/code for others / on the live server!
+
+
+### Building files
+1. Run `grunt q`
+
+
 ### Running Tests
 1. Run `grunt` from the root app directory - this will run all tests:
 	1. backend node.js Jasmine (API route) tests
