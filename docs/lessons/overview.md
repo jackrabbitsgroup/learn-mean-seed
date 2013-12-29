@@ -31,13 +31,7 @@ In general each 'use' lesson group should have a 'basic' and one or more 'option
 ## Structure
 
 ### Page / Lesson Structure
-Each lesson will typically have:
-
-- title + summary - what this lesson is about in 1-2 sentences.
-- prereqs - docs and lessons that the student should be familiar with first. These should all be LINKS to other pages (internal or external), NOT actual descriptions themselves. Again, modularize!
-- files - a list of the files they should open to read/edit (typically the files for this page and any associated pages/files)
-- demo / seed code (if any is necessary) to help teach this lesson
-- challenges - the tasks/tests for the student to do to complete this lesson
+- see [lessons-format.md](lessons-format.md)
 
 
 ### File / Folder Structure
