@@ -31,16 +31,8 @@ In general each 'use' lesson group should have a 'basic' and one or more 'option
 ## Structure
 
 ### Page / Lesson Structure
-Each lesson will be its own page and will typically have the following:
 
-- title - A brief, descriptive header for the lesson. Use the class 'lesson-title'.
-- location - The path to the page's files. Use the class 'lesson-location'.
-- prereqs - A list of links to lessons (or possibly external pages) that the student should be familiar with.
-- body - Place any and all of the lesson's text and html here. Use the class 'lesson-body'.
-- challenges - A list of tasks for the student to do to test knowledge gained from the lesson. Use the class 'lesson-challenges'
-- sandbox - A blank div intended for students to add or edit code. May be pre-filled with code as necessary. Students should not need to edit any html outside this container. Use the class 'lesson-sandbox'.
-
-Teachers are strongly encouraged to copy an existing lesson's html file and simply edit as needed.
+- see [lesson-format.md](lesson-format.md)
 
 
 ### File / Folder Structure

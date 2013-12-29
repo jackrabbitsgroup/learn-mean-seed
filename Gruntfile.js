@@ -127,6 +127,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-exit');
 	
+	//set default to no (normal build) - need to do this OUTSIDE of init so it can be over-written
+	grunt.option('lessons', 'no');
+	
 
 	/**
 	Function that wraps everything to allow dynamically setting/changing grunt options and config later by grunt task. This init function is called once immediately (for using the default grunt options, config, and setup) and then may be called again AFTER updating grunt (command line) options.
@@ -296,17 +299,26 @@ module.exports = function(grunt) {
 						outputFiles: {
 							js: ['filePathsJsNoPrefix'],
 							css: ['filePathsCssNoPrefix'],
+							// testUnit: ['filePathsJsTestUnitNoPrefix']
+						}
+					},
+					noPrefixTest: {
+						// prefix: '',
+						ifOpts: [{key:'lessons', val:'no'}],
+						// moduleGroup: 'allNoBuildCss',
+						moduleGroup: 'testsUnitNoLessons',
+						outputFiles: {
 							testUnit: ['filePathsJsTestUnitNoPrefix']
 						}
 					},
-					//overwrite karma tests for lessons only
-					//@todo - add this back in
-					// noPrefixLessons: {
-						// moduleGroup: 'testsLessons',
-						// outputFiles: {
-							// testUnit: ['filePathsJsTestUnitNoPrefix']
-						// }
-					// },
+					//karma tests for lessons only
+					noPrefixLessons: {
+						ifOpts: [{key:'lessons', val:'yes'}],
+						moduleGroup: 'testsLessons',
+						outputFiles: {
+							testUnit: ['filePathsJsTestUnitNoPrefix']
+						}
+					},
 					//karma unit test files but with prefix for use in other grunt tasks
 					karmaUnitGruntTasksPrefix: {
 						prefix: publicPathRelativeDot,
@@ -395,19 +407,21 @@ module.exports = function(grunt) {
 						}
 					},
 					testProtractor: {
-						moduleGroup: 'testsProtractor',
+						ifOpts: [{key:'lessons', val:'no'}],
+						// moduleGroup: 'testsProtractor',
+						moduleGroup: 'testsProtractorNoLessons',
 						outputFiles: {
 							testE2E: ['filePathsTestProtractor']
 						}
 					},
-					//overwrite Protractor tests for lessons only
-					//@todo - add this back in
-					// testProtractorLessons: {
-						// moduleGroup: 'testsLessons',
-						// outputFiles: {
-							// testE2E: ['filePathsTestProtractor']
-						// }
-					// }
+					//Protractor tests for lessons only
+					testProtractorLessons: {
+						ifOpts: [{key:'lessons', val:'yes'}],
+						moduleGroup: 'testsLessons',
+						outputFiles: {
+							testE2E: ['filePathsTestProtractor']
+						}
+					}
 				},
 				files: {
 					indexHtml: {
@@ -936,6 +950,7 @@ module.exports = function(grunt) {
 			grunt.log.subhead(msg);
 		});
 		
+
 		
 		var tasks =[];
 		var tasksSelenium =[];
@@ -1089,6 +1104,14 @@ module.exports = function(grunt) {
 		
 		//all (build & test)
 		grunt.registerTask('dev', ['test-cleanup', 'test-setup', 'q-watch', 'karma:watch:start', 'focus:all']);
+		
+		grunt.registerTask('lessons', 'run lessons', function() {
+			grunt.option('lessons', 'yes');
+			init({});		//re-init (since changed grunt options)
+			grunt.task.run(['default']);
+		});
+		
+		//@todo - make more lessons grunt commands (i.e. for quicker development) BUT remember the proper buildfiles needs to be run first!
 	
 	}
 	
