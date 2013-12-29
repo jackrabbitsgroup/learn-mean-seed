@@ -31,13 +31,16 @@ In general each 'use' lesson group should have a 'basic' and one or more 'option
 ## Structure
 
 ### Page / Lesson Structure
-Each lesson will typically have:
+Each lesson will be its own page and will typically have the following:
 
-- title + summary - what this lesson is about in 1-2 sentences.
-- prereqs - docs and lessons that the student should be familiar with first. These should all be LINKS to other pages (internal or external), NOT actual descriptions themselves. Again, modularize!
-- files - a list of the files they should open to read/edit (typically the files for this page and any associated pages/files)
-- demo / seed code (if any is necessary) to help teach this lesson
-- challenges - the tasks/tests for the student to do to complete this lesson
+- title - A brief, descriptive header for the lesson. Use the class 'lesson-title'.
+- location - The path to the page's files. Use the class 'lesson-location'.
+- prereqs - A list of links to lessons (or possibly external pages) that the student should be familiar with.
+- body - Place any and all of the lesson's text and html here. Use the class 'lesson-body'.
+- challenges - A list of tasks for the student to do to test knowledge gained from the lesson. Use the class 'lesson-challenges'
+- sandbox - A blank div intended for students to add or edit code. May be pre-filled with code as necessary. Students should not need to edit any html outside this container. Use the class 'lesson-sandbox'.
+
+Teachers are strongly encouraged to copy an existing lesson's html file and simply edit as needed.
 
 
 ### File / Folder Structure

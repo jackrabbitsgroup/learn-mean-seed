@@ -248,6 +248,27 @@ $routeProvider.when(appPathRoute+'html-hpspan', {templateUrl: pagesPath+'html/ht
 			}
 		}
 	});
+$routeProvider.when(appPathRoute+'css-intro', {templateUrl: pagesPath+'css/css-intro/css-intro.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'css-transition', {templateUrl: pagesPath+'css/css-transition/css-transition.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'css-pselectors-hover', {templateUrl: pagesPath+'css/pseudo-selectors/css-pselectors-hover/css-pselectors-hover.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
 //end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 
