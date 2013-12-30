@@ -31,6 +31,7 @@ In general each 'use' lesson group should have a 'basic' and one or more 'option
 ## Structure
 
 ### Page / Lesson Structure
+
 - see [lesson-format.md](lesson-format.md)
 
 

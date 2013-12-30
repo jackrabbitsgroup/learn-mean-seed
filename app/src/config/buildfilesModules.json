@@ -887,6 +887,67 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "css",
+							"dirs": [
+								{
+									"name": "css-intro",
+									"files": {
+										"html": [
+											"css-intro.html"
+										],
+										"js": [
+											"CssIntroCtrl.js"
+										],
+										"testUnit": [
+											"CssIntroCtrl.spec.js"
+										],
+										"less": [
+											"css-intro.less"
+										]
+									}
+								},
+								{
+									"name": "css-transition",
+									"files": {
+										"html": [
+											"css-transition.html"
+										],
+										"js": [
+											"CssTransitionCtrl.js"
+										],
+										"testUnit": [
+											"CssTransitionCtrl.spec.js"
+										],
+										"less": [
+											"css-transition.less"
+										]
+									}
+								},
+								{
+									"name": "pseudo-selectors",
+									"dirs": [
+										{
+											"name": "css-pselectors-hover",
+											"files": {
+												"html": [
+													"css-pselectors-hover.html"
+												],
+												"js": [
+													"CssPselectorsHoverCtrl.js"
+												],
+												"testUnit": [
+													"CssPselectorsHoverCtrl.spec.js"
+												],
+												"less": [
+													"css-pselectors-hover.less"
+												]
+											}
+										}
+									]
+								}
+							]
 						}
 					]
 				}

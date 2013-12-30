@@ -1,0 +1,46 @@
+<div class = 'lesson' ng-controller='CssIntroCtrl'>
+	<div class = 'lesson-title'> Introduction to CSS </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'css/css-intro'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		CSS stands for 'Cascading Style Sheets', and its primary purpose is to make your webpage look prettier.
+		CSS often plays a large role in the positioning of elements of your page, and is also used to adjust things like colors, borders, spacing, and sizing.
+		It can even be used to add some limited functionality to your page using things like <a ng-href = '{{appPathLink + "css-transition"}}' target = '_blank'>transitions</a> or <a ng-href = '{{appPathLink + "css-pselectors-hover"}}' target = '_blank'>hover events</a>.
+		<br/><br/>
+		CSS is written by assigning 'values' to 'properties' under a given 'selector'. The syntax looks like this:
+		<br/><br/>
+		<code>
+			selector1<br/>
+			{<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;property1: value1;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;property2: value2;<br/>
+			}
+			<br/><br/>			
+			selector2<br/>
+			{<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;property3: value3;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;property4: value4;<br/>
+			}
+		</code>
+		<br/><br/>
+		<a ng-href = '{{appPathLink + "css-selectors"}}' target = '_blank'>Selectors</a> come in many forms, but their purpose is always to identify some element on the page.
+		Any elements that are identified by a given selector will be assigned the styles specified by the properties and values attached to that selector.
+		This group of styles attached to the selector is sometimes called the selector's 'rule'.
+		<br/><br/>
+		There are many CSS properties to choose from, and each one has its own set of possible values.
+		This can make learning CSS seem a bit daunting at first, but you'll quickly learn all of the common properties and values in the other CSS lessons,
+		and the internet can tell you about any others you have questions about.
+		The <a href = 'http://www.w3schools.com/cssref/' target = '_blank'>CSS Reference at W3Schools</a> is particularly helpful here.
+		<br/><br/>
+		One last thing to note: In Mean Seed, we use a CSS preprocessor - either LESS or SCSS (but not both on the same project) - instead of straight CSS.
+		That means that if you're trying to write CSS in Mean Seed, you should be editing a file with a <code>.less</code> or <code>.scss</code> extension.
+		You don't need to understand LESS or SCSS just yet, though; for now, just know that anything that works in normal CSS will work just the same in LESS or SCSS.
+	</div>
+	
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		
+	</div>
+</div>
