@@ -215,6 +215,12 @@ module.exports = function(grunt) {
 			//concatFilesMin:    []
 		};
 
+		//set coverage thresholds (set to variable so can be over-written if need by without touching cfgJson)
+		var testCov ={
+			jasmine_node: cfgJson.test_coverage.jasmine_node,
+			angular_karma: cfgJson.test_coverage.angular_karma
+		};
+		
 		//declare config that will be used more than once to keep code DRY
 		var jsHintBackendConfig ={
 			options: {
@@ -272,7 +278,9 @@ module.exports = function(grunt) {
 			filePathsJsNoPrefix:        '',		//will be filled/created in buildfiles task
 			filePathsCssNoPrefix:        '',		//will be filled/created in buildfiles task
 			filePathsJsTestUnitNoPrefix: '',		//for karma .spec files to test
-			filePathsJsCustom: '',			//for karma coverage files to check
+			filePathsJsTest: {
+				karmaUnitCoverage: ''
+			},
 			filePathsTestProtractor: '',
 			filePathMinJs:      staticPath+paths.minJs,
 			filePathMinCss:     staticPath+paths.minCss,
@@ -328,6 +336,12 @@ module.exports = function(grunt) {
 							testUnit: ['watch.karmaUnitTest.files', 'watch.karmaUnit.files', 'watch.karmaCovUnit.files']
 						}
 					},
+					karmaUnitCoverage:{
+						moduleGroup: 'nonMinifiedLint',
+						outputFiles: {
+							js: ['filePathsJsTest.karmaUnitCoverage']
+						}
+					},
 					//index.html file paths (have the static path prefix for use in <link rel="stylesheet" > and <script> tags)
 					indexFilePaths:{
 						prefix: cfgJson.server.staticPath,
@@ -358,12 +372,6 @@ module.exports = function(grunt) {
 						moduleGroup: 'nonMinifiedLint',
 						outputFiles: {
 							js: ['jshint.beforeconcat.files.src', 'jshint.beforeconcatQ.files.src', 'watch.jsHintFrontend.files', 'watch.build.files']
-						}
-					},
-					jshintNoPrefix:{
-						moduleGroup: 'nonMinifiedLint',
-						outputFiles: {
-							js: ['filePathsJsCustom']
 						}
 					},
 					//list of js files to concatenate together - will be stuffed into concat grunt task variable(s)
@@ -834,11 +842,11 @@ module.exports = function(grunt) {
 					],
 					// matchall: true,
 					options : {
-						failTask: cfgJson.test_coverage.jasmine_node.failTask,
-						branches : cfgJson.test_coverage.jasmine_node.branches,
-						functions: cfgJson.test_coverage.jasmine_node.functions,
-						statements: cfgJson.test_coverage.jasmine_node.statements,
-						lines: cfgJson.test_coverage.jasmine_node.lines
+						failTask: testCov.jasmine_node.failTask,
+						branches : testCov.jasmine_node.branches,
+						functions: testCov.jasmine_node.functions,
+						statements: testCov.jasmine_node.statements,
+						lines: testCov.jasmine_node.lines
 					}
 				},
 				options: {
@@ -853,10 +861,10 @@ module.exports = function(grunt) {
 			coverage: {
 				options: {
 					thresholds: {
-						branches: cfgJson.test_coverage.angular_karma.branches,
-						functions: cfgJson.test_coverage.angular_karma.functions,
-						statements: cfgJson.test_coverage.angular_karma.statements,
-						lines: cfgJson.test_coverage.angular_karma.lines
+						branches: testCov.angular_karma.branches,
+						functions: testCov.angular_karma.functions,
+						statements: testCov.angular_karma.statements,
+						lines: testCov.angular_karma.lines
 					},
 					dir: 'coverage-angular',
 					root: publicPathRelativeRootNoSlash
@@ -932,8 +940,8 @@ module.exports = function(grunt) {
 		grunt.registerTask('outputCoverage', 'display coverage thresholds', function() {
 		// var outputCoverageThresholds =function(params) {
 			var xx;
-			var backend =cfgJson.test_coverage.jasmine_node;
-			var frontend =cfgJson.test_coverage.angular_karma;
+			var backend =testCov.jasmine_node;
+			var frontend =testCov.angular_karma;
 			var msg ='TEST COVERAGE Thresholds:\n';
 			msg+='Backend (Node API/Integration Tests):\n';
 			for(xx in backend) {
