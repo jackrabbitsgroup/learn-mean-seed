@@ -33,17 +33,20 @@
 	"testsUnitNoLessons": {
 		"modules":["_all"],
 		"skipModules": ["build", "buildTemp", "test",
-			"modules.pages.angular.directive.use.forminput.angular-forminput-basic"
+			"modules.pages.angular.directive.use.forminput.angular-forminput-basic",
+			"modules.pages.angular.controller.test.scope.angular-controller-test-scope"
 		]
 	},
 	"testsLessons": {
 		"comment": "Karma Unit tests will error if no tests so make sure there's at least one! (passwordReset is to ensure there is at least one)",
 		"xModulesFullList":[
 			"modules.pages.passwordReset",
-			"modules.pages.angular.directive.use.forminput.angular-forminput-basic"
+			"modules.pages.angular.directive.use.forminput.angular-forminput-basic",
+			"modules.pages.angular.controller.test.scope.angular-controller-test-scope"
 		],
 		"modules":[
-			"modules.pages.angular.directive.use.forminput.angular-forminput-basic"
+			"modules.pages.angular.directive.use.forminput.angular-forminput-basic",
+			"modules.pages.angular.controller.test.scope.angular-controller-test-scope"
 		]
 	}
 }

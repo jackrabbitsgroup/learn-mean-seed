@@ -26,6 +26,7 @@ Each lesson will typically have:
 	<div class ='lesson-body'>
 		<h4>Lesson:</h4>
 		[Some Description / Teaching / Example Code]
+		<code>[Some code here]</code>
 	</div>
 	
 	<div class ='lesson-challenges'>

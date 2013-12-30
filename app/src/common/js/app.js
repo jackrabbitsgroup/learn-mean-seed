@@ -248,6 +248,27 @@ $routeProvider.when(appPathRoute+'html-hpspan', {templateUrl: pagesPath+'html/ht
 			}
 		}
 	});
+$routeProvider.when(appPathRoute+'docs-testing', {templateUrl: pagesPath+'docs/testing/docs-testing/docs-testing.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'angular-controller-test-scope', {templateUrl: pagesPath+'angular/controller/test/scope/angular-controller-test-scope/angular-controller-test-scope.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'docs-testing-jasmine', {templateUrl: pagesPath+'docs/testing/docs-testing-jasmine/docs-testing-jasmine.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
 //end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 

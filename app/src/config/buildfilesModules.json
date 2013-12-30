@@ -537,6 +537,38 @@
 											]
 										}
 									]
+								},
+								{
+									"name": "controller",
+									"dirs": [
+										{
+											"name": "test",
+											"dirs": [
+												{
+													"name": "scope",
+													"dirs": [
+														{
+															"name": "angular-controller-test-scope",
+															"files": {
+																"html": [
+																	"angular-controller-test-scope.html"
+																],
+																"js": [
+																	"AngularControllerTestScopeCtrl.js"
+																],
+																"testUnit": [
+																	"AngularControllerTestScopeCtrl.spec.js"
+																],
+																"less": [
+																	"angular-controller-test-scope.less"
+																]
+															}
+														}
+													]
+												}
+											]
+										}
+									]
 								}
 							]
 						},
@@ -577,6 +609,45 @@
 												],
 												"less": [
 													"docs-angular-directive.less"
+												]
+											}
+										}
+									]
+								},
+								{
+									"name": "testing",
+									"dirs": [
+										{
+											"name": "docs-testing",
+											"files": {
+												"html": [
+													"docs-testing.html"
+												],
+												"js": [
+													"DocsTestingCtrl.js"
+												],
+												"testUnit": [
+													"DocsTestingCtrl.spec.js"
+												],
+												"less": [
+													"docs-testing.less"
+												]
+											}
+										},
+										{
+											"name": "docs-testing-jasmine",
+											"files": {
+												"html": [
+													"docs-testing-jasmine.html"
+												],
+												"js": [
+													"DocsTestingJasmineCtrl.js"
+												],
+												"testUnit": [
+													"DocsTestingJasmineCtrl.spec.js"
+												],
+												"less": [
+													"docs-testing-jasmine.less"
 												]
 											}
 										}

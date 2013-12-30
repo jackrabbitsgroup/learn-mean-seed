@@ -1,0 +1,40 @@
+<div ng-controller='DocsTestingJasmineCtrl'>
+	Jasmine is a BDD (Behavior Driven Development) Testing framework for Javascript that we use for writing both frontend Angular tests and backend Node tests.
+	
+	<div class='margin-tb'>
+		<h4>Test Blocks</h4>
+		<div><code>describe</code> blocks organize / group your tests. You need at least one <code>describe</code> section per test file.</div>
+		<div><code>it</code> blocks are where the actual test assertions/expectations go.</div>
+		<div><code>expect</code> lines are where the actual tests are</div>
+	</div>
+	
+	<div class='margin-tb'>
+		<h4>Boilerplate, Syntax & Mocks</h4>
+		The hardest part of writing tests is typically just getting the syntax and setup correct so you can properly access the piece of code you're trying to test (since unlike a live website and especially with unit tests, you're testing code in isolation so don't have access to everything you normally would in a live environment - sometimes we'll use 'mocks' to simulate live behavior and code accordingly). We'll walk you through testing each type of code (i.e. Angular Controller, Directive, Service as well as Node backend tests) and their various pieces.
+	</div>
+	
+	<div class='margin-tb'>
+		<h4>expect matchers</h4>
+		<div>(NOTE: this also includes some added in (Angular) matchers)</div>
+		
+		<div>Basic</div>
+		<div class='margin-l'>
+			<div>A non-exhaustive list of common matchers you'll be using:</div>
+			<div><code>expect().toBe()</code> - this you can use 75% or more of the time</div>
+			<div><code>expect().toBeDefined()</code></div>
+			<div><code>expect().toEqual()</code></div>
+			<div><code>expect().toBeTruthy()</code></div>
+			<div><code>expect().toHaveBeenCalled()</code></div>
+			<div>You typically put <code>.not</code> in front of something to make it the opposite, i.e. <code>expect().not.toBe()</code></div>
+		</div>
+		
+		<div>HTTP Requests</div>
+		<div class='margin-l'>
+			<div><code>$httpBackend.expectPOST().respond()</code></div>
+			<div><code>$httpBackend.verifyNoOutstandingExpectation()</code></div>
+			<div><code>$httpBackend.verifyNoOutstandingRequest()</code></div>
+		</div>
+		
+	</div>
+	
+</div>
