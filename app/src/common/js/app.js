@@ -269,6 +269,34 @@ $routeProvider.when(appPathRoute+'css-pselectors-hover', {templateUrl: pagesPath
 			}
 		}
 	});
+$routeProvider.when(appPathRoute+'css-selectors', {templateUrl: pagesPath+'css/css-selectors/css-selectors.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'css-textstyles', {templateUrl: pagesPath+'css/css-textstyles/css-textstyles.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'css-spacing', {templateUrl: pagesPath+'css/css-spacing/css-spacing.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'css-colors', {templateUrl: pagesPath+'css/css-colors/css-colors.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
 //end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 

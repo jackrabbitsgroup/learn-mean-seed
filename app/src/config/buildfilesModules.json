@@ -875,6 +875,74 @@
 											}
 										}
 									]
+								},
+								{
+									"name": "css-selectors",
+									"files": {
+										"html": [
+											"css-selectors.html"
+										],
+										"js": [
+											"CssSelectorsCtrl.js"
+										],
+										"testUnit": [
+											"CssSelectorsCtrl.spec.js"
+										],
+										"less": [
+											"css-selectors.less"
+										]
+									}
+								},
+								{
+									"name": "css-textstyles",
+									"files": {
+										"html": [
+											"css-textstyles.html"
+										],
+										"js": [
+											"CssTextstylesCtrl.js"
+										],
+										"testUnit": [
+											"CssTextstylesCtrl.spec.js"
+										],
+										"less": [
+											"css-textstyles.less"
+										]
+									}
+								},
+								{
+									"name": "css-spacing",
+									"files": {
+										"html": [
+											"css-spacing.html"
+										],
+										"js": [
+											"CssSpacingCtrl.js"
+										],
+										"testUnit": [
+											"CssSpacingCtrl.spec.js"
+										],
+										"less": [
+											"css-spacing.less"
+										]
+									}
+								},
+								{
+									"name": "css-colors",
+									"files": {
+										"html": [
+											"css-colors.html"
+										],
+										"js": [
+											"CssColorsCtrl.js"
+										],
+										"testUnit": [
+											"CssColorsCtrl.spec.js"
+										],
+										"less": [
+											"css-colors.less"
+										]
+									}
 								}
 							]
 						}
