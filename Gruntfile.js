@@ -221,6 +221,14 @@ module.exports = function(grunt) {
 			angular_karma: cfgJson.test_coverage.angular_karma
 		};
 		
+		//overwrite coverage for lessons tests
+		if(grunt.option('lessons') =='yes') {
+			testCov.angular_karma.branches =0;
+			testCov.angular_karma.functions =0;
+			testCov.angular_karma.statements =0;
+			testCov.angular_karma.lines =0;
+		}
+		
 		//declare config that will be used more than once to keep code DRY
 		var jsHintBackendConfig ={
 			options: {
@@ -337,7 +345,16 @@ module.exports = function(grunt) {
 						}
 					},
 					karmaUnitCoverage:{
-						moduleGroup: 'nonMinifiedLint',
+						ifOpts: [{key:'lessons', val:'no'}],
+						// moduleGroup: 'nonMinifiedLint',
+						moduleGroup: 'testsKarmaCovNoLessons',
+						outputFiles: {
+							js: ['filePathsJsTest.karmaUnitCoverage']
+						}
+					},
+					karmaUnitCoverageLessons:{
+						ifOpts: [{key:'lessons', val:'yes'}],
+						moduleGroup: 'testsLessons',
 						outputFiles: {
 							js: ['filePathsJsTest.karmaUnitCoverage']
 						}

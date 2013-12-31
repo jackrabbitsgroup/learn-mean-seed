@@ -33,18 +33,67 @@
 	"testsUnitNoLessons": {
 		"modules":["_all"],
 		"skipModules": ["build", "buildTemp", "test",
+			"modules.pages.docs",
+			"modules.pages.toc",
+			"modules.pages.css.css-intro",
+			"modules.pages.css.css-transition",
+			"modules.pages.css.pseudo-selectors.css-pselectors-hover",
+			"modules.pages.html.html-a",
+			"modules.pages.html.html-attributes",
+			"modules.pages.html.html-br",
+			"modules.pages.html.html-div",
+			"modules.pages.html.html-hpspan",
+			"modules.pages.html.html-img",
+			"modules.pages.html.html-input",
+			"modules.pages.html.html-intro",
+			"modules.pages.html.html-self-closing",
+			"modules.pages.angular.directive.use.forminput.angular-forminput-basic",
+			"modules.pages.angular.controller.test.scope.angular-controller-test-scope"
+		]
+	},
+	"testsKarmaCovNoLessons": {
+		"modules":["_all"],
+		"skipModules":["build", "buildTemp", "buildTempCss", "bower.minified", "lib.minified", "bower.nonMinified", "lib.nonMinified", "test",
+			"modules.pages.docs",
+			"modules.pages.toc",
+			"modules.pages.css.css-intro",
+			"modules.pages.css.css-transition",
+			"modules.pages.css.pseudo-selectors.css-pselectors-hover",
+			"modules.pages.html.html-a",
+			"modules.pages.html.html-attributes",
+			"modules.pages.html.html-br",
+			"modules.pages.html.html-div",
+			"modules.pages.html.html-hpspan",
+			"modules.pages.html.html-img",
+			"modules.pages.html.html-input",
+			"modules.pages.html.html-intro",
+			"modules.pages.html.html-self-closing",
 			"modules.pages.angular.directive.use.forminput.angular-forminput-basic",
 			"modules.pages.angular.controller.test.scope.angular-controller-test-scope"
 		]
 	},
 	"testsLessons": {
 		"comment": "Karma Unit tests will error if no tests so make sure there's at least one! (passwordReset is to ensure there is at least one)",
-		"xModulesFullList":[
+		"xxModulesFullList":[
 			"modules.pages.passwordReset",
 			"modules.pages.angular.directive.use.forminput.angular-forminput-basic",
 			"modules.pages.angular.controller.test.scope.angular-controller-test-scope"
 		],
 		"modules":[
+			"modules.pages.docs",
+			"modules.pages.toc",
+			"modules.pages.css.css-intro",
+			"modules.pages.css.css-transition",
+			"modules.pages.css.pseudo-selectors.css-pselectors-hover",
+			"modules.pages.html.html-a",
+			"modules.pages.html.html-attributes",
+			"modules.pages.html.html-br",
+			"modules.pages.html.html-div",
+			"modules.pages.html.html-hpspan",
+			"modules.pages.html.html-img",
+			"modules.pages.html.html-input",
+			"modules.pages.html.html-intro",
+			"modules.pages.html.html-self-closing",
 			"modules.pages.angular.directive.use.forminput.angular-forminput-basic",
 			"modules.pages.angular.controller.test.scope.angular-controller-test-scope"
 		]
