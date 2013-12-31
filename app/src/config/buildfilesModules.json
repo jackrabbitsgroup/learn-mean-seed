@@ -652,6 +652,28 @@
 											}
 										}
 									]
+								},
+								{
+									"name": "getting-started",
+									"dirs": [
+										{
+											"name": "docs-getting-started",
+											"files": {
+												"html": [
+													"docs-getting-started.html"
+												],
+												"js": [
+													"DocsGettingStartedCtrl.js"
+												],
+												"testUnit": [
+													"DocsGettingStartedCtrl.spec.js"
+												],
+												"less": [
+													"docs-getting-started.less"
+												]
+											}
+										}
+									]
 								}
 							]
 						},
