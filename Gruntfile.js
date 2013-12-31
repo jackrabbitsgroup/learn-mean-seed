@@ -143,6 +143,10 @@ module.exports = function(grunt) {
 		*/
 		grunt.log.writeln('init');
 		
+		if(grunt.option('lessons') =='yes') {
+			grunt.log.writeln('LESSONS grunt option');
+		}
+		
 		//allow changing config file based on comman line options
 		if(grunt.option('config')) {
 			// grunt.log.writeln('config: '+grunt.option('config'));
@@ -340,8 +344,8 @@ module.exports = function(grunt) {
 						prefix: publicPathRelativeDot,
 						moduleGroup: 'allNoBuildCss',
 						outputFiles: {
-							js: ['watch.karmaUnitJs.files', 'watch.karmaUnit.files', 'watch.karmaCovUnit.files'],
-							testUnit: ['watch.karmaUnitTest.files', 'watch.karmaUnit.files', 'watch.karmaCovUnit.files']
+							js: ['watch.karmaUnitJs.files', 'watch.karmaUnit.files', 'watch.karmaCovUnit.files', 'watch.e2e.files', 'watch.e2eLessons.files', 'watch.karmaUnitLessons.files', 'watch.karmaCovUnitLessons.files'],
+							testUnit: ['watch.karmaUnitTest.files', 'watch.karmaUnit.files', 'watch.karmaCovUnit.files', 'watch.karmaUnitLessons.files', 'watch.karmaCovUnitLessons.files']
 						}
 					},
 					//IMPORTANT: do NOT also have this one here or it will run too!
@@ -387,7 +391,7 @@ module.exports = function(grunt) {
 						prefix: publicPathRelativeDot,
 						moduleGroup: 'allNoBuild',
 						outputFiles: {
-							less: ['watch.less.files', 'watch.build.files']
+							less: ['watch.less.files', 'watch.build.files', 'watch.e2e.files', 'watch.buildLessons.files', 'watch.e2eLessons.files']
 						}
 					},
 					//list of files to lint - will be stuffed into jshint grunt task variable(s)
@@ -395,7 +399,7 @@ module.exports = function(grunt) {
 						prefix: publicPathRelativeDot,
 						moduleGroup: 'nonMinifiedLint',
 						outputFiles: {
-							js: ['jshint.beforeconcat.files.src', 'jshint.beforeconcatQ.files.src', 'watch.jsHintFrontend.files', 'watch.build.files']
+							js: ['jshint.beforeconcat.files.src', 'jshint.beforeconcatQ.files.src', 'watch.jsHintFrontend.files', 'watch.build.files', 'watch.e2e.files', 'watch.buildLessons.files', 'watch.e2eLessons.files']
 						}
 					},
 					//list of js files to concatenate together - will be stuffed into concat grunt task variable(s)
@@ -428,7 +432,7 @@ module.exports = function(grunt) {
 						prefix: publicPathRelativeDot,
 						moduleGroup: 'allNoBuild',
 						outputFiles: {
-							html: ['ngtemplates.main.src', 'watch.html.files', 'watch.build.files']
+							html: ['ngtemplates.main.src', 'watch.html.files', 'watch.build.files', 'watch.e2e.files', 'watch.buildLessons.files', 'watch.e2eLessons.files']
 						}
 					},
 					concatJsNoMin: {
@@ -740,6 +744,12 @@ module.exports = function(grunt) {
 				},
 				all: {
 					include: ['build', 'karmaUnit']
+				},
+				allE2E: {
+					include: ['build', 'karmaUnit', 'e2e']
+				},
+				allE2ELessons: {
+					include: ['buildLessons', 'karmaUnitLessons', 'e2eLessons']
 				}
 			},
 			/**
@@ -763,6 +773,31 @@ module.exports = function(grunt) {
 				karmaCovUnit: {
 					files: [],		//will be filled by grunt-buildfiles
 					tasks: ['karma-cov']
+				},
+				e2e: {
+					files: [],		//will be filled by grunt-buildfiles
+					tasks: ['e2e']
+				},
+				
+				//lessons
+				buildLessons: {
+					files: [],		//will be filled by grunt-buildfiles
+					tasks: ['lessons-config', 'q-watch'],
+					options: {
+						livereload: true
+					}
+				},
+				karmaUnitLessons: {
+					files: [],		//will be filled by grunt-buildfiles
+					tasks: ['lessons-config', 'karma:watch:run']
+				},
+				karmaCovUnitLessons: {
+					files: [],		//will be filled by grunt-buildfiles
+					tasks: ['lessons-config', 'karma-cov']
+				},
+				e2eLessons: {
+					files: [],		//will be filled by grunt-buildfiles
+					tasks: ['lessons-config', 'e2e']
 				},
 				
 				//run buildfiles pretty much any time a file changes (since this generates file lists for other tasks - will this work / update them since grunt is already running??)
@@ -1137,13 +1172,20 @@ module.exports = function(grunt) {
 		//all (build & test)
 		grunt.registerTask('dev', ['test-cleanup', 'test-setup', 'q-watch', 'karma:watch:start', 'focus:all']);
 		
-		grunt.registerTask('lessons', 'run lessons', function() {
+		
+		//lessons specific commands / versions
+		grunt.registerTask('lessons-config', 'set up lessons config / grunt options', function() {
 			grunt.option('lessons', 'yes');
 			init({});		//re-init (since changed grunt options)
-			grunt.task.run(['default']);
 		});
 		
-		//@todo - make more lessons grunt commands (i.e. for quicker development) BUT remember the proper buildfiles needs to be run first!
+		grunt.registerTask('lessons', 'run lessons', function() {
+			grunt.task.run(['lessons-config', 'default']);
+		});
+		
+		grunt.registerTask('lessons-dev', 'run lessons dev', function() {
+			grunt.task.run(['lessons-config', 'test-cleanup', 'test-setup', 'node-test-server', 'q-watch', 'karma:watch:start', 'focus:allE2ELessons']);		//run node-test-server to get test server running for e2e tests, which we'll also auto run. Also, we need to run the lessons version to triger the lessons-config task FIRST since each watch task re-runs grunt from SCRATCH and we lose grunt options / configuration so have to re-set it again!!..
+		});
 	
 	}
 	
