@@ -345,6 +345,12 @@ module.exports = function(grunt) {
 						}
 					},
 					karmaUnitCoverage:{
+						moduleGroup: 'testsKarmaCov',
+						outputFiles: {
+							js: ['filePathsJsTest.karmaUnitCoverage']
+						}
+					},
+					karmaUnitCoverageNoLessons:{
 						ifOpts: [{key:'lessons', val:'no'}],
 						// moduleGroup: 'nonMinifiedLint',
 						moduleGroup: 'testsKarmaCovNoLessons',

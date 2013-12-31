@@ -23,6 +23,12 @@
 		"modules":["_all"],
 		"skipModules":["build", "buildTemp", "buildTempCss", "bower.minified", "lib.minified", "bower.nonMinified", "lib.nonMinified", "test"]
 	},
+	"testsKarmaCov": {
+		"modules":["_all"],
+		"skipModules":["build", "buildTemp", "buildTempCss", "bower.minified", "lib.minified", "bower.nonMinified", "lib.nonMinified", "test",
+			"common.js"
+		]
+	},
 	"testsProtractor": {
 		"modules":["_all"],
 		"skipModules": ["build", "buildTemp", "buildTempCss"]
@@ -54,6 +60,7 @@
 	"testsKarmaCovNoLessons": {
 		"modules":["_all"],
 		"skipModules":["build", "buildTemp", "buildTempCss", "bower.minified", "lib.minified", "bower.nonMinified", "lib.nonMinified", "test",
+			"common.js",
 			"modules.pages.docs",
 			"modules.pages.toc",
 			"modules.pages.css.css-intro",
