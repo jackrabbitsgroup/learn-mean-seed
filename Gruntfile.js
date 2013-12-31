@@ -344,12 +344,13 @@ module.exports = function(grunt) {
 							testUnit: ['watch.karmaUnitTest.files', 'watch.karmaUnit.files', 'watch.karmaCovUnit.files']
 						}
 					},
-					karmaUnitCoverage:{
-						moduleGroup: 'testsKarmaCov',
-						outputFiles: {
-							js: ['filePathsJsTest.karmaUnitCoverage']
-						}
-					},
+					//IMPORTANT: do NOT also have this one here or it will run too!
+					// karmaUnitCoverage:{
+						// moduleGroup: 'testsKarmaCov',
+						// outputFiles: {
+							// js: ['filePathsJsTest.karmaUnitCoverage']
+						// }
+					// },
 					karmaUnitCoverageNoLessons:{
 						ifOpts: [{key:'lessons', val:'no'}],
 						// moduleGroup: 'nonMinifiedLint',
