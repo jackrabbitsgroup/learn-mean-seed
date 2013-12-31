@@ -54,7 +54,7 @@ module.exports = function (config) {
 		//code coverage (with Instanbul - built into Karma)
 		preprocessors: {
 			<%
-			var filePaths = grunt.config('filePathsJsCustom');
+			var filePaths = grunt.config('filePathsJsTest.karmaUnitCoverage');
 			for(var ii=0; ii<filePaths.length; ii++) {
 				if(ii !=0) {
 					print('\t\t\t');

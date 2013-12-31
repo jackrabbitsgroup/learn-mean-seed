@@ -56,10 +56,10 @@
 			"lines": 60
 		},
 		"angular_karma":{
-			"branches": 0,
-			"functions": 0,
-			"statements": 0,
-			"lines": 0
+			"branches": 85,
+			"functions": 85,
+			"statements": 85,
+			"lines": 85
 		}
 	},
 	"ci":{

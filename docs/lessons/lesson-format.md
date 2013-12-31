@@ -28,6 +28,7 @@ Teachers are strongly encouraged to copy an existing lesson's html file and simp
 	
 	<div class ='lesson-body'>
 		[Some Description / Teaching / Example Code]
+		<code>[Some code here]</code>
 	</div>
 	
 	<div class ='lesson-challenges'>

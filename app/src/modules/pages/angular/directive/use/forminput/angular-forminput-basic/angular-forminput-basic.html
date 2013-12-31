@@ -3,7 +3,7 @@
 	<div class ='lesson-summary'>
 		Forms and inputs allow you to capture user input.
 	</div>
-	<div class = 'lesson-location'> {{pagesFullPath + 'angular/directives/use/forminput/angular-forminput-basic'}} </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'angular/directive/use/forminput/angular-forminput-basic'}} </div>
 	<div class = 'lesson-prereqs'>
 		<h4>Prereqs:</h4>
 		<a class='a-block' ng-href='{{appPathLink}}docs-angular'>Docs - Angular Overview</a>
@@ -13,20 +13,18 @@
 		<h4>Lesson:</h4>
 		We're going to use a form input builder directive to build a simple text input (in 3 lines of code below). Try typing in it!
 		<br />
-		
-		<form name='myForm'>
-			<div jrg-forminput ng-model='text' opts='' ></div>
-		</form>
 	
 	</div>
 	
 	<div class = 'lesson-challenges'>
 		<h4>Challenges:</h4>
-		1. Add " placeholder='my text' " to the jrg-forminput div element (right before the "&gt;&lt;/div&gt;") to make a 'placeholder' and 'label' show up for the input.
+		1. Add " placeholder='my text' " to the jrg-forminput div element (right before the <code>&gt;&lt;/div&gt;</code>) to make a 'placeholder' and 'label' show up for the input.
 	</div>
 	
 	<div class = 'lesson-sandbox'>
-		
+		<form name='myForm'>
+			<div jrg-forminput ng-model='text' opts='' placeholder='my text'></div>
+		</form>
 	</div>
 	
 </div>

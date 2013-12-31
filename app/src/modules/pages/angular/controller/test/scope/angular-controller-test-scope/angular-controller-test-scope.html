@@ -1,0 +1,27 @@
+<div class='lesson' ng-controller='AngularControllerTestScopeCtrl'>
+	<div class ='lesson-title'>Unit Test Controller Scope</div>
+	<div class ='lesson-summary'>
+	</div>
+	<div class ='lesson-location'> {{pagesFullPath + 'angular/controller/test/scope/angular-controller-test-scope'}} </div>
+	
+	<div class ='lesson-prereqs'>
+		<h4>Prereqs:</h4>
+		<a class='a-block' ng-href='{{appPathLink}}docs-testing'>Docs Testing</a>
+		<a class='a-block' ng-href='{{appPathLink}}docs-testing-jasmine'>Docs Testing Jasmine</a>
+	</div>
+	
+	<div class ='lesson-body'>
+		<h4>Lesson:</h4>
+		The easiest and most common thing to test controllers for is the $scope. Using $scope avoids using the DOM (Document Object Model - the view/html) all together, making things easier to test and less brittle if the HTML/CSS change later. This is great advantage of Angular (it was built with testing in mind)!
+	</div>
+	
+	<div class ='lesson-challenges'>
+		<h4>Challenges:</h4>
+		1. Run the tests to confirm them fail (we always want to ensure a failure first so we know when they pass later that actually means they are valid).<br />
+		2. Make the tests pass then run them again to confirm they pass!
+	</div>
+	
+	<div class ='lesson-sandbox'>
+		
+	</div>
+</div>
