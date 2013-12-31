@@ -37,7 +37,7 @@
 		"grunt-karma": "~0.6.2",
 		"grunt-jasmine-node-coverage-validation": "~0.0.4",
 		"grunt-istanbul-coverage":"~0.0.2",
-		"grunt-buildfiles": "~0.3.4",
+		"grunt-buildfiles": "~0.3.6",
 		"grunt-angular-templates": "~0.3.12",
 		"grunt-shell-spawn":"~0.3.0",
 		"grunt-parallel":"~0.3.1",
