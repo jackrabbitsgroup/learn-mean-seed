@@ -1,0 +1,36 @@
+<div class = 'lesson' ng-controller='CssSpacingCtrl'>
+	<div class = 'lesson-title'> CSS Spacing: Margin, Border, and Padding</div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'css/css-spacing'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		Adding spacing between elements is one of the most common tasks in CSS, and luckily for us, it's not difficult.
+		The three relevant properties are <code>margin</code>, <code>border</code>, and <code>padding</code>.
+		<br/><br/>
+		You already know what a border is - it surrounds the outside of an element, usually as a thin, solid line.
+		Margin is the space on the outside of the border, separating the border from any elements surrouding our element.
+		Padding is the space on the inside of the border, separating the border from the interior of the element.
+		This image says it all:
+		<br/><br/>
+		<img ng-src = '{{appPathImg + "box-model.png"}}' />
+		<br/><br/>
+		Each of these properties has four sides: <code>top</code>, <code>bottom</code>, <code>left</code>, and <code>right</code>.
+		You can define all four at once with something like <code>padding: 10px;</code>,
+		or you can specify each individually using <code>margin-top</code>, <code>margin-left</code>, etc.
+		<br/><br/>
+		Here are some example divs. They all have the same <code>height</code> and <code>width</code>.
+		<br/><br/>
+		<div class = 'css-spacing-example1'> Padding </div>
+		<div class = 'css-spacing-example2'> Margin </div>
+		<div class = 'css-spacing-example3'> Margin, padding, and border</div>
+		<div class = 'css-spacing-example4'> Dashed Border, large left padding only, no margin</div>
+		<div class = 'css-spacing-example5'> Top margin, huge right border, thin top border </div>
+		<div class = 'css-spacing-example6'> Top padding, left margin, dotted border </div>
+	</div>
+	
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		
+	</div>
+</div>

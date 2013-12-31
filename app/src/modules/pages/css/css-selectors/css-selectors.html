@@ -1,0 +1,76 @@
+<div class = 'lesson' ng-controller='CssSelectorsCtrl'>
+	<div class = 'lesson-title'> CSS: Selectors </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'css/css-selectors'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		Selectors in CSS serve as the link between style rules and HTML elements.
+		Elements identified (or 'selected') by the selector will beb given the styles associated with that selector.
+		<br/><br/>
+		There are dozens of ways to write a selector; they can become extremely complicated.
+		Fortunately, however, they typically don't need to be, and good coders will often see to it that their selectors remain as simple as possible.
+		<br/><br/>
+		The most common selector by far is the class selector, which you can and should use for almost all of your CSS needs.
+		It is flexible and easy to use: simply assign a class name to your element, and then write a CSS rule under that class name, like so:
+		<br/><br/>
+		HTML:<br/>
+		<code> &lt;div class = "selector-demo" &gt; My Test Div &lt;/div&gt; </code>
+		<br/><br/>
+		CSS: <br/>
+		<code>
+		.selector-demo<br/>
+			{<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;color: red;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;padding: 5px;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;border: solid 1px gray;<br/>
+			}
+		</code>
+		<br/><br/>
+		The code above produces this result:
+		<br/><br/>
+		<div class = 'selector-demo'> My Test Div </div>
+		<br/>
+		The <code>.</code> in the CSS is the class selector; it tells the browser that what follows (in this case, <code>selector-demo</code>) is a class name that it should search for.
+		With this CSS rule in effect, any element on the page with the class <code>selector-demo</code> will have red color text, 5 pixels of padding on all four sides, and a simple gray border.
+		<br/><br/>
+		You can also create a selector that targets multiple classes at once by simply writing two selectors at once, with no spaces between: <code>.selector-demo.selector-example</code> .
+		This selector would only apply to elements that have <b>both</b> of those classes.
+		<br/><br/>
+		If you want the same style rule to apply to multiple selectors, you can use a comma-separated list: <code>.selector-demo, .selector-example</code> .
+		This selector would apply to elements that have at least one of those two classes.
+		<br/><br/>
+		As mentioned before, the class selector is all you need in almost all practical cases, especially in Mean Seed.
+		Nevertheless, you should also know about the id selector, <code>#</code>.
+		It works just like the class selector, but it targets an element's <code>id</code> attribute instead the <code>class</code> attribute,
+		and it uses a <code>#</code> in place of the class selector's <code>.</code> symbol.
+		<br/><br/>
+		You can also write selectors to target element types by simply writing the element itself, as in
+		<br/><br/>
+		<code>
+		div<br/>
+			{<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;color: blue;<br/>
+			}
+		</code>
+		<br/><br/>
+		The CSS above would be applied to ALL <code>div</code> elements, though, which usually isn't something you want to do.
+		Generally speaking, you want your CSS selectors to be as specific as possible, so as not to interfere with any other elements on your website.
+		<br/><br/>
+		There are a few other kinds of selectors, most notably the <a ng-href = '{{appPathLink + "css-descendant"}}' target = '_blank'>descendant selector</a>
+		and the various 'pseudo-selectors', like <code>:hover</code> or <code>:first-child</code>, but those are topics for another lesson.
+		<br/><br/>		
+		W3Schools has a <a href = 'http://www.w3schools.com/cssref/css_selectors.asp' target = '_blank'>CSS Selector Reference</a> which should be useful if you ever encounter a selector you don't recognize.
+	</div>
+	
+	<div class = 'lesson-challenges'>
+		<h4> Challenges: </h4>
+		1. Three divs have been created for you in the Sandbox. Without editing any html, write CSS rules in this page's <code>.less</code> file to give only one of them 5px padding, two of them blue borders and one a green border, and a different color text to each - red, blue, or green.
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		<div class = 'selector-sandbox-demo1'> Sandbox Div 1 </div>
+		<br/>
+		<div class = 'selector-sandbox-demo2'> Sandbox Div 2 </div>
+		<br/>
+		<div class = 'selector-sandbox-demo1 selector-sandbox-demo2'> Sandbox Div 3 </div>
+	</div>
+</div>

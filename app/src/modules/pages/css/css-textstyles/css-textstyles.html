@@ -1,0 +1,36 @@
+<div class = 'lesson' ng-controller='CssTextstylesCtrl'>
+	<div class = 'lesson-title'> Styling Text </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'css/css-textstyles'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		Styling text with CSS is fairly simple and straightforward, for the most part.
+		Once again, W3Schools has a useful reference of <a href = 'http://www.w3schools.com/css/css_text.asp' target = '_blank'>Text Styles</a>
+		and <a href = 'http://www.w3schools.com/css/css_font.asp' target = '_blank'>Font Styles</a>, and honestly, those pages alone can tell you pretty much everything you need to know.
+		<br/><br/>
+		I won't bother repeating what W3Schools has laid out so nicely, but I will say that you don't need to memorize every single property.
+		Just make sure that you understand <code>color</code>, <code>text-align</code>, <code>font-size</code>, <code>line-height</code>, and <code>font-family</code>.
+		<code>text-decoration</code>, <code>font-style</code>, and <code>font-weight</code> are less important, but still good to know.
+		You probably won't use the others very often; just know that they exist, and you can look them up if you ever need them.
+		<br/><br/>
+		Most of the styles above are fairly self-explanatory, but I would like to point out a particular use for <code>line-height</code> that is often especially helpful: vertical centering.
+		<br/><br/>
+		Horizontally centering text inside a large div is easy with <code>text-align: center;</code>, but vertical centering is notoriously troublesome in comparison.
+		You might think that the <code>vertical-align</code> property would handle it easily, but you'd be wrong. That property almost never works like you want it to where centering is concerned.
+		<br/><br/>
+		The <code>line-height</code> property is perfect for centering if you know the height of your container and if your text only spans a single line.
+		That might sound like a very limited scenario, but it's actually very common - most buttons, for example, satisfy these conditions.
+		So, if those two conditions hold, you can just set <code>line-height</code> equal to the height of your container, and you're done.
+		This is usually much quicker, easier, and less likely to break than any other alternative.
+		<br/><br/>
+		
+		<div class = 'textstyles-btn1'> "Centered" with vertical-align </div>
+		<div class = 'textstyles-btn2'> Centered with line-height </div>
+	</div>
+	
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		
+	</div>
+</div>
