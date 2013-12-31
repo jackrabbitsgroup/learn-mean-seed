@@ -272,49 +272,52 @@ $routeProvider.when(appPathRoute+'docs-testing-jasmine', {templateUrl: pagesPath
 $routeProvider.when(appPathRoute+'css-intro', {templateUrl: pagesPath+'css/css-intro/css-intro.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'css-transition', {templateUrl: pagesPath+'css/css-transition/css-transition.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'css-pselectors-hover', {templateUrl: pagesPath+'css/pseudo-selectors/css-pselectors-hover/css-pselectors-hover.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'css-selectors', {templateUrl: pagesPath+'css/css-selectors/css-selectors.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'css-textstyles', {templateUrl: pagesPath+'css/css-textstyles/css-textstyles.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'css-spacing', {templateUrl: pagesPath+'css/css-spacing/css-spacing.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
 			}
 		}
 	});
 $routeProvider.when(appPathRoute+'css-colors', {templateUrl: pagesPath+'css/css-colors/css-colors.html',
 		resolve: {
 			auth: function(appAuth) {
-				return appAuth.checkSess({noLoginRequired:true});
+				return appAuth.checkSess({});
+			}
+		}
+	});
 $routeProvider.when(appPathRoute+'docs-getting-started', {templateUrl: pagesPath+'docs/getting-started/docs-getting-started/docs-getting-started.html',
 		resolve: {
 			auth: function(appAuth) {
