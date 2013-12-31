@@ -87,8 +87,8 @@
 			"modules.pages.angular.controller.test.scope.angular-controller-test-scope"
 		],
 		"modules":[
-			"modules.pages.docs",
-			"modules.pages.toc",
+			"__modules.pages.docs",
+			"__modules.pages.toc",
 			"modules.pages.css.css-intro",
 			"modules.pages.css.css-transition",
 			"modules.pages.css.pseudo-selectors.css-pselectors-hover",
