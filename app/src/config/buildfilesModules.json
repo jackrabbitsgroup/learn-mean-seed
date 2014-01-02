@@ -1036,6 +1036,28 @@
 											"css-colors.less"
 										]
 									}
+								},
+								{
+									"name": "layout",
+									"dirs": [
+										{
+											"name": "css-layout-position",
+											"files": {
+												"html": [
+													"css-layout-position.html"
+												],
+												"js": [
+													"CssLayoutPositionCtrl.js"
+												],
+												"testUnit": [
+													"CssLayoutPositionCtrl.spec.js"
+												],
+												"less": [
+													"css-layout-position.less"
+												]
+											}
+										}
+									]
 								}
 							]
 						}

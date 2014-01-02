@@ -1,3 +1,80 @@
-<div ng-controller='CssColorsCtrl'>
-	css-colors
+<div class = 'lesson' ng-controller='CssColorsCtrl'>
+	<div class = 'lesson-title'> CSS Color Codes</div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'css/css-colors'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		There are basically four ways to specify colors in CSS: color names, RGB codes, hex codes, or HSL codes.
+		It doesn't matter if the color is for a border or a background or text; these color codes will all work for any and every CSS property that involves a color.
+		<br/><br/>
+		Color name is the simplest, most intuitive, and least flexible. You simply name a color, as in <code>background-color: white;</code>,
+		and if the browser recognizes that color name, it will auto-convert it to a hex color code and use it.
+		If the browser doesn't recognize the color name, though, or if the color it uses isn't quite the shade you wanted, then you're out of luck.
+		For this reason, it's usually a better idea to use hex or RGB color codes instead of names.
+		<br/><br/>
+		<code>rgb</code> stands for 'Red-Green-Blue'. RGB codes are defined by three numbers - one for the amount of red, one for the amount of green, and one for blue.
+		The lowest each number can be is 0; the highest is 255. This means that there are a total of 256 * 256 * 256 = 16,777,216 defineable colors that you can use.
+		Here's an example of the syntax:
+		<br/><br/>
+		<div class = 'css-colors-green-rgb'> <code>background-color:rgb(51, 255, 51);</code></div>
+		<br/>
+		Hex color codes are nothing more or less than shorthand for an RGB code. It uses a six-digit hexadecimal number to define the color,
+		where the first two digits represent the 'red' value from the RGB code, the second two are the 'green value', and the last pair are the 'blue' value.
+		Hex codes are much more commonly used than RGB, simply because they're shorter and easier to type.
+		Here's that same green color above, in hex syntax this time:
+		<br/><br/>
+		<div class = 'css-colors-green-hex'>
+			<code>background-color: #33FF33;</code><br/>
+			The '#' sign just tells the browser 'this is a hex code'.
+		</div>
+		<br/>
+		Play around a bit with this <a ng-href = 'http://www.w3schools.com/tags/ref_colorpicker.asp' >HTML Color Picker</a> to get a feel for how the numbers translate to colors.
+		<br/><br/>
+		(In case you were wondering, hexadecimal means 'base sixteen'. It uses the letters A-F to represent the numbers 10-15, so 2A is equal to (2 * 16) + (10 * 1) = 42,
+		FF = (15 * 16) + (15 * 1) = 255, etc.)
+		<br/><br/>
+		HSL stands for 'Hue-Saturation-Lightness', and it won't be covered here because it's rarely used and more confusing than RGB.
+		HSL codes can be converted to RGB codes, so I recommend avoiding HSL and sticking with RGB and hex codes.
+		You can easily find more information about HSL online, if you need to.
+		<br/><br/>
+		There is one more color code you should be aware of: <code>rgba</code>.
+		This looks and works just like an RGB code, except that it has a fourth number, for opacity.
+		Opacity (which can also be thought of as transparency) is a number between 0 and 1; the lower this number is, the more see-through the color is.
+		This is occasionally useful when you have elements overlapping each other, and you want to see the bottom element, too.
+		Normally, you might use <a ng-href = '{{appPathLink + "css-layout-opacity"}}'>opacity</a> (a separate CSS property) to do this, except that this will apply to the entire element.
+		With <code>rgba</code>, you could, for example, make only the background color transparent:
+		<br/><br/>
+		<div class = 'css-colors-rgba-cont'>
+			<div class = 'css-colors-rgba-lower'> <code>background-color: #66FF33;</code><br/>
+				Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text 
+				Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text 
+				Filler Text Filler Text Filler Text
+			</div>
+			<div class = 'css-colors-rgba-upper1'> <code>background-color: rgb(0,255,255);</code><br/>Opacity unspecified</div>
+		</div>
+		<br/>
+		<div class = 'css-colors-rgba-cont'>
+			<div class = 'css-colors-rgba-lower'> <code>background-color: #66FF33;</code><br/>
+				Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text 
+				Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text 
+				Filler Text Filler Text Filler Text
+			</div>
+			<div class = 'css-colors-rgba-upper2'> <code>background-color: rgb(0,255,255); opacity: .5;</code> </div>
+		</div>
+		<br/>
+		<div class = 'css-colors-rgba-cont'>
+			<div class = 'css-colors-rgba-lower'> <code>background-color: #66FF33;</code><br/>
+				Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text 
+				Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text 
+				Filler Text Filler Text Filler Text
+			</div>
+			<div class = 'css-colors-rgba-upper3'> <code>background-color: rgba(0,255,255, .5);</code></div>
+		</div>
+	</div>
+	
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		
+	</div>
 </div>

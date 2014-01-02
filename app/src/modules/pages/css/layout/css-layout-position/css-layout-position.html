@@ -1,0 +1,54 @@
+<div class = 'lesson' ng-controller='CssLayoutPositionCtrl'>
+	<div class = 'lesson-title'> CSS Color Codes</div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'css/css-layout-position'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		The <code>position</code> property is used to specify where an element should be placed relative to its surroundings.
+		There are four possible values: <code>static</code>, <code>relative</code>, <code>absolute</code>, and <code>fixed</code>.
+		<br/><br/>
+		<code>static</code> is the default value. Elements are positioned according their order in the html, just as you expect.
+		<br/><br/>
+		<code>relative</code> is essentially exactly the same as <code>static</code>, for most purposes.
+		The one crucial difference is how they interact with internal <code>absolute</code> elements.
+		<br/><br/>
+		<code>absolute</code> elements are placed relative to their nearest non-<code>static</code> parent, regardless of any sibling elements.
+		(This is why <code>relative</code> elements are useful.) This is the most common way to cause elements to overlap one another,
+		and can even be used to make an element appear outside of the boundaries of its parent, because parents of <code>absolute</code> elements
+		will <i>not</i> expand their width or height to accomodate their  <code>absolute</code>ly positioned children: as far as the parent element is concerned,
+		<code>absolute</code> children have 0 width and 0 height.
+		<br/><br/>
+		<code>fixed</code> elements are not placed relative to their parents at all, but instead relative to the browser window.
+		That means that when you scroll the window, <code>fixed</code> elements will stay where they are on the screen.
+		Like <code>absolute</code> elements, <code>fixed</code> elements have no height and width as far as their parent elements are concerned.
+		<br/><br/>
+		<code>absolute</code> and <code>fixed</code> come with 5 more relevant properties to specify their position:
+		<code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code>, and <code>z-index</code>.
+		<br/><br/>
+		The first four are numbers in <code>px</code> (pixels) or <code>%</code>.
+		<code>top</code> specifies how far down the top edge of the element should be (relative to the top edge of the nearest non-<code>static</code> parent for <code>absolute</code> or to the window for <code>fixed</code>).
+		<code>left</code>, <code>right</code>, and <code>bottom</code> do the same for the other 3 edges, though you'll rarely need to define all four of them at once.
+		You can use negative values here to move the element outside of its parent.
+		<br/><br/>
+		<code>z-index</code> is a unitless number used to order overlapping siblings.
+		If two elements overlap, the one with the higher z-index will be placed on top of the other, along with everything inside it.
+		<code>z-index</code> only works on non-<code>static</code> elements.
+		<br/><br/>
+		<div class = 'css-position-rel1'><code>position:relative;</code>
+			<div class = 'css-position-static'> Position unspecified (<code>static</code>)
+				<div class = 'css-position-abs1'><code>position:absolute;</code> This div is inside the <code>static</code> div, but is placed relative to the <code>relative</code> parent.</div>
+				<div class = 'css-position-rel2'> <code>position:relative;</code>
+					<div class = 'css-position-abs2'><code>position:absolute; left:0px;<br/>right: -30px; top: 20px;<br/>z-index: 1;</code></div>
+					<div class = 'css-position-abs3'><code>position:absolute;<br/>bottom: 0px;<br/>top: 0px;<br/>right: 10%;<br/>z-index: 5;<br/>width: 225px;</code></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class = 'css-position-fixed'><code>position:fixed;<br/>bottom: 50px;<br/>right: 5px;</code></div>
+	
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		
+	</div>
+</div>
