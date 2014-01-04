@@ -86,7 +86,7 @@ config(['$routeProvider', '$locationProvider', 'appConfigProvider', '$compilePro
 	Generic / common routes
 	@toc 2.
 	*/
-	$routeProvider.when(appPathRoute+'home', {redirectTo: appPathRoute+'dev-test/test'});
+	// $routeProvider.when(appPathRoute+'home', {redirectTo: appPathRoute+'dev-test/test'});
 	
 	$routeProvider.when(appPathRoute+'login', {templateUrl: pagesPath+'login/login.html',
 		resolve: {
@@ -339,6 +339,6 @@ $routeProvider.when(appPathRoute+'css-layout-position', {templateUrl: pagesPath+
 	catch-all 'otherwise' route
 	@toc 4.
 	*/
-	$routeProvider.otherwise({redirectTo: appPathRoute+'home'});
+	$routeProvider.otherwise({redirectTo: appPathRoute+'toc'});
 	
 }]);
