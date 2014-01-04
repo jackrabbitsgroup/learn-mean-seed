@@ -1,0 +1,35 @@
+<div class = 'lesson' ng-controller='CssDescendantCtrl'>
+	<div class = 'lesson-title'> CSS: The Descendant Selector</div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'css/descendant'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		The descendant selector allows you to target child elements of a particular parent. Syntactically, it is very simple;
+		just write a selector for the parent element followed by a selector for the child, with a space between, as in <code>.parent .child</code>.
+		In this example, the selector targets elements with the class <code>child</code>, but <i>only</i> if they are also inside an element with the class <code>parent</code>.
+		<br/><br/>
+		<div class = 'css-descendant-child'>This element is not in the 'parent', so the descendant selector does not apply.</div>
+		<br/>
+		<div class = 'css-descendant-parent'>
+			<div class = 'css-descendant-child'>This element is in the 'parent', so the descendant selector does apply.</div>
+		</div>
+		<br/><br/>
+		You can chain this selector together as well, as in <code>.ancestor .parent .child</code>,
+		in order to target only <code>.child</code>ren that are descendants of <code>.parent</code>s that are descendants of <code>.ancestor</code>s.
+		You can do this as many times as you like, but if you find yourself chaining often or many times, you should probably reevaluate your strategy.
+		<br/><br/>
+		Side note: There is also the child selector <code>></code>, as in <code>.parent > .child</code>. This works just like the descendant selector,
+		except it targets only immediate children rather than any descendant of <code>.parent</code>.
+		<br/><br/>
+		The descendant selector can be very helpful, but it can also become annoying and difficult to keep track of if used too often.
+		Thus, it should be used only when necessary.
+		Do <b>NOT</b> use a descendant selector simply because you were too lazy to write a new class for the element you want to style!
+		Rather, save it for a situation where you have no easier way to distinguish two elements than by their parents.
+		<br/><br/>
+		You will probably find that you almost never need to use the descendant selector, but on those rare occasions when you do, it can save you from a massive headache.
+		
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
+</div>

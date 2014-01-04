@@ -948,28 +948,6 @@
 									}
 								},
 								{
-									"name": "pseudo-selectors",
-									"dirs": [
-										{
-											"name": "css-pselectors-hover",
-											"files": {
-												"html": [
-													"css-pselectors-hover.html"
-												],
-												"js": [
-													"CssPselectorsHoverCtrl.js"
-												],
-												"testUnit": [
-													"CssPselectorsHoverCtrl.spec.js"
-												],
-												"less": [
-													"css-pselectors-hover.less"
-												]
-											}
-										}
-									]
-								},
-								{
 									"name": "css-selectors",
 									"files": {
 										"html": [
@@ -1056,8 +1034,115 @@
 													"css-layout-position.less"
 												]
 											}
+										},
+										{
+											"name": "css-layout-float",
+											"files": {
+												"html": [
+													"css-layout-float.html"
+												],
+												"js": [
+													"CssLayoutFloatCtrl.js"
+												],
+												"testUnit": [
+													"CssLayoutFloatCtrl.spec.js"
+												],
+												"less": [
+													"css-layout-float.less"
+												]
+											}
+										},
+										{
+											"name": "css-layout-inline",
+											"files": {
+												"html": [
+													"css-layout-inline.html"
+												],
+												"js": [
+													"CssLayoutInlineCtrl.js"
+												],
+												"testUnit": [
+													"CssLayoutInlineCtrl.spec.js"
+												],
+												"less": [
+													"css-layout-inline.less"
+												]
+											}
+										},
+										{
+											"name": "css-layout-flexbox",
+											"files": {
+												"html": [
+													"css-layout-flexbox.html"
+												],
+												"js": [
+													"CssLayoutFlexboxCtrl.js"
+												],
+												"testUnit": [
+													"CssLayoutFlexboxCtrl.spec.js"
+												],
+												"less": [
+													"css-layout-flexbox.less"
+												]
+											}
 										}
 									]
+								},
+								{
+									"name": "pseudo-classes",
+									"dirs": [
+										{
+											"name": "css-pclasses-hover",
+											"files": {
+												"html": [
+													"css-pclasses-hover.html"
+												],
+												"js": [
+													"CssPclassesHoverCtrl.js"
+												],
+												"testUnit": [
+													"CssPclassesHoverCtrl.spec.js"
+												],
+												"less": [
+													"css-pclasses-hover.less"
+												]
+											}
+										},
+										{
+											"name": "css-pclasses-children",
+											"files": {
+												"html": [
+													"css-pclasses-children.html"
+												],
+												"js": [
+													"CssPclassesChildrenCtrl.js"
+												],
+												"testUnit": [
+													"CssPclassesChildrenCtrl.spec.js"
+												],
+												"less": [
+													"css-pclasses-children.less"
+												]
+											}
+										}
+									]
+								},
+								{
+									"name": "css-descendant",
+									"files": {
+										"html": [
+											"css-descendant.html"
+										],
+										"js": [
+											"CssDescendantCtrl.js"
+										],
+										"testUnit": [
+											"CssDescendantCtrl.spec.js"
+										],
+										"less": [
+											"css-descendant.less"
+										]
+									}
 								}
 							]
 						}

@@ -1,0 +1,41 @@
+/* css-pclasses-children */
+
+.css-pclasses-children-demo
+{
+	width: 150px;
+	height: 150px;
+	border: solid 3px #808080;
+	margin: 5px;
+	display: inline-block;
+	vertical-align: top;
+	background-color: white;
+	color: black;
+}
+
+.css-pclasses-children-demo:nth-child(2n)
+{
+	background-color: black;
+	color: white;
+}
+
+.css-pclasses-children-demo:nth-child(3n+2)
+{
+	width: 200px;
+}
+
+.css-pclasses-children-demo:nth-child(10)
+{
+	background-color: green;
+}
+
+.css-pclasses-children-demo:first-child
+{
+	background-color: red;
+	border: dashed 3px blue;
+}
+
+.css-pclasses-children-demo:last-child
+{
+	background-color: blue;
+	border: dashed 3px red;
+}

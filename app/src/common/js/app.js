@@ -283,13 +283,6 @@ $routeProvider.when(appPathRoute+'css-transition', {templateUrl: pagesPath+'css/
 			}
 		}
 	});
-$routeProvider.when(appPathRoute+'css-pselectors-hover', {templateUrl: pagesPath+'css/pseudo-selectors/css-pselectors-hover/css-pselectors-hover.html',
-		resolve: {
-			auth: function(appAuth) {
-				return appAuth.checkSess({});
-			}
-		}
-	});
 $routeProvider.when(appPathRoute+'css-selectors', {templateUrl: pagesPath+'css/css-selectors/css-selectors.html',
 		resolve: {
 			auth: function(appAuth) {
@@ -326,6 +319,48 @@ $routeProvider.when(appPathRoute+'docs-getting-started', {templateUrl: pagesPath
 		}
 	});
 $routeProvider.when(appPathRoute+'css-layout-position', {templateUrl: pagesPath+'css/layout/css-layout-position/css-layout-position.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'css-pclasses-hover', {templateUrl: pagesPath+'css/pseudo-classes/css-pclasses-hover/css-pclasses-hover.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'css-descendant', {templateUrl: pagesPath+'css/css-descendant/css-descendant.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'css-pclasses-children', {templateUrl: pagesPath+'css/pseudo-classes/css-pclasses-children/css-pclasses-children.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'css-layout-float', {templateUrl: pagesPath+'css/layout/css-layout-float/css-layout-float.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'css-layout-inline', {templateUrl: pagesPath+'css/layout/css-layout-inline/css-layout-inline.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'css-layout-flexbox', {templateUrl: pagesPath+'css/layout/css-layout-flexbox/css-layout-flexbox.html',
 		resolve: {
 			auth: function(appAuth) {
 				return appAuth.checkSess({noLoginRequired:true});

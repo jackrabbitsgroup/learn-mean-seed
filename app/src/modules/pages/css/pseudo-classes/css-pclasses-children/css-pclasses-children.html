@@ -1,0 +1,53 @@
+<div class = 'lesson' ng-controller='CssPclassesChildrenCtrl'>
+	<div class = 'lesson-title'> CSS: The First-Child, Last Child, and Nth-Child Pseudo-Classes</div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'css/pseudo-classes/css-pclasses-children'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		The <code>:first-child</code>, <code>:last-child</code>, and <code>:nth-child</code> selectors are used to target elements based on their order inside their parent element.
+		As you would expect, <code>:first-child</code> will only apply to an element if it is the first element inside its parent, <code>:last-child</code> will only apply to the
+		last element, and <code>:nth-child</code> can be used to target any child (or group of children).
+		<br/><br/>
+		These selectors are most commonly used with lists, where you will frequently want to style to first or last element in the list slightly differently -
+		for example, the first element in a vertically-oriented list might not need a <code>margin-top</code> for spacing purposes, but all the rest do.
+		<code>:first-child</code> and <code>:last-child</code> spare you the trouble of giving the first or last elements a different or extra class.
+		(This is particularly useful in conjunction with Angular's <code>ng-repeat</code>.)
+		<br/><br/>
+		<code>:nth-child</code> is a bit more complicated. It can be used to target a specific child with something like <code>.example-class:nth-child(4)</code>,
+		which would apply to elements with the class <code>.example-class</code> only if the element is the fourth child of its parent.
+		This type of usage is fairly simple and straightforward.
+		<br/><br/>
+		<code>:nth-child</code> can do more, however. Instead of specifying a particular number like 4, you could write a rule to target a whole set of elements.
+		For example, <code>.example-class:nth-child(2n+1)</code> would target all odd-numbered children,
+		<code>.example-class:nth-child(4n+3)</code> would target elements 3, 7, 11, 15, and so on.
+		Needless to say, this kind of versatility can make the <code>:nth-child</code> selector extremely useful in certain situations.
+		In practice, however, you'll most likely rarely need to do more than target every other element, and even that isn't all that common, unfortunately.
+		<br/><br/>
+		Here's an example of these selectors in action. This is also a working example of <code>ng-repeat</code>, in case you're interested.
+		<br/><br/>
+		<div>
+			<div class = 'css-pclasses-children-demo' ng-repeat = 'element in my_child_elements'> {{element.element_text}} </div>
+		</div>
+		<br/><br/>
+		Be careful of precedence when using these selectors together; if you have a <code>:first-child</code> and <code>:nth-child</code> selector that target the same element,
+		(or any two <code>-child</code> selectors targeting the same element, for that matter),
+		then the one that appears last in the CSS file will take precedence, overwriting any CSS properties defined by both of them.
+		<br/><br/>
+		You should also be aware of the <code>:first-of-type</code>, <code>:last-of-type</code>, and <code>:nth-of-type</code> selectors.
+		These work exactly like the analagous <code>-child</code> selectors, except that that target elements based on their type as well as their position.
+		For example, where <code>.example-class:first-child</code> targets elements that have the class <code>.example-class</code> and are also the first child of their parent,
+		<code>.example-class:first-of-type</code> targets elements that are the first occurrence of the class <code>.example-class</code> in their parent,
+		regardless of how many other sibling elements may have come before it.
+	</div>
+		
+	<div class = 'lesson-challenges'>
+		<h4> Challenges: </h4>
+		1. There is a list of 10 elements in the sandbox. Without editing any html, give the first a red background, the last a green background,
+		and a total of 3 of them green backgrounds. Do not write more than 2 CSS rules.
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		<div>
+			<div class = 'css-pclasses-children-challenge' style = 'border:solid 1px black; width: 150px; height: 150px; display: inline-block; margin: 5px;' ng-repeat = 'element in challenge_elements'> {{element.element_text}} </div>
+		</div>
+	</div>
+</div>

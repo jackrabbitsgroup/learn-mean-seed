@@ -1,13 +1,13 @@
 'use strict';
 
-describe('CssPselectorsHoverCtrl', function(){
+describe('CssPclassesHoverCtrl', function(){
 	var ctrl, scope ={};
 	
 	beforeEach(module('myApp'));
 	
 	beforeEach(inject(function($rootScope, $controller) {
 		scope = $rootScope.$new();
-		ctrl = $controller('CssPselectorsHoverCtrl', {$scope: scope});
+		ctrl = $controller('CssPclassesHoverCtrl', {$scope: scope});
 	}));
 	
 	/*

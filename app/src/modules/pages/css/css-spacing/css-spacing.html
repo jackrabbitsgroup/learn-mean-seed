@@ -25,6 +25,24 @@
 		<div class = 'css-spacing-example4'> Dashed Border, large left padding only, no margin</div>
 		<div class = 'css-spacing-example5'> Top margin, huge right border, thin top border </div>
 		<div class = 'css-spacing-example6'> Top padding, left margin, dotted border </div>
+		<br/><br/>
+		Margin*, padding, and border width** are valued in <code>px</code> (pixels) or as a % of the available width.
+		Be warned that %s do not work well, if at all, with regards to height;
+		do not rely on % values when specifying <code>height</code>s, <code>top</code>s, <code>bottom</code>s, or any another vertical property, for that matter.
+		They almost never behave as you would expect.
+		<br/><br/>
+		<div class = 'css-spacing-marginauto'>
+			*There is another value for margins that can be very useful:
+			setting <code>margin-left: auto; margin-right: auto;</code> will center the element horizontally in the available space.
+			Try resizing your window - this div will stay centered.
+			This does not work vertically, though, for the same reason that % values do not work well with heights - browsers are notoriously bad at that sort of thing.
+		</div>
+		<br/><br/>
+		**I said 'border width' because the <code>border</code> property is actually a combination of three properties:
+		<code>border-width</code>, <code>border-style</code>, and <code>border-color</code>.
+		That's why border values have three parts, as in <code>border: 1px solid black</code>.
+		The order in which you write these parts does not matter.
+		
 	</div>
 	
 	<div class = 'lesson-challenges'>

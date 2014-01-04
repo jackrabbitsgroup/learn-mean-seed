@@ -1,0 +1,66 @@
+<div class = 'lesson' ng-controller='CssLayoutInlineCtrl'>
+	<div class = 'lesson-title'> CSS Layout: Inline-block Elements</div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'css/layout/css-layout-inline'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		There are three common ways to cause <code>div</code> elements to display side-by-side: <a ng-href = '{{appPathLink + "css-layout-flexbox"}}' target = '_blank'> Flexbox </a>,
+		<a ng-href = '{{appPathLink + "css-layout-float"}}' target = '_blank'> Float </a>, and <code>display: inline-block</code>.
+		<br/><br/>
+		Setting <code>display: inline-block</code> causes a <code>div</code>'s width to shrink to the width of its content,
+		and to display side-by-side next to surrounding elements rather than beginning on a new line. If an inline-block element cannot fit on the current line,
+		it will wrap to the next line, just like text does. In fact, you can usually think of an inline-block element as a particularly big word of text:
+		they display adjacent to surroudning content and will automatically wrap to the next line if they do not fit.
+		They can even be aligned just like text by using the <code>text-align</code> property on the parent element.
+		<br/><br/>
+		This text-like behavior makes inline-block elements ideal for situations where you do not mind if your elements wrap to a new line.
+		<code>display: inline-block</code> can still be useful when you <b>do</b> mind,
+		but you must take care that you have enough width available to prevent unwanted wrapping.
+		<br/><br/>
+		This is often done by specifying %-based widths (and sometimes also %-based margins): if you have only 4 elements on a line, each with <code>width:24%</code> and no space between them,
+		they can never wrap to a new line. This sort of strategy is particularly useful when you cannot or do not want to use flexbox,
+		but it is not always ideal; in particular, it is very difficult to get a line of inline-block elements to touch both edges of their container.
+		If you are off by just one pixel, the last element could wrap to a new line, which is usually disastrous for your layout.
+		<br/><br/>
+		Because unwanted wrapping can be such a page-killer, it is sometimes important to know exactly how much space is between your elements.
+		Thus, you should be aware that if there is any white space in the html between two inline-block elements,
+		the browser will place a space between them - just as if they were text!
+		Check this page's html file to see how the white space is removed between the following two divs.
+		<br/><br/>
+		<!-- Note how the closing '>' for the first div is placed just before the start of the second, so there is actually no blank space between the two. -->
+		<div>
+			<div class = 'css-layout-inline-nowhitespace'> Inline Element 1 </div
+			><div class = 'css-layout-inline-nowhitespace'> Inline Element 2 </div>
+		</div>
+		<br/>
+		Note that elements written with <code>ng-repeat</code> do not have this problem, since <code>ng-repeat</code> does not insert any white space between elements.
+		<br/><br/>
+		Here are some more example divs. Try resizing your browser; the first three are %-widths, and will never wrap.
+		The rest are fixed-width, and will wrap as needed. All of them will stay centered, because their parent element has <code>text-align:center</code>.
+		<br/><br/>
+		<div class = 'css-layout-inline-demo-container'>
+			<div class = 'css-layout-inline-demo-nowrap'> Non-wrap element 1 </div
+			><div class = 'css-layout-inline-demo-nowrap'> Non-wrap element 2 </div
+			><div class = 'css-layout-inline-demo-nowrap'> Non-wrap element 3 </div>
+		</div>
+		<div class = 'css-layout-inline-demo-container'>
+			<div class = 'css-layout-inline-demo-wrap'> Wrap element 1 </div
+			><div class = 'css-layout-inline-demo-wrap'> Wrap element 2 </div
+			><div class = 'css-layout-inline-demo-wrap'> Wrap element 3 </div
+			><div class = 'css-layout-inline-demo-wrap'> Wrap element 4 </div
+			><div class = 'css-layout-inline-demo-wrap'> Wrap element 5 </div
+			><div class = 'css-layout-inline-demo-wrap'> Wrap element 6 </div>
+		</div>
+		<br/>
+		<code>display:inline-block</code> often goes hand-in-hand with another property, <code>vertical-align</code>.
+		If your elements are not all the same height, you must decide how they sit next to each other.
+		Usually, this means setting each to <code>vertical-align:top</code>, which aligns the elements along their top edge,
+		or <code>vertical-align:bottom</code>, which aligns the elements along their bottom edge.
+		There are other options, but they do not always behave as you might expect, so be careful.
+	</div>
+		
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
+</div>
