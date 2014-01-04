@@ -1,0 +1,39 @@
+<div class='lesson' ng-controller='AngularTestScopeDigestCtrl'>
+	<div class ='lesson-title'>Scope Digest, Timing, Promises</div>
+	<div class ='lesson-location'> {{pagesFullPath + 'angular-test-scope-digest'}} </div>
+	<div class ='lesson-summary'>
+		<div><code>$scope.$digest()</code> (or <code>$scope.$apply()</code>) will often be used in tests to make Angular code run/compile/update</div>
+		<div>Similarly, <code>$timeout.flush()</code> will make timeouts run/finish</div>
+	</div>
+	
+	<div class ='lesson-prereqs'>
+		<h4>Prereqs:</h4>
+		<a class='a-block' ng-href='{{appPathLink}}docs-testing'>Docs Testing</a>
+		<a class='a-block' ng-href='{{appPathLink}}docs-testing-jasmine'>Docs Testing Jasmine</a>
+	</div>
+	
+	<div class ='lesson-body'>
+		<div class='margin-tb'>One thing you'll learn about tests is that since they 'mock' things, you have to manually trigger things that happen automatically within the live app. There is no asynchronous code in tests so things don't run until you tell them to. This is vital for testing but takes a little getting used to (it can feel like there are "timing issues") since you may call a function or write a line of code and expect it to actually run but realize that by the next line nothing has changed! This is because you haven't "triggered" it yet so nothing has actually happened!</div>
+		<div class='margin-tb'>
+			<div>Typical use cases where <code>$scope.$digest()</code> should be run after:</div>
+			<div class='margin-l'>
+				<div>Events: <code>$scope.$emit()</code> or <code>$scope.$broadcast()</code></div>
+				<div>Deferreds, Promises, HTTP Requests: <code>$httpBackend.flush()</code> or any function that uses <code>$http</code> or <code>$q</code></div>
+				<div>Compiling: <code>$compile(...)</code> - USE <code>$scope.$apply()</code> here instead!</div>
+				<div>Form Validation: I.e. after you set <code>$scope</code> form values, call <code>$digest()</code> to get validation to run - NOTE: forms only work well within directives for testing (more on this later).</div>
+			</div>
+			<div>Basically any time you change an Angular variable (i.e. <code>$scope</code>) or call a function that touches an Angular variable or Angular function, make sure to call <code>$scope.$digest()</code> to get the Angular code to actually run.</div>
+		</div>
+	</div>
+	
+	<div class ='lesson-challenges'>
+		<h4>Challenges:</h4>
+		<div>1. <code>beforeEach</code> practice: move all the code in the current <code>it</code> block of the test to the empty <code>beforeEach</code> function. Confirm the tests still run and pass.</div>
+		<div>2. More test code modularization: move the test code (that you put in the <code>beforeEach</code> block above) into the <code>defaultRuns()</code> function and then call this function from the <code>beforeEach</code>. Again confirm all the tests still run and pass.</div>
+		<div>3. Calling promise functions: In the 2nd <code>it</code> block, call the <code>$scope.runPromise(..)</code> function and inside the <code>.then</code> resolve (or reject), set <code>promiseCalled =true;</code> to test that the function is properly called. Make sure to use <code>$scope.$digest()</code> after the promise!</div>
+	</div>
+	
+	<div class ='lesson-sandbox'>
+		{{promiseVal}}
+	</div>
+</div>

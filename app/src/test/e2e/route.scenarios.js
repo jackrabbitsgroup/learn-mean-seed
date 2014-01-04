@@ -31,7 +31,8 @@ describe("E2E: Testing Routes", function() {
 		},
 		password: 'e2eTesting'
 	};
-	var defaultPage ='dev-test/test';		//the page we should go to by default (i.e. the 'otherwise' route)
+	// var defaultPage ='dev-test/test';		//the page we should go to by default (i.e. the 'otherwise' route)
+	var defaultPage ='toc';
 	
 	beforeEach(function() {
 		// ptor =protractor.getInstance();

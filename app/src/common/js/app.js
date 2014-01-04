@@ -86,7 +86,7 @@ config(['$routeProvider', '$locationProvider', 'appConfigProvider', '$compilePro
 	Generic / common routes
 	@toc 2.
 	*/
-	$routeProvider.when(appPathRoute+'home', {redirectTo: appPathRoute+'dev-test/test'});
+	// $routeProvider.when(appPathRoute+'home', {redirectTo: appPathRoute+'dev-test/test'});
 	
 	$routeProvider.when(appPathRoute+'login', {templateUrl: pagesPath+'login/login.html',
 		resolve: {
@@ -325,6 +325,7 @@ $routeProvider.when(appPathRoute+'css-layout-position', {templateUrl: pagesPath+
 			}
 		}
 	});
+<<<<<<< HEAD
 $routeProvider.when(appPathRoute+'css-pclasses-hover', {templateUrl: pagesPath+'css/pseudo-classes/css-pclasses-hover/css-pclasses-hover.html',
 		resolve: {
 			auth: function(appAuth) {
@@ -367,6 +368,13 @@ $routeProvider.when(appPathRoute+'css-layout-flexbox', {templateUrl: pagesPath+'
 			}
 		}
 	});
+$routeProvider.when(appPathRoute+'angular-test-scope-digest', {templateUrl: pagesPath+'angular/test/scope-digest/angular-test-scope-digest/angular-test-scope-digest.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
 //end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 
@@ -374,6 +382,6 @@ $routeProvider.when(appPathRoute+'css-layout-flexbox', {templateUrl: pagesPath+'
 	catch-all 'otherwise' route
 	@toc 4.
 	*/
-	$routeProvider.otherwise({redirectTo: appPathRoute+'home'});
+	$routeProvider.otherwise({redirectTo: appPathRoute+'toc'});
 	
 }]);

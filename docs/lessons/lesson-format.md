@@ -33,7 +33,7 @@ Teachers are strongly encouraged to copy an existing lesson's html file and simp
 	
 	<div class ='lesson-challenges'>
 		<h4>Challenges:</h4>
-		1. [Task #1 - add as many as needed]
+		<div>1. [Task #1 - add as many as needed]</div>
 	</div>
 	
 	<div class ='lesson-sandbox'>
