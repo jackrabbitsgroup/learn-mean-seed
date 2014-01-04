@@ -13,7 +13,7 @@
 	</div>
 	
 	<div class ='lesson-body'>
-		<div class='margin-tb'>One thing you'll learn about tests is that since they 'mock' things, you have to manually trigger things that happen automatically within the live app. There is no asynchronous code so things don't run until you tell them do. This is vital for testing but takes a little getting used to (it can feel like there are "timing issues") since you may call a function or write a line of code and expect it to actually run but realize that by the next line nothing has changed! This is because you haven't "triggered" it yet so nothing has actually happened!</div>
+		<div class='margin-tb'>One thing you'll learn about tests is that since they 'mock' things, you have to manually trigger things that happen automatically within the live app. There is no asynchronous code in tests so things don't run until you tell them to. This is vital for testing but takes a little getting used to (it can feel like there are "timing issues") since you may call a function or write a line of code and expect it to actually run but realize that by the next line nothing has changed! This is because you haven't "triggered" it yet so nothing has actually happened!</div>
 		<div class='margin-tb'>
 			<div>Typical use cases where <code>$scope.$digest()</code> should be run after:</div>
 			<div class='margin-l'>
