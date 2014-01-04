@@ -325,7 +325,6 @@ $routeProvider.when(appPathRoute+'css-layout-position', {templateUrl: pagesPath+
 			}
 		}
 	});
-<<<<<<< HEAD
 $routeProvider.when(appPathRoute+'css-pclasses-hover', {templateUrl: pagesPath+'css/pseudo-classes/css-pclasses-hover/css-pclasses-hover.html',
 		resolve: {
 			auth: function(appAuth) {
