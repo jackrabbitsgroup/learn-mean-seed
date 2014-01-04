@@ -569,6 +569,33 @@
 											]
 										}
 									]
+								},
+								{
+									"name": "test",
+									"dirs": [
+										{
+											"name": "scope-digest",
+											"dirs": [
+												{
+													"name": "angular-test-scope-digest",
+													"files": {
+														"html": [
+															"angular-test-scope-digest.html"
+														],
+														"js": [
+															"AngularTestScopeDigestCtrl.js"
+														],
+														"testUnit": [
+															"AngularTestScopeDigestCtrl.spec.js"
+														],
+														"less": [
+															"angular-test-scope-digest.less"
+														]
+													}
+												}
+											]
+										}
+									]
 								}
 							]
 						},

@@ -332,6 +332,13 @@ $routeProvider.when(appPathRoute+'css-layout-position', {templateUrl: pagesPath+
 			}
 		}
 	});
+$routeProvider.when(appPathRoute+'angular-test-scope-digest', {templateUrl: pagesPath+'angular/test/scope-digest/angular-test-scope-digest/angular-test-scope-digest.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
 //end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 
