@@ -1,5 +1,6 @@
 # Learn MEAN
 Learn to Code!
+
 Learn Angular, Learn Node, Learn Javascript, Learn CSS, Learn HTML (and more)!
 
 
@@ -31,8 +32,11 @@ Learn MEAN (aka 4 Hour Coder) is closer to Codecademy (free, self-paced) with so
 	- Again this goes along with the idea of **having NOTHING extra**. ALL of your learning is focused on 100% of things you'll ACTUALLY USE. You'll **clone Learn MEAN seed from Github** and take lessons **locally on your computer, JUST AS YOU'LL DEVELOP real code**.
 	
 	
+	
 ### Support / Office Hours / Community:
+
 We've toyed with the idea of having online Google Hangout office hours each day open to anyone to ask questions if they get stuck. With the end goal of having people who have completed Learn MEAN host office hours as well such that eventually we have someone online 24/7 and a community of people helping each other (everyone is both a mentor and a mentee) learn to code. Coding is becoming the most popular language to speak and useful for ANY field - **our vision is to make learning coding accessible to anyone** and be able to teach anyone to code **FOR FREE, in as short a time as possible (weeks or months)**.
+
 
 
 ### Why MEAN?
@@ -50,6 +54,12 @@ A sequence of decisions led to MEAN:
 Plus MEAN is gaining popularity and while it's by no means the "only right answer" to every project, it's a great place to start.
 
 [Addy Osmani (co-creator of Yeoman) MEAN blog post](http://addyosmani.com/blog/full-stack-javascript-with-mean-and-yeoman/)
+
+
+
+### Why generator-mean-seed?
+TODO: blog post coming!
+
 
 
 ### More Info on our Blog, Specifically:
