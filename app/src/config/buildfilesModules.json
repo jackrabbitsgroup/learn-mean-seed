@@ -594,6 +594,28 @@
 													}
 												}
 											]
+										},
+										{
+											"name": "scope-on",
+											"dirs": [
+												{
+													"name": "angular-test-scope-on",
+													"files": {
+														"html": [
+															"angular-test-scope-on.html"
+														],
+														"js": [
+															"AngularTestScopeOnCtrl.js"
+														],
+														"testUnit": [
+															"AngularTestScopeOnCtrl.spec.js"
+														],
+														"less": [
+															"angular-test-scope-on.less"
+														]
+													}
+												}
+											]
 										}
 									]
 								}

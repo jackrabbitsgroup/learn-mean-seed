@@ -1,0 +1,27 @@
+<div class='lessons' ng-controller='AngularTestScopeOnCtrl'>
+	<div class ='lesson-title'>$scope.$on Angular Events</div>
+	<div class ='lesson-location'> {{pagesFullPath + 'angular/test/scope-on/angular-test-scope-on'}} </div>
+	<div class ='lesson-summary'>
+		Using $scope.$on to test Angular Events ($scope.$broadcast, $scope.$emit)
+	</div>
+	
+	<div class ='lesson-prereqs'>
+		<h4>Prereqs:</h4>
+		<a class='a-block' ng-href='{{appPathLink}}docs-testing'>Docs Testing</a>
+		<a class='a-block' ng-href='{{appPathLink}}docs-testing-jasmine'>Docs Testing Jasmine</a>
+	</div>
+	
+	<div class ='lesson-body'>
+		<div>Use <code>$scope.$on</code>, <code>$scope.$broadcast</code> as normal to trigger and listen for events and then <code>expect()</code> with the <code>$scope.$on</code> that everything is firing/listening properly and with the correct arguments.</div>
+	</div>
+	
+	<div class ='lesson-challenges'>
+		<h4>Challenges:</h4>
+		<div>1. Write a test (new <code>it</code> block) to test the 'evtEmit' event. Hint: use the 'evtBroadcast' <code>it</code> block as a reference/template.</div>
+		<div>2. Add an <code>expect</code> in the 'evtOn' <code>it</code> block/tests to check the p3 param.</div>
+	</div>
+	
+	<div class ='lesson-sandbox'>
+		
+	</div>
+</div>

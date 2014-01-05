@@ -1,9 +1,5 @@
 # Cloning
 
-Follow these steps for duplicating the app/website/code to OTHER servers/machines AFTER Yeoman has been run.
-
-Give these steps to any fellow developers for them to get set up - they do NOT need to run Yeoman since you've already generated the app for them - the main generator for Yeoman only needs to be run ONCE (and potentially can be used for updates). Though other developers WILL use other Yeoman generators (i.e. for creating a new route), just not the main/core generator that builds the app from scratch the first time.
-
 NOTE: all commands should be run in a terminal/command prompt window.
 In general you'll have 2-3 terminal/command prompt windows open at once - one for running MongoDB (if not running by default / as a service), one for running node.js, and one for commands (mostly grunt)
 
@@ -38,6 +34,12 @@ In general you'll have 2-3 terminal/command prompt windows open at once - one fo
 
 ### More Info
 See [setup-detailed.md](setup-detailed.md) and [running.md](running.md) in the `docs` folder.
+
+
+### Note for (initial) developer(s):
+These cloning steps above are for duplicating the app/website/code to OTHER servers/machines AFTER Yeoman has been run (once).
+
+Give these steps to any fellow developers for them to get set up - they do NOT need to run Yeoman since you've already generated the app for them - the main generator for Yeoman only needs to be run ONCE (and later used for updates). Though other developers WILL use other Yeoman generators (i.e. for creating a new route), just not the main/core generator that builds the app from scratch the first time.
 
 
 

@@ -55,7 +55,8 @@
 			"modules.pages.html.html-self-closing",
 			"modules.pages.angular.directive.use.forminput.angular-forminput-basic",
 			"modules.pages.angular.controller.test.scope.angular-controller-test-scope",
-			"modules.pages.angular.test.scope-digest.angular-test-scope-digest"
+			"modules.pages.angular.test.scope-digest.angular-test-scope-digest",
+			"modules.pages.angular.test.scope-on.angular-test-scope-on"
 		]
 	},
 	"testsKarmaCovNoLessons": {
@@ -78,7 +79,8 @@
 			"modules.pages.html.html-self-closing",
 			"modules.pages.angular.directive.use.forminput.angular-forminput-basic",
 			"modules.pages.angular.controller.test.scope.angular-controller-test-scope",
-			"modules.pages.angular.test.scope-digest.angular-test-scope-digest"
+			"modules.pages.angular.test.scope-digest.angular-test-scope-digest",
+			"modules.pages.angular.test.scope-on.angular-test-scope-on"
 		]
 	},
 	"testsLessons": {
@@ -100,7 +102,8 @@
 			"__modules.pages.html.html-self-closing",
 			"__modules.pages.angular.directive.use.forminput.angular-forminput-basic",
 			"__modules.pages.angular.controller.test.scope.angular-controller-test-scope",
-			"modules.pages.angular.test.scope-digest.angular-test-scope-digest"
+			"__modules.pages.angular.test.scope-digest.angular-test-scope-digest",
+			"modules.pages.angular.test.scope-on.angular-test-scope-on"
 		]
 	}
 }
