@@ -12,9 +12,9 @@
 - **buildfilesModuleGroups.json**: add your lesson to `buildfilesModuleGroups.json` (in 3 places - copy/follow the existing lessons there already and just add yours)
 	- this is for tests and test coverage to run properly - lessons should have FAILING tests until the trainee / student takes the lesson so we need to keep tests and coverage for lessons / students separate from the development code (which still needs PASSING tests and to meet code coverage thresholds)
 	- use `__` as a skip prefix (this module will NOT be included (or skipped, if used in `skipModules`)) to "comment out" that line
-- **write your lesson** (use [lessons/lesson-format.md](lesson-format.md) for the boilerplate HTML to get started)
 - **contents / toc**: add your lesson to the contents page
 	- `modules/pages/toc/toc/toc.html`
+- **write your lesson** (use [lessons/lesson-format.md](lesson-format.md) for the boilerplate HTML to get started)
 - **take/test lesson**: take your own lesson as if you were the student and confirm it works as expected
 
 
@@ -29,6 +29,6 @@ Keep your documentation short and link to external websites or blog posts for mo
 - **buildfilesModuleGroups.json**: add your lesson to `buildfilesModuleGroups.json` (in 3 places - copy/follow the existing lessons docs there already and just add yours)
 	- this is for tests and test coverage to run properly - lessons should have FAILING tests until the trainee / student takes the lesson so we need to keep tests and coverage for lessons / students separate from the development code (which still needs PASSING tests and to meet code coverage thresholds)
 	- use `__` as a skip prefix (this module will NOT be included (or skipped, if used in `skipModules`)) to "comment out" that line
-- **write your doc** file
 - **contents / toc**: add your lesson to the contents page
 	- `modules/pages/toc/toc/toc.html`
+- **write your doc** file
