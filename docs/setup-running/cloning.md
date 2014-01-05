@@ -32,14 +32,14 @@ In general you'll have 2-3 terminal/command prompt windows open at once - one fo
 	1. `grunt`
 	
 
+### More Info
+See [setup-detailed.md](setup-detailed.md) and [running.md](running.md) in the `docs` folder.
+
+
 ### Note for (initial) developer(s):
 These cloning steps above are for duplicating the app/website/code to OTHER servers/machines AFTER Yeoman has been run (once).
 
 Give these steps to any fellow developers for them to get set up - they do NOT need to run Yeoman since you've already generated the app for them - the main generator for Yeoman only needs to be run ONCE (and later used for updates). Though other developers WILL use other Yeoman generators (i.e. for creating a new route), just not the main/core generator that builds the app from scratch the first time.
-
-
-### More Info
-See [setup-detailed.md](setup-detailed.md) and [running.md](running.md) in the `docs` folder.
 
 
 
