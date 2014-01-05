@@ -44,9 +44,9 @@ A sequence of decisions led to MEAN:
 5. MongoDB is just Javascript Objects (again ONLY Javascript to learn)
 
 Plus MEAN is gaining popularity and while it's by no means the "only right answer" to every project, it's a great place to start.
-(Addy Osmani (co-creator of Yeoman) MEAN blog post)[http://addyosmani.com/blog/full-stack-javascript-with-mean-and-yeoman/]
+[Addy Osmani (co-creator of Yeoman) MEAN blog post](http://addyosmani.com/blog/full-stack-javascript-with-mean-and-yeoman/)
 
 
 ### More Info on our Blog, Specifically:
-(http://jackrabbitsgroup.blogspot.com/2013/12/learning-philosophy-4-hour-coder-part-1.html)[http://jackrabbitsgroup.blogspot.com/2013/12/learning-philosophy-4-hour-coder-part-1.html]
-(http://jackrabbitsgroup.blogspot.com/2013/12/learning-philosophy-4-hour-coder-part-2.html)[http://jackrabbitsgroup.blogspot.com/2013/12/learning-philosophy-4-hour-coder-part-2.html]
+[http://jackrabbitsgroup.blogspot.com/2013/12/learning-philosophy-4-hour-coder-part-1.html](http://jackrabbitsgroup.blogspot.com/2013/12/learning-philosophy-4-hour-coder-part-1.html)
+[http://jackrabbitsgroup.blogspot.com/2013/12/learning-philosophy-4-hour-coder-part-2.html](http://jackrabbitsgroup.blogspot.com/2013/12/learning-philosophy-4-hour-coder-part-2.html)
