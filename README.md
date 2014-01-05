@@ -57,7 +57,7 @@ Plus MEAN is gaining popularity and while it's by no means the "only right answe
 
 
 
-### Why generator-mean-seed?
+### Why [generator-mean-seed](https://github.com/jackrabbitsgroup/generator-mean-seed)?
 TODO: blog post coming!
 
 
