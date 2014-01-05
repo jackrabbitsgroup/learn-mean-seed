@@ -8,7 +8,7 @@ See [cloning.md](docs/setup-running/cloning.md)
 
 
 
-## Why
+## Why / Philosophy
 
 The "4 Hour Coder" (yes, we love Tim Ferriss and the 80/20 rule)
 
@@ -35,6 +35,9 @@ We've toyed with the idea of having online Google Hangout office hours each day 
 
 
 ### Why MEAN?
+
+Short answer: It's all **javascript** (full-stack javascript) making just ONE language to learn.
+
 A sequence of decisions led to MEAN:
 
 1. Frontend is easier to start with since you can SEE results
