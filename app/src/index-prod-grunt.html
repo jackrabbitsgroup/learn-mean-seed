@@ -32,7 +32,12 @@ print('\t<link rel="stylesheet" href="' + filePath + '"/>\n');
         }
         if(ie >-1 && ie <10)		//IE less than 10 (only >=10 supports flexbox)
         {
-            window.location ="src/ie.html";
+            //window.location ="src/ie.html";
+			var curLoc =window.location.toString();
+			var index1 =curLoc.indexOf('//');
+			var indexSlash =curLoc.indexOf('/', (index1+2));
+			var host =curLoc.slice(0, (indexSlash+1));
+            window.location =host+"src/ie.html";
             //alert("redirect");
         }
     </script>
