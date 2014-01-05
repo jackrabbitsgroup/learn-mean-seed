@@ -1,3 +1,80 @@
-<div ng-controller='CssLayoutFlexboxCtrl'>
-	css-layout-flexbox
+<div class = 'lesson' ng-controller='CssLayoutFlexboxCtrl'>
+	<div class = 'lesson-title'> CSS Layout: Flexbox</div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'css/layout/css-layout-flexbox'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		There are three common ways to cause <code>div</code> elements to display side-by-side: <a ng-href = '{{appPathLink + "css-layout-float"}}' target = '_blank'> Float </a>,
+		<a ng-href = '{{appPathLink + "css-layout-inline"}}' target = '_blank'> Inline-Block </a>, and flexbox.
+		<br/><br/>
+		Flexbox is still relatively new, and has undergone a lot of changes since it was first implemented.
+		This means that the syntax and relevant CSS properties for flexbox is a mess across browsers -
+		IE9 and lower don't support it at all, and other browsers may only support older versions of the syntax.
+		Furthermore, there are a number of online articles with information on flexbox, but because of all the changes between 2010 and 2013,
+		it is sometimes hard to be sure if what you're reading is still accurate.
+		Combine this with the fact that there are at least 10 CSS properties specifically for flexbox -
+		some of which may have had their names changed or have even ceased to exist over the years -
+		and you've got one seriously confusing setup on your hands.
+		This confusion will tend to clear up over time, as browsers get up-to-date and begin to agree on a more uniform approach to flexbox,
+		but that small comfort won't help you much in the here and now.
+		<br/><br/>
+		For this reason, we're not going to get into the murky details or flexbox here;
+		instead, we're just going to focus on using it in Mean Seed, which isn't nearly so complicated.
+		<br/><br/>
+		The basic idea of flexbox is to create a group of 'flexible boxes' inside some container.
+		The boxes will touch both edges of the container and completely fill the space between, never wrapping to a new line.
+		You can specify their width relative to one another as well, and they will size themselves accordingly, and maintain their ratios no matter how the container resizes.
+		Furthermore, each box will have the same height, filling the container.
+		These properties allow flexbox to easily accomplish a number of tasks that would be very difficult and tedious otherwise,
+		which is why coders have been willing to put up with all of the confusion that has come with it thus far.
+		<br/><br/>
+		To use flexbox in Mean Seed, give the classes <code>flexbox</code> and <code>row</code> to the parent element
+		(you can also use <code>column</code> instead of <code>row</code>, to create a vertical flexbox rather than a horizontal one).
+		Next, specify how flexible each child should be using the classes <code>flex0</code>, <code>flex1</code>, <code>flex2</code>, or <code>flex3</code>.
+		The higher the number, the more space the element will take up relative to its siblings.
+		<code>flex0</code> elements will not take up any more space than they need;
+		in fact, you can just omit <code>flex0</code> on elements that should be inflexible.
+		<br/>
+		In theory, you could use any integer, but only these four classes are provided by Mean Seed by default.
+		<br/><br/>
+		<div class='css-layout-flexbox-container flexbox row'>
+			<div class = 'css-layout-flexbox-child1'>Left (Inflexible)</div>
+			<div class = 'css-layout-flexbox-child2 flex1'>Middle (flex1)</div>
+			<div class = 'css-layout-flexbox-child3 flex1'>Right (flex1)</div>
+		</div>
+		<br/>
+		<div class='css-layout-flexbox-container-vert flexbox column'>
+			<div class = 'css-layout-flexbox-child1 flex0'>Left (Inflexible)</div>
+			<div class = 'css-layout-flexbox-child2 flex1'>Middle (flex1)</div>
+			<div class = 'css-layout-flexbox-child3 flex1'>Right (flex1)</div>
+		</div>
+		<br/>
+		<div class='css-layout-flexbox-container flexbox row'>
+			<div class = 'css-layout-flexbox-child1 flex3'>Left (flex3)</div>
+			<div class = 'css-layout-flexbox-child2 flex1'>Right (flex1)</div>
+		</div>
+		<br/>
+		Be warned that flexibility only applies to empty space. Here's the previous example again, but with more text:
+		<br/><br/>
+		<div class='css-layout-flexbox-container flexbox row'>
+			<div class = 'css-layout-flexbox-child1 flex3'>Left (flex3)<br/>This extra text takes up more width, reducing the amount of empty space<br/>in the container available to be distributed to the flexible boxes.<br/>The empty space will be divvied up 3:1, but as you can see,<br/>the resulting widths are not the same as above.</div>
+			<div class = 'css-layout-flexbox-child2 flex1'>Right (flex1)</div>
+		</div>
+		<br/>
+		You can also use <code>center</code> in place of <code>row</code> to vertically center an element without knowing any heights.
+		(This is usually a notoriously difficult task!)
+		<br/><br/>
+		<div style = 'height:100px; border: solid 1px black;'>
+			<div class='flexbox center'>
+				<div class = 'css-layout-flexbox-child1'>Vertically centered!</div>
+			</div>
+		</div>
+		
+
+	</div>
+		
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
 </div>

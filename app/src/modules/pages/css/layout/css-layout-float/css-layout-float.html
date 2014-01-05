@@ -1,3 +1,38 @@
-<div ng-controller='CssLayoutFloatCtrl'>
-	css-layout-float
+<div class = 'lesson' ng-controller='CssLayoutFloatCtrl'>
+	<div class = 'lesson-title'> CSS Layout: Float</div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'css/layout/css-layout-float'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		There are three common ways to cause <code>div</code> elements to display side-by-side: <a ng-href = '{{appPathLink + "css-layout-flexbox"}}' target = '_blank'> Flexbox </a>,
+		<a ng-href = '{{appPathLink + "css-layout-inline"}}' target = '_blank'> Inline-Block </a>, and <code>float</code>.
+		<br/><br/>
+		Setting <code>float: left</code> (or <code>float: right</code>) causes a <code>div</code>'s width to shrink to the width of its content,
+		and to display as far to the left (or to the right) as it can. Elements after a floated element will flow around it, until the float is cleared.
+		If a floated element cannot fit on the current line, it will wrap to the next line.
+		<br/><br/>
+		Floats should always be cleared, otherwise they can alter the display of everything that follows after them.
+		This can be done by adding the style <code>clear:both</code> to an element after the floats.
+		In Mean Seed, a float can be cleared by simply adding the class <code>clearfix</code> to the float's parent element.
+		<br/><br/>
+		<code>float</code> is best used when you want to put elements on both the left and right edge of a container,
+		and you don't mind if there is a lot of empty space between them.
+		If you're looking to display an evenly spaced row of elements, try using flexbox or inline-block.
+		But if you just want an element on the left and one on the right, <code>float</code> is your best bet.
+		This is particularly common in headers and footers.
+		<br/><br/>
+		<div class = 'clearfix'>
+			<div class = 'css-layout-float-left'> Element 1<br/><code>float: left</code> </div>
+			<div class = 'css-layout-float-left'> Element 2<br/><code>float: left</code> </div>
+			<div class = 'css-layout-float-right'> Element 3<br/><code>float: right</code> </div>
+			<div class = 'css-layout-float-right'> Element 4<br/><code>float: right</code> </div>
+		</div>
+		<br/>
+		Note that multiple adjacent right-floated elements will be displayed in right-to-left order.
+	</div>
+		
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
 </div>
