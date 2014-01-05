@@ -1,4 +1,5 @@
 # Learn MEAN
+Learn to Code!
 Learn Angular, Learn Node, Learn Javascript, Learn CSS, Learn HTML (and more)!
 
 
@@ -31,7 +32,7 @@ Learn MEAN (aka 4 Hour Coder) is closer to Codecademy (free, self-paced) with so
 	
 	
 ### Support / Office Hours / Community:
-We've toyed with the idea of having online Google Hangout office hours each day open to anyone to ask questions if they get stuck. With the end goal of having people who have completed Learn MEAN host office hours as well such that eventually we have someone online 24/7 and a community of people helping each other (everyone is both a mentor and a mentee) learn to code. Coding is becoming the most popular language to speak and useful for ANY field - our vision is to make it accessible to anyone and be able to teach anyone to code FOR FREE, in as short a time as possible (weeks or months).
+We've toyed with the idea of having online Google Hangout office hours each day open to anyone to ask questions if they get stuck. With the end goal of having people who have completed Learn MEAN host office hours as well such that eventually we have someone online 24/7 and a community of people helping each other (everyone is both a mentor and a mentee) learn to code. Coding is becoming the most popular language to speak and useful for ANY field - **our vision is to make learning coding accessible to anyone** and be able to teach anyone to code **FOR FREE, in as short a time as possible (weeks or months)**.
 
 
 ### Why MEAN?
