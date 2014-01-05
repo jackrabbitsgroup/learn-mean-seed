@@ -78,7 +78,7 @@ describe('PasswordResetCtrl', function(){
 	
 	it('should not validate with mis-matching passwords', function() {
 		setup({});
-		spyOn($scope, '$emit');
+		// spyOn($scope, '$emit');		//UPDATE: not necessary! (and in fact if include this, it will 'mock' the $emit event and the $scope.$on below will NOT work.
 		
 		var errorCalled =false;
 		$scope.formVals ={
@@ -88,25 +88,21 @@ describe('PasswordResetCtrl', function(){
 			password_confirm: 'NOTpassword'
 		};
 		
+		//NOTE: this must be defined BEFORE calling $scope.submitForm()!!
+		$scope.$on('evtAppalertAlert', function(evt, params) {
+			errorCalled =true;
+		});
+		
 		$scope.passResetForm ={
 			$valid: true
 		};
 		$scope.submitForm();
-
-		//doesn't work.. apparently testing events is tricky and has timing issues. People recommend using spyOn but that doesn't allow fine grained expect statements..
-		// $scope.$on('evtAppalertAlert', function(evt, params) {
-			// errorCalled =true;
-		// });
-		// $timeout(function() {
-		// }, 100);
-		// $timeout.flush();
 		
 		$scope.$digest();
-		// expect(errorCalled).toBe(true);
-		// $timeout.flush();
-		
+		expect(errorCalled).toBe(true);
+		//UPDATE: not needed!
 		// expect($scope.$emit).toHaveBeenCalledWith('evtAppalertAlert', {type:'error'});
-		expect($scope.$emit).toHaveBeenCalled();
+		// expect($scope.$emit).toHaveBeenCalled();
 	});
 	
 	describe('route params', function() {
