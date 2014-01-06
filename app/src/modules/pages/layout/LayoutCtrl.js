@@ -70,6 +70,13 @@ angular.module('myApp').controller('LayoutCtrl', ['$scope', 'appConfig', '$locat
 	$scope.pagesFullPath = appConfig.dirPaths.staticPath+appConfig.dirPaths.pagesPath;
 	
 	/**
+	For use in referencing directive folders
+	@property $scope.directivesFullPath
+	@type String
+	**/
+	$scope.directivesFullPath = appConfig.dirPaths.staticPath+'modules/directives/';
+	
+	/**
 	Stores the title of the application (as set in appConfig) - can be used in (any) HTML partial files or javascript controller files
 	@property $scope.appTitle
 	@type String
