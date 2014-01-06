@@ -1192,6 +1192,40 @@
 											"css-descendant.less"
 										]
 									}
+								},
+								{
+									"name": "css-vendor-prefix",
+									"files": {
+										"html": [
+											"css-vendor-prefix.html"
+										],
+										"js": [
+											"CssVendorPrefixCtrl.js"
+										],
+										"testUnit": [
+											"CssVendorPrefixCtrl.spec.js"
+										],
+										"less": [
+											"css-vendor-prefix.less"
+										]
+									}
+								},
+								{
+									"name": "css-mixin",
+									"files": {
+										"html": [
+											"css-mixin.html"
+										],
+										"js": [
+											"CssMixinCtrl.js"
+										],
+										"testUnit": [
+											"CssMixinCtrl.spec.js"
+										],
+										"less": [
+											"css-mixin.less"
+										]
+									}
 								}
 							]
 						}

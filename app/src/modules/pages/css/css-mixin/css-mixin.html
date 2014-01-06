@@ -1,0 +1,60 @@
+<div class = 'lesson' ng-controller='CssMixinCtrl'>
+	<div class = 'lesson-title'> CSS: LESS and SCSS Mixins</div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'css/mixin'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		Mixins are not a part of standard CSS; they are an additional feature provided by the CSS preprocessors, LESS and SCSS.
+		At their simplest, mixins are just groups of CSS lines that you can quickly insert anywhere in your CSS.
+		(More complex mixins can also accept inputs and essentially serve as CSS functions, but you probably won't need to worry about those often.)
+		<br/><br/>
+		In LESS, every class is a mixin. Simply reference the name of a class inside a CSS rule, and the CSS lines listed under that class will be duplicated in the rule.
+		See this page's <code>.less</code> file for examples.
+		<br/><br/>
+		This website uses LESS, not SCSS, so I can't provide a working example of SCSS mixins here, but I can describe the syntax.
+		In SCSS, mixins are created using <code>@mixin</code> and used with <code>@include</code> as follows:<br/><br/>
+		<code>
+			@mixin my-mixin<br/>
+			{<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;color: black;<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;border: solid 1px black;<br/>
+			}<br/>
+			.example-class<br/>
+			{<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;@include my-mixin;<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;[Additional styles here]<br/>
+			}
+		</code>
+		<br/><br/>
+		In the example above, when the SCSS is compiled into CSS (which is one of the many tasks performed by <code>grunt</code> in Mean Seed),
+		the CSS rule for example-class would be<br/><br/>
+		<code>
+			.example-class<br/>
+			{<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;color: black;<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;border: solid 1px black;<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;[Additional styles here]<br/>
+			}
+		</code>
+		<br/><br/>
+		LESS mixins work exactly the same way - they are compiled into CSS by <code>grunt</code>, with the mixin's styles inserted where specified.
+		<br/><br/>
+		Mixins can be extremely useful for keeping your CSS in sync. They allow you to place the same CSS into multiple class rules,
+		and you can later change that CSS for all of those classes with ease by simply editing the mixin.
+		Mixins with inputs are also very helpful for handling <a ng-href = '{{appPathLink + "css-vendor-prefix"}}' target = '_blank'>vendor-prefixed properties</a>.
+		(Most such mixins have already been written for you in Mean Seed, by the way).
+		<br/><br/>
+		<div class = 'css-mixin-example1'>
+			These two divs have different classes,
+		</div>
+		<div class = 'css-mixin-example2'>
+			but some of their properties are kept in sync with a mixin.
+		</div>
+		
+	</div>
+		
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
+</div>

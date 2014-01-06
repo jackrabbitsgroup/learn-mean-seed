@@ -381,6 +381,20 @@ $routeProvider.when(appPathRoute+'angular-test-scope-on', {templateUrl: pagesPat
 			}
 		}
 	});
+$routeProvider.when(appPathRoute+'css-vendor-prefix', {templateUrl: pagesPath+'css/css-vendor-prefix/css-vendor-prefix.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'css-mixin', {templateUrl: pagesPath+'css/css-mixin/css-mixin.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
 //end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 

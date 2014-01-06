@@ -1,3 +1,45 @@
-<div ng-controller='CssTransitionCtrl'>
-	css-transition
+<div class = 'lesson' ng-controller='CssTransitionCtrl'>
+	<div class = 'lesson-title'> CSS Transitions</div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'css/transitions'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		The <code>transition</code> property is used to smoothly adjust another CSS property from one value to another.
+		Though this can be done with virtually any property, it only truly makes sense with properties that can have intermediate values,
+		such as width and height (or anything else with a numerical value, for that matter), and also colors.
+		<br/><br/>
+		<code>transition</code>, as of 2013, is still a <a ng-href = '{{appPathLink + "css-vendor-prefix"}}' target = '_blank'>vendor-prefixed property</a>.
+		Thus, in Mean Seed, we use a <a ng-href = '{{appPathLink + "css-mixin"}}' target = '_blank'>mixin</a> to create transition effects.
+		The LESS version of this mixin (which is aptly named 'transition') looks like this:
+		<br/><br/>
+		<code>.transition(background-color 2s ease 1s);</code>
+		<br/><br/>
+		The first input is the property to be transitioned (you can use <code>all</code> to have the transition apply to everything).<br/>
+		The second input is the transition duration - the amount of time it takes for the property to transition from its old value to its new value.<br/>
+		The third input is a timing function, which has to do with the transition's speed.
+		<code>ease</code> and <code>linear</code> should cover almost all your needs here;
+		<a ng-href = 'http://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp'>W3Schools</a> can tell you more if that's not enough.<br/>
+		The fourth input is the delay - the time between when the transition is triggered and when it actually begins.
+		<br/><br/>
+		To create a transition effect, first apply the mixin to the element in question.
+		Now the browser will 'watch' the specified property on that element; whenever the value of the property changes, the transition will kick in.
+		Changing the property value is typically done by adjusting the element's classes somehow, which usually requires Javascript.
+		It can also be done with pure CSS using the <a ng-href = '{{appPathLink + "css-pclasses-hover"}}' target = '_blank'>hover pseudo-class</a>.
+		Here are some examples:
+		<br/><br/>
+		<div class = 'css-transition-example1'> Hover here!<br/><code>.transition(all 5s ease 1s);</code></div>
+		<br/>
+		<!-- This next example uses Javascript with Angular to change the class whenever the div is clicked -->
+		<div class = 'css-transition-example2 {{click_class}}' ng-click = 'changeClass()'>
+			Click here, several times!<br/>
+			<code>.transition(all 1s linear 0s);</code><br/>
+			Current class: {{click_class}}
+		</div>
+
+	</div>
+		
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
 </div>

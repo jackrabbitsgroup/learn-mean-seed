@@ -1,1 +1,39 @@
 /* css-transition */
+
+.css-transition-example1
+{
+	.transition(all 5s ease 1s);
+	width: 300px;
+	height: 60px;
+	background-color: white;
+	color: black;
+	border: solid 1px black;
+}
+.css-transition-example1:hover
+{
+	width: 600px;
+	height: 200px;
+	background-color: black;
+	color: white;
+}
+
+.css-transition-example2
+{
+	width: 300px;
+	height:200px;
+	background-color: #66FF99;
+	border: solid 1px black;
+	.transition(all 1s ease 0s);
+}
+.css-transition-example2.clicked-once
+{
+	border: dashed 5px #99CCFF;
+	background-color: #FF9999;
+}
+.css-transition-example2.clicked-twice
+{
+	width: 560px;
+	height: 250px;
+	padding: 20px;
+	background-color: #FF9999;
+}

@@ -1,0 +1,31 @@
+<div class = 'lesson' ng-controller='CssVendorPrefixCtrl'>
+	<div class = 'lesson-title'> CSS Vendor-Prefixed Properties</div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'css/vendor-prefix'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		There are a number of CSS properties that are not supported as-is by all browsers.
+		In these situations, browsers often support their own special version of the property instead.
+		These special versions are named the same as the original property, except with a browser-specific prefix attached.
+		Such properties are called 'vendor-prefixed'.
+		<br/><br/>
+		Mozilla Firefox uses the <code>-moz-</code> prefix, Google Chrome, Android, and Apple devices use the <code>-webkit-</code> prefix,
+		Opera uses the <code>-o-</code> prefix, and Internet Explorer uses the <code>-ms-</code> prefix.
+		<br/><br/>
+		As web developers, vendor-prefixed properties can be a bit annoying because they require us to write the same property multiple times -
+		once for every version of the property - else our CSS will not work in certain browsers.
+		In Mean Seed, we avoid this by using <a ng-href = '{{appPathLink + "css-mixin"}}' target = '_blank'>mixins</a> for such properties;
+		we write the value we want once, and the mixin adds all of the vendor-prefixed lines for us.
+		<br/><br/>
+		Some notable properties that require vendor prefixes as of 2013 include <code>transition</code>, <code>box-shadow</code>, <code>transform</code>,
+		and nearly every property related to flexbox.
+		As time goes on, browsers will update and some of these properties may no longer require prefixes;
+		for example, at the time of this writing, <code>-webkit-box-shadow</code> is the only prefix required for <code>box-shadow</code> CSS to work -
+		Firefox, Opera, and IE no longer need a prefix for this property.
+	</div>
+		
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
+</div>
