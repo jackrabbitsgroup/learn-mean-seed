@@ -356,6 +356,25 @@
 									"layout.spec.js"
 								]
 							}
+						},
+						{
+							"name": "angular",
+							"dirs": [
+								{
+									"name": "angular-test",
+									"files": {
+										"js": [
+											"angular-test.js"
+										],
+										"testUnit": [
+											"angular-test.spec.js"
+										],
+										"less": [
+											"angular-test.less"
+										]
+									}
+								}
+							]
 						}
 					]
 				},
@@ -616,6 +635,23 @@
 													}
 												}
 											]
+										},
+										{
+											"name": "angular-test-element-find",
+											"files": {
+												"html": [
+													"angular-test-element-find.html"
+												],
+												"js": [
+													"AngularTestElementFindCtrl.js"
+												],
+												"testUnit": [
+													"AngularTestElementFindCtrl.spec.js"
+												],
+												"less": [
+													"angular-test-element-find.less"
+												]
+											}
 										}
 									]
 								}

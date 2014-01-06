@@ -1,0 +1,42 @@
+<div class='lessons' ng-controller='AngularTestElementFindCtrl'>
+	<div class ='lesson-title'>Finding Elements</div>
+	<div class ='lesson-location'>
+		{{pagesFullPath + 'angular/test/angular-test/element-find'}}
+		<br />{{directivesFullPath + 'angular/angular-test'}}
+	</div>
+	<div class ='lesson-summary'>
+		Using jqLite selectors to access elements when testing
+	</div>
+	
+	<div class ='lesson-prereqs'>
+		<h4>Prereqs:</h4>
+		<a class='a-block' ng-href='{{appPathLink}}docs-testing'>Docs Testing</a>
+		<a class='a-block' ng-href='{{appPathLink}}docs-testing-jasmine'>Docs Testing Jasmine</a>
+		<a class='a-block' ng-href='http://docs.angularjs.org/api/angular.element'>Angular Element</a>
+	</div>
+	
+	<div class ='lesson-body'>
+		<div>Angular uses jqLite (a subset of jQuery) to find elements. It's very similar to CSS selectors used to access an element - use a combination of element tags and attributes (i.e. class names), including nesting to find sub-elements, to get a hold of a particular element. Once you have the correct element, you can use it for many things when writing your tests, but some common easy ones are confirming the DOM / layout is setup properly.</div>
+		<div>Syntax for finding elements:</div>
+		<div class='margin-l'>
+			<div><code>.find([one or more selectors])</code></div>
+			<div>I.e. <code>.find('div.class-one div.class-two')</code></div>
+		</div>
+		<div>Some <code>expect</code> matchers:</div>
+		<div class='margin-l'>
+			<div><code>.length</code></div>
+			<div><code>.text()</code></div>
+			<div><code>.toHaveClass()</code></div>
+			<div><code>.not.toHaveClass()</code></div>
+		</div>
+	</div>
+	
+	<div class ='lesson-challenges'>
+		<h4>Challenges:</h4>
+		<div>1. [Task #1 - add as many as needed]</div>
+	</div>
+	
+	<div class ='lesson-sandbox'>
+		
+	</div>
+</div>

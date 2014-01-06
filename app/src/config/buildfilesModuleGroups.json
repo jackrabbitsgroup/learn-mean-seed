@@ -39,6 +39,9 @@
 	"testsUnitNoLessons": {
 		"modules":["_all"],
 		"skipModules": ["build", "buildTemp", "test",
+		
+			"modules.directives.angular.angular-test",
+			
 			"modules.pages.docs",
 			"modules.pages.toc",
 			"modules.pages.css.css-intro",
@@ -56,13 +59,17 @@
 			"modules.pages.angular.directive.use.forminput.angular-forminput-basic",
 			"modules.pages.angular.controller.test.scope.angular-controller-test-scope",
 			"modules.pages.angular.test.scope-digest.angular-test-scope-digest",
-			"modules.pages.angular.test.scope-on.angular-test-scope-on"
+			"modules.pages.angular.test.scope-on.angular-test-scope-on",
+			"modules.pages.angular.test.angular-test-element-find"
 		]
 	},
 	"testsKarmaCovNoLessons": {
 		"modules":["_all"],
 		"skipModules":["build", "buildTemp", "buildTempCss", "bower.minified", "lib.minified", "bower.nonMinified", "lib.nonMinified", "test",
 			"common.js",
+			
+			"modules.directives.angular.angular-test",
+			
 			"modules.pages.docs",
 			"modules.pages.toc",
 			"modules.pages.css.css-intro",
@@ -80,12 +87,15 @@
 			"modules.pages.angular.directive.use.forminput.angular-forminput-basic",
 			"modules.pages.angular.controller.test.scope.angular-controller-test-scope",
 			"modules.pages.angular.test.scope-digest.angular-test-scope-digest",
-			"modules.pages.angular.test.scope-on.angular-test-scope-on"
+			"modules.pages.angular.test.scope-on.angular-test-scope-on",
+			"modules.pages.angular.test.angular-test-element-find"
 		]
 	},
 	"testsLessons": {
 		"comment": "Karma Unit tests will error if no tests so make sure there's at least one!",
 		"modules": [
+			"__modules.directives.angular.angular-test",
+			
 			"__modules.pages.docs",
 			"__modules.pages.toc",
 			"__modules.pages.css.css-intro",
@@ -103,7 +113,8 @@
 			"__modules.pages.angular.directive.use.forminput.angular-forminput-basic",
 			"__modules.pages.angular.controller.test.scope.angular-controller-test-scope",
 			"__modules.pages.angular.test.scope-digest.angular-test-scope-digest",
-			"modules.pages.angular.test.scope-on.angular-test-scope-on"
+			"__modules.pages.angular.test.scope-on.angular-test-scope-on",
+			"modules.pages.angular.test.angular-test-element-find"
 		]
 	}
 }
