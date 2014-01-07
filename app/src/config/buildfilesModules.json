@@ -1264,6 +1264,28 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "misc-tips",
+							"dirs": [
+								{
+									"name": "web-debugger",
+									"files": {
+										"html": [
+											"web-debugger.html"
+										],
+										"js": [
+											"WebDebuggerCtrl.js"
+										],
+										"testUnit": [
+											"WebDebuggerCtrl.spec.js"
+										],
+										"less": [
+											"web-debugger.less"
+										]
+									}
+								}
+							]
 						}
 					]
 				}

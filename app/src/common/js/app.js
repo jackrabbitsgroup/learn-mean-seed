@@ -402,6 +402,13 @@ $routeProvider.when(appPathRoute+'angular-test-element-find', {templateUrl: page
 			}
 		}
 	});
+$routeProvider.when(appPathRoute+'web-debugger', {templateUrl: pagesPath+'misc-tips/web-debugger/web-debugger.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
 //end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 

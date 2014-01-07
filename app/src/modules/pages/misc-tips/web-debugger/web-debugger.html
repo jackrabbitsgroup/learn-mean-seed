@@ -1,0 +1,61 @@
+<div class = 'lesson' ng-controller='WebDebuggerCtrl'>
+	<div class = 'lesson-title'> Protip: Web Debuggers</div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'misc-tips/web-debugger'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		The web debugger, also known as 'developer tools' or 'web inspector', is a ridiculously useful tool that no web coder should be without.
+		It allows you to see error messages, view (and edit!) a page's rendered html and CSS, step-through debug Javascript, and more.
+		<br/><br/>
+		Debuggers vary a bit from browser to browser, but the concept and basic structure is the same.
+		Chrome, Safari, and Firefox come with a debugger pre-installed and ready-to-use,
+		and even Internet Explorer has one, though it's weak in comparison.
+		I, however, highly recommend Firebug, a downloadable plugin for debugging in Firefox, but that may be just a matter of personal preference.
+		<br/><br/>
+		To activate the debugger (in most browsers), simply bring up the context menu (that means right-clicking the page, for Windows users),
+		and select 'Inspect Element'. This will open a new panel on your screen,
+		giving you access to a wide range of information organized across several tabs. Go ahead and try it now, on this page.
+		The tabs you care most about are 'Console', 'Elements' (called 'HTML' in Firebug, 'Inspector' in Firefox's default), and 'Scripts' ('Debugger' in Firefox's default).
+		<br/><br/>
+		You'll start on the 'Elements' tab, where you can see all of the page's rendered HTML.
+		Clicking on one of the elements in this tab will select it, allowing you to see additional information about it in the panel on the right.
+		(The element you right-clicked when opening the web debugger will be selected initially).
+		<br/><br/>
+		Familiarize yourself with these panels, because they are a CSS writer's absolute best friend.
+		Not only can you quickly view all CSS rules and styles being applied to the selected element, but you can <i>edit</i> them, too!
+		This allows you to preview any CSS changes you may be considering, and see their effects without even touching your <code>.less</code> (or <code>.scss</code>) files.
+		You can tweak your styles in the browser window to your heart's content and then, once satisfied with the result, mirror your changes in your files.
+		This is about a thousand times faster than editing your files, saving, running <code>grunt</code>, and then reloading the page to see your adjustments.
+		And if you make a terrible mistake in the debugger, no problem! You can always simply reload the page, and you'll be back to where you started.
+		<br/><br/>
+		The 'Console' tab is where you go to view error messages as well as any and all data that has been logged with Javascript's <code>console.log()</code>.
+		(If you haven't learned anything about Javascript yet, feel free to come back to this later.)
+		You should find some such data there now; if not, just refresh the page while the debugger is active.
+		This is the first place to go if you think your page is broken or not responding - check for error messages!
+		Sometimes the error messages aren't very helpful, but other times they'll tell you exactly what went wrong and where.
+		<br/><br/>
+		The 'Scripts' tab is where you go to debug your Javascript, using breakpoints, Step Overs, Step Intos, etc.
+		- coders experienced with other languages will probably be right at home here.
+		For the rest of you, know that this tab will allow you go through your Javascript code one line at a time.
+		Simply click a line to insert a breakpoint; when the code reaches that line, it will pause,
+		allowing you to inspect variable values and such at that point in time.
+		From there, you can use the various 'Step' buttons in the top right to walk through your code piece by piece.
+		Needless to say, this is ideal for pinpointing errors and other bugs.
+		<br/><br/>
+		Here are some divs for you to play around with in the 'Elements' tab.
+		<br/><br/>
+		<div class = 'web-debugger-example1'>
+			Try editing my width, and give me some <code>padding</code>!<br/>
+			Most debuggers will let you highlight a CSS property's value and then cycle through possible values with the arrow keys.
+		</div>
+		<br/>
+		<div class = 'web-debugger-example2'>
+			That arrow-key trick works with colors, too! Try it on my background color.
+		</div>
+	</div>
+		
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
+</div>
