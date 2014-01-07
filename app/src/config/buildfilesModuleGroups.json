@@ -94,7 +94,7 @@
 	"testsLessons": {
 		"comment": "Karma Unit tests will error if no tests so make sure there's at least one!",
 		"modules": [
-			"__modules.directives.angular.angular-test",
+			"modules.directives.angular.angular-test",
 			
 			"__modules.pages.docs",
 			"__modules.pages.toc",

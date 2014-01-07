@@ -39,7 +39,7 @@ angular.module('app').directive('appAngularTest', [ function () {
 				"<div>"+
 					"<a ng-href='badlink'>Anchor here</a>"+
 					"<span class='angular-test-span'>SECOND Span Content Here</span>"+
-					"<div ng-repeat='item in items'>"+
+					"<div class='angular-test-items' ng-repeat='item in items'>"+
 						"<div>{{item.title}}</div>"+
 						"<div class='angular-test-item-html'>{{item.html}}</div>"+
 					"</div>"+
