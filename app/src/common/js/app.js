@@ -409,6 +409,20 @@ $routeProvider.when(appPathRoute+'web-debugger', {templateUrl: pagesPath+'misc-t
 			}
 		}
 	});
+$routeProvider.when(appPathRoute+'js-intro', {templateUrl: pagesPath+'js/js-intro/js-intro.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'js-variables', {templateUrl: pagesPath+'js/js-variables/js-variables.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
 //end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 

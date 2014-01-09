@@ -1,0 +1,45 @@
+<div class = 'lesson' ng-controller='JsVariablesCtrl'>
+	<div class = 'lesson-title'> JS: Variables </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'js/js-variables'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		Variables are one of the most basic parts of javascript. They are used to store data.
+		They should be declared before being used (though browsers usually aren't very strict about enforcing this rule), as in
+		<br/><br/>
+		<code> var my_variable; </code>
+		<br/><br/>
+		In this example, a variable named <code>my_variable</code> is created; <code>var</code> is a Javascript keyword for creating variables.
+		The value of <code>my_variable</code> is currently <code>undefined</code> (which is a special value in javascript).
+		We can now assign it any value we like, and re-assign it to another value at any time.
+		Variables in Javascript are not bound by data type; any variable can store any type of data at any time,
+		be it a number, a string, an array, an object, or even a function!
+		(That's right - functions are data in javascript, so you can pass them around as function inputs or what-have-you, like any other piece of data).
+		<br/><br/>
+		Variable assignments in javascript are made using the syntax <code>variable = expression;</code>, which should be familiar to experienced coders.
+		The value to the left of the <code>=</code> sign is always the name of the variable that you want to make an assignment to.
+		The value to the right is some javascript expression; this expression will be evaluated, and then the result will be stored in the variable,
+		overwriting any value currently in the variable.
+		<br/><br/>
+		Variable names (and also function names) in javascript <b>must</b> begin with $, _, or a letter. They may contain numbers, letters, and $ or _.
+		They may NOT contain other symbols, notably spaces and -.
+		(You might want to use hyphens in your variable names, but the browser would mistake this for subtraction.)
+		Variable names are case-sensitive and can be any length. They cannot be the same as one of Javascript's reserved words.
+		<br/><br/>
+		Though the browser does not care what you name your variables (so long as you follow the rules above), humans do.
+		Try to name your variables intelligently, so that you and others know what each variable is for, but also try to keep the name from being ridiculously long.
+		<br/><br/>
+		In Mean Seed, we tend to use the convention of naming variables with underscores as word separators
+		(as in <code>my_variable</code>, not <code>myvariable</code> or <code>myVariable</code>)
+		and naming functions in camelCase (as in <code>myFunction</code>, not <code>my_function</code>),
+		though these are not strict rules by any means.
+		<br/><br/>
+		Be sure to check out this page's Ctrl file!
+		
+	</div>
+		
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
+</div>

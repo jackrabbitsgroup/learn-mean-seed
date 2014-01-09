@@ -1286,6 +1286,45 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "js",
+							"dirs": [
+								{
+									"name": "js-intro",
+									"files": {
+										"html": [
+											"js-intro.html"
+										],
+										"js": [
+											"JsIntroCtrl.js"
+										],
+										"testUnit": [
+											"JsIntroCtrl.spec.js"
+										],
+										"less": [
+											"js-intro.less"
+										]
+									}
+								},
+								{
+									"name": "js-variables",
+									"files": {
+										"html": [
+											"js-variables.html"
+										],
+										"js": [
+											"JsVariablesCtrl.js"
+										],
+										"testUnit": [
+											"JsVariablesCtrl.spec.js"
+										],
+										"less": [
+											"js-variables.less"
+										]
+									}
+								}
+							]
 						}
 					]
 				}

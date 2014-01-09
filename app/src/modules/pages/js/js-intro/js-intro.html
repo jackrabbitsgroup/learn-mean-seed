@@ -1,0 +1,38 @@
+<div class = 'lesson' ng-controller='JsIntroCtrl'>
+	<div class = 'lesson-title'> Introduction to Javascript </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'js/js-intro'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		HTML and CSS can put elements on a webpage for the user to see, but Javascript is what lets a page <i>do</i> something.
+		Javascript is what handles all the behind-the-scenes logic of a webpage;
+		it's where you put your functions and variables, handle data, interface with the server, etc.
+		People with prior coding experience will probably feel right at home with Javascript's syntax and structure.
+		<br/><br/>
+		In Angular, your Javascript code will typically be placed in a Controller, Service, or Directive.
+		You won't need to worry much about writing services or directives for a while, though, so we'll focus on controllers for now.
+		<br/><br/>
+		A controller is a Javascript function that governs a block of HTML, designated using <code>ng-controller</code>.
+		In Mean Seed, every page has its own controller, and each of these controllers is its own file.
+		You can easily tell that a file holds a controller because its name will end in <code>Ctrl.js</code>.
+		<br/><br/>
+		The importance of Javascript scales with the complexity of the webpage.
+		A simple page like this one, which just needs to display "static" content (meaning nothing changes in response to user inputs),
+		doesn't require any Javascript at all.
+		Pages that aim to interact with a user, though, will tend to require more and more behind-the-scenes logic, and that's where Javascript shines.
+		<br/><br/>
+		Here's a simple example of some basic Javascript in action (in conjuction with Angular).
+		Be sure to look at this page's controller file!
+		Don't worry too much about how it works, though. We'll cover all of that in future lessons.
+		<br/><br/>
+		<div class = 'btn btn-info' ng-click = 'increment()'>Click Me!</div>
+		<br/>
+		Clicked {{click_text}}!
+		
+	</div>
+		
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
+</div>
