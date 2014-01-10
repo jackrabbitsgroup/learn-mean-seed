@@ -1323,6 +1323,125 @@
 											"js-variables.less"
 										]
 									}
+								},
+								{
+									"name": "js-functions",
+									"files": {
+										"html": [
+											"js-functions.html"
+										],
+										"js": [
+											"JsFunctionsCtrl.js"
+										],
+										"testUnit": [
+											"JsFunctionsCtrl.spec.js"
+										],
+										"less": [
+											"js-functions.less"
+										]
+									}
+								},
+								{
+									"name": "js-arrays",
+									"files": {
+										"html": [
+											"js-arrays.html"
+										],
+										"js": [
+											"JsArraysCtrl.js"
+										],
+										"testUnit": [
+											"JsArraysCtrl.spec.js"
+										],
+										"less": [
+											"js-arrays.less"
+										]
+									}
+								},
+								{
+									"name": "js-objects",
+									"files": {
+										"html": [
+											"js-objects.html"
+										],
+										"js": [
+											"JsObjectsCtrl.js"
+										],
+										"testUnit": [
+											"JsObjectsCtrl.spec.js"
+										],
+										"less": [
+											"js-objects.less"
+										]
+									}
+								},
+								{
+									"name": "js-operators",
+									"files": {
+										"html": [
+											"js-operators.html"
+										],
+										"js": [
+											"JsOperatorsCtrl.js"
+										],
+										"testUnit": [
+											"JsOperatorsCtrl.spec.js"
+										],
+										"less": [
+											"js-operators.less"
+										]
+									}
+								},
+								{
+									"name": "js-logic",
+									"files": {
+										"html": [
+											"js-logic.html"
+										],
+										"js": [
+											"JsLogicCtrl.js"
+										],
+										"testUnit": [
+											"JsLogicCtrl.spec.js"
+										],
+										"less": [
+											"js-logic.less"
+										]
+									}
+								},
+								{
+									"name": "js-loops",
+									"files": {
+										"html": [
+											"js-loops.html"
+										],
+										"js": [
+											"JsLoopsCtrl.js"
+										],
+										"testUnit": [
+											"JsLoopsCtrl.spec.js"
+										],
+										"less": [
+											"js-loops.less"
+										]
+									}
+								},
+								{
+									"name": "js-math",
+									"files": {
+										"html": [
+											"js-math.html"
+										],
+										"js": [
+											"JsMathCtrl.js"
+										],
+										"testUnit": [
+											"JsMathCtrl.spec.js"
+										],
+										"less": [
+											"js-math.less"
+										]
+									}
 								}
 							]
 						}

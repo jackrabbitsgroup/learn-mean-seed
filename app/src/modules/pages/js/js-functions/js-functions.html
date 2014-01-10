@@ -1,0 +1,40 @@
+<div class = 'lesson' ng-controller='JsFunctionsCtrl'>
+	<div class = 'lesson-title'> JS: Functions </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'js/js-functions'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		A function is a set of lines of code. A function can be made to do just about anything,
+		but most coders will create a function to perform a specific, isolated task.
+		Functions can accept inputs and can return a value, but need not do either.
+		Functions are extremely useful for purposes of <b>abstraction</b>, <b>modularization<b/>, and reusability.
+		<br/><br/>
+		Abstraction (where functions are concerned) is akin to the idea of a function as a "black box".
+		You know that if you give it some particular input, you'll get some particular output, and so long as it works,
+		you do not care nor do you need to know how it does so.
+		In this way, a well-written function can save you and others from worrying about sticky details:
+		create a function that performs some complex task and verify that it works,
+		and from then on you can just use that function for that task.
+		You don't have to re-solve the complex problem every time, and anyone else using your function never needs to solve it at all.
+		<br/><br/>
+		Modularization is the concept of isolating pieces of code that perform a task independent of the surrounding code.
+		This can aid with both organization and abstraction; rather than put all of your code in one big row of lines,
+		you can break it up into several tasks with a function for each task, and then simply call the functions in sequence.
+		Even if the functions are only called once, this can still be very helpful for keeping everything organized.
+		If you discover a bug in one of the tasks, for example, you know exactly what function to start looking in,
+		and anyone else using your code will have an easier time of it as well.
+		<br/><br/>
+		Reusability simply refers to the fact that you can call a function as many times as you like.
+		If you find yourself running the same 5 lines of code again and again in a bunch of places,
+		try wrapping it in a function and using that instead.
+		Not only does this slim down your code and save you time,
+		but it also allows you to change those 5 lines everywhere at once, should you ever need to.
+	</div>
+		
+	<div class = 'lesson-challenges'>
+		<h4> Challenges: </h4>
+		1. Write a <code>createParabola</code> function that takes three inputs, a, b, and c, and returns the function <code>f(x) = ax^2 + bx + c</code>.
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
+</div>

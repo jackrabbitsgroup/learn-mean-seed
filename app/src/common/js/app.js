@@ -423,6 +423,55 @@ $routeProvider.when(appPathRoute+'js-variables', {templateUrl: pagesPath+'js/js-
 			}
 		}
 	});
+$routeProvider.when(appPathRoute+'js-functions', {templateUrl: pagesPath+'js/js-functions/js-functions.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'js-arrays', {templateUrl: pagesPath+'js/js-arrays/js-arrays.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'js-objects', {templateUrl: pagesPath+'js/js-objects/js-objects.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'js-operators', {templateUrl: pagesPath+'js/js-operators/js-operators.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'js-logic', {templateUrl: pagesPath+'js/js-logic/js-logic.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'js-loops', {templateUrl: pagesPath+'js/js-loops/js-loops.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'js-math', {templateUrl: pagesPath+'js/js-math/js-math.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
 //end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 
