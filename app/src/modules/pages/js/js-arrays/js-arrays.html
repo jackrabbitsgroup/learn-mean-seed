@@ -1,3 +1,27 @@
-<div ng-controller='JsArraysCtrl'>
-	js-arrays
+<div class = 'lesson' ng-controller='JsArraysCtrl'>
+	<div class = 'lesson-title'> JS: Arrays </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'js/js-arrays'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		Arrays are a useful way of storing data, and should be familiar to experienced coders.
+		An array is a list of 'elements' (pieces of data), in some order.
+		Each element has a specific index in the array; the first element is at index 0.
+		Elements in an array can be of any data type - number, string, function, object, array, etc.
+		<br/><br/>
+		Arrays in Javascript are really just a special type of <a ng-href = '{{appPathLink + "js-objects"}}'>object</a> that Javascript provides native support for,
+		which is why the syntax is so similar.
+		You don't need to worry about this relationship too much, though, since Javascript handles those details for you.
+		<br/><br/>
+		Javascript provides several methods for dealing with arrays.
+		You can find the full list at <a href ='http://www.w3schools.com/jsref/jsref_obj_array.asp'>W3Schools</a>.
+		The most commonly used (and therefore important to know) methods are <code>indexOf</code>, <code>push</code>, <code>sort</code>, and <code>splice</code>.
+		<br/><br/>
+		See this page's Ctrl file for more information.
+	</div>
+		
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
 </div>
