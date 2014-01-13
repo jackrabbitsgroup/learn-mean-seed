@@ -39,7 +39,7 @@ function($scope)
 	//When the loop is complete, my_array will be [5, 1, 7, 8, 9]
 	
 	//There is a second type of 'for' loop, used with objects. The syntax is a bit simpler.
-	var my_object = {'prop1': 1, 'prop2': 2; 'prop3': 40 };
+	var my_object = {'prop1': 1, 'prop2': 2, 'prop3': 40 };
 	
 	var xx;
 	for(xx in my_object)
