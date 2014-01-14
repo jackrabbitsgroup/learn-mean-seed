@@ -472,6 +472,13 @@ $routeProvider.when(appPathRoute+'js-math', {templateUrl: pagesPath+'js/js-math/
 			}
 		}
 	});
+$routeProvider.when(appPathRoute+'js-recursion', {templateUrl: pagesPath+'js/js-recursion/js-recursion.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
 //end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 

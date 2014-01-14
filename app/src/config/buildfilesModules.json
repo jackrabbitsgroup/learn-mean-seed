@@ -1442,6 +1442,23 @@
 											"js-math.less"
 										]
 									}
+								},
+								{
+									"name": "js-recursion",
+									"files": {
+										"html": [
+											"js-recursion.html"
+										],
+										"js": [
+											"JsRecursionCtrl.js"
+										],
+										"testUnit": [
+											"JsRecursionCtrl.spec.js"
+										],
+										"less": [
+											"js-recursion.less"
+										]
+									}
 								}
 							]
 						}
