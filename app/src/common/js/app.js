@@ -479,6 +479,27 @@ $routeProvider.when(appPathRoute+'js-recursion', {templateUrl: pagesPath+'js/js-
 			}
 		}
 	});
+$routeProvider.when(appPathRoute+'angular-intro', {templateUrl: pagesPath+'angular-basics/angular-intro/angular-intro.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'ang-scope', {templateUrl: pagesPath+'angular-basics/ang-scope/ang-scope.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'ang-directives-intro', {templateUrl: pagesPath+'angular-basics/directives/ang-directives-intro/ang-directives-intro.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
 //end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 

@@ -1,0 +1,52 @@
+<div class = 'lesson' ng-controller='AngScopeCtrl'>
+	<div class = 'lesson-title'> Angular Basics: Scope </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'angular-basics/ang-scope'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		Scope is easily the most useful feature that Angular has to offer.
+		It bridges the gap between HTML and Javascript, allowing you to reference Javascript variables directly from HTML.
+		Here's an example. Be sure to check both the HTML and Ctrl file for this page:
+		<br/><br/>
+		{{text}}
+		<!--
+			The double curly brackets tell Angular to treat the code inside as Javascript.
+			Inside these brackets, you have access to any values you've attached to the $scope.
+			In the example above, we simply reference a single variable, 'text', so it just displays the value of the controller's '$scope.text'.
+		-->
+		<br/><br/>
+		<code>$scope</code> is really just a special Javascript object created by Angular,
+		and what we call <code>$scope</code> variables are just properties that we attach to that object.
+		<br/><br/>
+		The data binding for <code>$scope</code> variables works two ways and updates automatically.
+		That means that if a <code>$scope</code> variable's value changes in the Javascript controller,
+		that change will be reflected in the HTML immediately.
+		It also means that if you change the variable from the HTML, the Javascript <code>$scope</code> variable's value will immediately change as well.
+		Here are some examples:
+		<br/><br/>
+		<div class = 'ang-scope-example1 {{example1.class_name}}' ng-click = 'toggleExample1()'> Click me to change my background color to {{example1.text}} </div>
+		<br/>
+		<div class = 'ang-scope-example2' ng-click = 'click_count = click_count + 1'> Click Me!<br/>{{"Clicked " + click_count + " times!"}}</div>
+		<br/>
+		As you may or may not realize, this two-way auto-update binding is <b><i>ridiculously</i></b> useful.
+		Traditionally, updating HTML via Javascript isn't so simple; it can become extremely tedious and annoying.
+		Angular, however, makes it trivially easy.
+		<br/><br/>
+		<code>$scope</code> is local to its controller.
+		You cannot access a <code>$scope</code> variable from HTML outside of the controller's div - that's the div with <code>ng-controller='InsertNameHereCtrl'</code> on it.
+		HTML inside of this div is said to be 'in the scope of the controller'.
+		
+	</div>
+		
+	<div class = 'lesson-challenges'>
+		<h4>Challenges</h4>
+		1. A button has been made for you in the sandbox. Clicking it will execute an empty function in the controller.
+		There is also a blank div in the sandbox. Using <code>$scope</code> variables, fill in this function and this div so that the div is blank before the button is clicked,
+		but gets a background color, border, and text of your choosing after the button is clicked. You may create any CSS rules you deem necessary.
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		<div class = 'ang-scope-sandbox-btn btn btn-info' ng-click = 'sandboxFunction()'> Click to run sandboxFunction </div>
+		<br/>
+		<div></div>
+	</div>
+</div>

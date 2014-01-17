@@ -1,0 +1,30 @@
+<div class = 'lesson' ng-controller='AngularIntroCtrl'>
+	<div class = 'lesson-title'> Introduction to AngularJS </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'angular-basics/angular-intro'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		AngularJS is an advanced Javascript framework, built by people at Google.
+		It makes building websites much, much easier;
+		in particular, it cuts away much of the difficulty of linking Javascript to HTML with its directives and two-way data binding.
+		Angular mostly eliminates the need for Jquery, for those of you who have built websites before.
+		<br/><br/>
+		Angular is typically used to create <i>single-page apps</i>, which means that the page does not reload when navigating around the site;
+		rather, the page's interior content changes, switching between various HTML templates created by you as the browser's url changes.
+		Because single-page apps do not need to reload everything with every page change, they tend to be much faster.
+		All Mean Seed applications are single-page apps by default.
+		<br/><br/>
+		There's a lot to Angular, but the most important things to understand are how it uses
+		<a ng-href = '{{appPathLink + "ang-scope"}}' target = '_blank'>scope</a>
+		to connect an HTML template to a Javascript controller and
+		how to use basic <a ng-href = '{{appPathLink + "ang-directives-intro"}}' target = '_blank'>directives</a>.
+		With an understanding of those and Javascript, HTML, and CSS,
+		you ought to be able to build most of the pieces of an average page.
+		
+	</div>
+		
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
+</div>

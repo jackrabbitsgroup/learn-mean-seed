@@ -1461,6 +1461,67 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "angular-basics",
+							"dirs": [
+								{
+									"name": "angular-intro",
+									"files": {
+										"html": [
+											"angular-intro.html"
+										],
+										"js": [
+											"AngularIntroCtrl.js"
+										],
+										"testUnit": [
+											"AngularIntroCtrl.spec.js"
+										],
+										"less": [
+											"angular-intro.less"
+										]
+									}
+								},
+								{
+									"name": "ang-scope",
+									"files": {
+										"html": [
+											"ang-scope.html"
+										],
+										"js": [
+											"AngScopeCtrl.js"
+										],
+										"testUnit": [
+											"AngScopeCtrl.spec.js"
+										],
+										"less": [
+											"ang-scope.less"
+										]
+									}
+								},
+								{
+									"name": "directives",
+									"dirs": [
+										{
+											"name": "ang-directives-intro",
+											"files": {
+												"html": [
+													"ang-directives-intro.html"
+												],
+												"js": [
+													"AngDirectivesIntroCtrl.js"
+												],
+												"testUnit": [
+													"AngDirectivesIntroCtrl.spec.js"
+												],
+												"less": [
+													"ang-directives-intro.less"
+												]
+											}
+										}
+									]
+								}
+							]
 						}
 					]
 				}
