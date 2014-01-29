@@ -1518,6 +1518,57 @@
 													"ang-directives-intro.less"
 												]
 											}
+										},
+										{
+											"name": "ang-directives-repeat",
+											"files": {
+												"html": [
+													"ang-directives-repeat.html"
+												],
+												"js": [
+													"AngDirectivesRepeatCtrl.js"
+												],
+												"testUnit": [
+													"AngDirectivesRepeatCtrl.spec.js"
+												],
+												"less": [
+													"ang-directives-repeat.less"
+												]
+											}
+										},
+										{
+											"name": "ang-directives-click",
+											"files": {
+												"html": [
+													"ang-directives-click.html"
+												],
+												"js": [
+													"AngDirectivesClickCtrl.js"
+												],
+												"testUnit": [
+													"AngDirectivesClickCtrl.spec.js"
+												],
+												"less": [
+													"ang-directives-click.less"
+												]
+											}
+										},
+										{
+											"name": "ang-directives-show-if",
+											"files": {
+												"html": [
+													"ang-directives-show-if.html"
+												],
+												"js": [
+													"AngDirectivesShowIfCtrl.js"
+												],
+												"testUnit": [
+													"AngDirectivesShowIfCtrl.spec.js"
+												],
+												"less": [
+													"ang-directives-show-if.less"
+												]
+											}
 										}
 									]
 								}

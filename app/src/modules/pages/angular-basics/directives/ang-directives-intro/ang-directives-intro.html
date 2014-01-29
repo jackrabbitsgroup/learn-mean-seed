@@ -1,3 +1,36 @@
-<div ng-controller='AngDirectivesIntroCtrl'>
-	ang-directives-intro
+<div class = 'lesson' ng-controller='AngDirectivesIntroCtrl'>
+	<div class = 'lesson-title'> Angular Basics: Introduction to Directives </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'angular-basics/directives/ang-directives-intro'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		Directives are Angular's most powerful tools. They are primarily used to adjust the page's DOM (html), and can accomplish a wide variety of tasks.
+		<br/><br/>
+		Directives come in many forms. Some are short and simple; others are extremely complex.
+		Learning to create your own directives is probably the most difficult thing about learning Angular;
+		fortunately, however, learning to use existing directives isn't nearly so difficult.
+		<br/><br/>
+		Angular comes with a lot of directives built-in, some of which you may have already seen,
+		like <code>ng-controller</code>, <code>ng-click</code>, or <code>ng-repeat</code>.
+		(All of Angular's default directives are prefixed with <code>ng-</code>.)
+		As you might expect from default directives, they cover nearly all basic functionality that you might want,
+		and are fairly well documented by <a href = 'http://docs.angularjs.org/api/ng#directive'>Angular's API Reference</a>.
+		These lessons will cover the more useful directives individually, though.
+		<br/><br/>
+		Directives are used from HTML. They can be activated as a class name or sometimes even as an element name, but usually they're written as an attribute:
+		<br/><br/>
+		<code>&lt;div ng-click = 'myFunction()'&gt;</code>
+		<br/><br/>
+		The code above would activate the <code>ngClick</code> directive on that div element;
+		this particular directive attaches a click event to the element in question.
+		Every directive is a bit different; the easiest way to learn to use a directive is usually just to see a working example or two.
+		Be aware that though directives are always activated from HTML,
+		they often depend on <code>$scope</code> variables in Javascript controllers for their input.
+		That means that you'll usually need to check both HTML and Javascipt in order to fully understand how a directive is being used.
+	</div>
+		
+	<div class = 'lesson-challenges'>
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
 </div>

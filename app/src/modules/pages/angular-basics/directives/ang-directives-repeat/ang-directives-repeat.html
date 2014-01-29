@@ -1,0 +1,64 @@
+<div class = 'lesson' ng-controller='AngDirectivesRepeatCtrl'>
+	<div class = 'lesson-title'> Angular Basics: ng-repeat </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'angular-basics/directives/ang-directives-repeat'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		<code>ng-repeat</code> is one of the most useful directives Angular has to offer.
+		It also tends to be the most confusing <code>ng-</code> directive for beginners.
+		<br/><br/>
+		<code>ng-repeat</code> is a bit like an HTML version of a Javascript <code>for</code> loop.
+		You give this directive an array, and it creates an HTML element for every entry in the array.
+		Here's an example - check this page's Ctrl file to see the array:
+		<br/><br/>
+		<div class = 'ang-directives-repeat-exam1' ng-repeat = 'item in my_array' style = 'background-color: {{item.bg_color}};'>
+			This is item {{$index}}.
+			<br/><br/>
+			{{item.text}}
+		</div>
+		<br/>
+		<code>ng-repeat</code> creates a copy of the element it is placed on - one copy for every element in the specified array.
+		Think of this element as a template: you can put any HTML you like inside it, and it will all be copied faithfully.
+		More importantly, you can reference the individual element's information in the template,
+		allowing you to make each copy a little bit different.
+		<br/><br/>
+		In the example above, we use <code>ng-repeat = 'item in my_array'</code>.
+		<code>my_array</code> is a Javascript array defined in our Ctrl file.
+		It has three elements, each an object with two properties, <code>bg_color</code> and <code>text</code>.
+		<code>item</code> is just the variable name we're going to use to reference the current element;
+		we could have just as easily said <code>foo in my_array</code>.
+		<br/><br/>
+		Each repeated element is given its own new <code>$scope</code>, and in this scope,
+		<code>item<code> (or <code>foo</code> or whatever the case may be) holds the current element.
+		That's why we can reference things like <code>item.bg_color</code> inside the repeated element as if it's a </code>$scope</code> variable.
+		<br/><br/>
+		<code>ng-repeat</code> also gives us <code>$index</code>, the index of the current element,
+		as well as booleans <code>$first</code>, <code>$last</code>, <code>$middle</code>, <code>$even</code>, and <code>$odd</code>.
+		These booleans are fairly self-explanatory - <code>$first</code> is true only for the first element,
+		<code>$middle</code> is true for all but the first and last elements, <code>$even</code> is true if <code>$index</code> is an even number, and so on.
+		<br/><br/>
+		As you might have guessed by now, <code>ng-repeat</code> is absurdly useful.
+		It allows you to very quickly create a template element, and then all you have to do is fill your array with entries and you'll get a copy of the template for each entry.
+		And you can add, edit, or remove entries simply by adjusting the array in Javascript; since it's a <code>$scope</code> variable, everything will update automatically.
+		<br/><br/>
+		Here's another example for you. Make sure you understand how it works!
+		<br/><br/>
+		<div class = 'center'>
+			<div class = 'ang-directives-repeat-exam2' ng-repeat = 'foo in example_array' ng-click = 'cycleBgColor($index)' style = 'background-color: {{foo.bg_color}};'>
+				Click me to change my background color to {{foo.next_color}}
+			</div>
+			<br/>
+			<div class = 'btn btn-info' ng-click = 'addElementToExampleArray()'> Add another element </div>
+		</div>
+	</div>
+		
+	<div class = 'lesson-challenges'>
+	<h4>Challenges</h4>
+		1. Make a list of at least 3 of your favorite movies. Use <code>ng-repeat</code> to display each movie's name, the year it was released,
+		and the name of your favorite character in the movie. You may write whatever CSS you wish to format it.<br/>
+		2. (Optional Bonus Round) Update your movie repeat code to additionally display an image from each movie that you found online,
+		and also display a link to the movie's IMDB or Wikipedia page.
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
+</div>

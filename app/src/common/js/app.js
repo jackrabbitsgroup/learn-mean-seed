@@ -500,6 +500,27 @@ $routeProvider.when(appPathRoute+'ang-directives-intro', {templateUrl: pagesPath
 			}
 		}
 	});
+$routeProvider.when(appPathRoute+'ang-directives-repeat', {templateUrl: pagesPath+'angular-basics/directives/ang-directives-repeat/ang-directives-repeat.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'ang-directives-click', {templateUrl: pagesPath+'angular-basics/directives/ang-directives-click/ang-directives-click.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'ang-directives-show-if', {templateUrl: pagesPath+'angular-basics/directives/ang-directives-show-if/ang-directives-show-if.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
 //end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 
