@@ -1,3 +1,48 @@
-<div ng-controller='AngDirectivesClickCtrl'>
-	ang-directives-click
+<div class = 'lesson' ng-controller='AngDirectivesClickCtrl'>
+	<div class = 'lesson-title'> Angular Basics: ng-click </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'angular-basics/directives/ang-directives-click'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		As the name implies, <code>ng-click</code> is used to add a click event to an element.
+		The syntax is very simple:
+		<br/><br/>
+		<code>ng-click = 'insertJavascriptHere'</code>
+		<br/><br/>
+		When the element with the <code>ng-click</code> on it is clicked (or tapped, in the case of touchscreens - <code>ng-click</code> handles both),
+		the specified Javascript code will be executed. In this code, you have access to <code>$scope</code> variables and the <code>$event</code>, should you need it.
+		<br/><br/>
+		Typically, you'll simply reference a single <code>$scope</code> function, as in
+		<br/><br/>
+		<code>ng-click = 'myScopeFunction("some_input")'</code>
+		<br/><br/>
+		You can put almost any basic Javascript code there, though. You can even use multiple lines of code:
+		<br/><br/>
+		<code>ng-click = 'myScopeFunction("some_input"); my_scope_variable = my_scope_variable + 1; my_other_scope_variable = false'</code>
+		<br/><br/>
+		Sometimes it's very helpful to put multiple lines of code in a click event, but in general, try to keep them to a minimum -
+		Javascript doesn't really belong in an HTML file.
+		<br/><br/>
+		Here are some examples. Make sure you understand them! Click events are the primary way that users interact with your page, after all.
+		<br/><br/>
+		<div class = 'ang-click-exam1' ng-click = 'count1 = count1 + 1'> Click to increase <code>$scope.count1</code></div>
+		<br/><br/>
+		<div class = 'ang-click-exam1' ng-click = 'incrementFunction()'> Click to decrease <code>$scope.count1</code> and increase <code>$scope.count2</code></div>
+		<br/><br/>
+		<div class = 'ang-click-exam1' ng-click = 'count1 = count1 + 5; count2 = count2 - 2'> Click to add 5 to <code>$scope.count1</code>, subtract 2 from <code>$scope.count2</code></div>
+		<br/><br/>
+		<code>$scope.count1</code>: {{count1}}
+		<br/>
+		<code>$scope.count2</code>: {{count2}}
+		
+	</div>
+		
+	<div class = 'lesson-challenges'>
+	<h4>Challenges</h4>
+		1. Using <code>ng-click</code>, put a click event on the blank div in the sandbox that sets <code>$scope.count2</code> equal to <code>count3</code>
+		and causes some text of your choosing to appear in the div.
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		<div class = 'ang-click-exam1'> </div>
+	</div>
 </div>
