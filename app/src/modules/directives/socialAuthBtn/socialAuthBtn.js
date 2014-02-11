@@ -36,13 +36,33 @@ function (appHttp, UserModel, appConfig, $rootScope, appSocialAuth) {
 			attrs =angular.extend(defaultAttrs, attrs);
 			
 			var html ="<div class='social-auth-btn-buttons center margin-t'>"+
-				"<div class='social-auth-btn-button-facebook' ng-click='fbLogin()'><i class='fa fa-facebook padding-lr social-auth-btn-button-icon'></i><div class='social-auth-btn-button-text'>"+attrs.buttonText+"</div></div>"+
-				"<div class='social-auth-btn-button-google' ng-click='googleLogin()'><i class='fa fa-google-plus padding-lr social-auth-btn-button-icon'></i><div class='social-auth-btn-button-text'>"+attrs.buttonText+"</div></div>"+
+				// "<div class='social-auth-btn-button-facebook' ng-click='fbLogin()'><i class='fa fa-facebook padding-lr social-auth-btn-button-icon'></i><div class='social-auth-btn-button-text'>"+attrs.buttonText+"</div></div>"+
+				"<div class='social-auth-btn-button-facebook' ng-click='fbLogin()'><i class='fa fa-facebook padding-lr social-auth-btn-button-icon'></i><div class='social-auth-btn-button-text'>Facebook</div></div>"+
+				"<div class='social-auth-btn-button-google' ng-click='googleLogin()'><i class='fa fa-google-plus padding-lr social-auth-btn-button-icon'></i><div class='social-auth-btn-button-text'>Google+</div></div>"+
+				"<a class='a-div social-auth-btn-button-twitter' ng-href='https://api.twitter.com/oauth/authorize?oauth_token={{twitter.requestToken}}' target='_blank'><i class='fa fa-twitter padding-lr social-auth-btn-button-icon'></i><div class='social-auth-btn-button-text'>Twitter</div></a>"+
 			"</div>";
 			return html;
 		},
 		
 		controller: function($scope, $element, $attrs) {
+			$scope.twitter ={
+				requestToken: false,
+				requestTokenSecret: false,
+				// callback_url: appConfig.cfgJson.twitter.callback_url
+			};
+			
+			/**
+			@toc 0.
+			@method init
+			*/
+			function init(params) {
+				appHttp.go({}, {url:'twitter/requestToken', data:{} }, {}, {})
+				.then(function(response) {
+					$scope.twitter.requestToken =response.result.request_token;
+					$scope.twitter.requestTokenSecret =response.result.request_token_secret;
+				});
+			}
+			
 			/**
 			Facebook login handling (in LoginCtrl which is PARENT of LoginFormCtrl and SignupFormCtrl so can use this function for BOTH login and sign up)
 			@toc 1.
@@ -103,6 +123,8 @@ function (appHttp, UserModel, appConfig, $rootScope, appSocialAuth) {
 					var dummy =1;
 				});
 			};
+			
+			init({});
 		}
 	};
 }]);

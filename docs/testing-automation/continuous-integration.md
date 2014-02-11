@@ -93,7 +93,6 @@ Summary: need 2 things:
 	- Concrete
 		- much simpler, smaller, and installs fine on Windows
 		- the regular one is good but doesn't seem to have auto Git web hooks built in so I used this fork instead:
-			- https://github.com/edy/concrete
-				- NOTE: the readme is now outdated as the username is 'edy' NOT 'edy-b' so for the first clone step, use: `git clone https://github.com/edy/concrete.git /path/to/concrete`
+			- https://github.com/jackrabbitsgroup/concrete
 		- NOTE: you MUST be the appropriate Linux/Ubuntu user with the GitHub credentials set up (via git config I believe?) otherwise it won't work and won't fail gracefully - it will just have a blank commit (since it couldn't pull anything due to lack of authorization) and give a breaking syntax error in git.js on commit[2].split line that cannot call method 'split' of undefined..
 		

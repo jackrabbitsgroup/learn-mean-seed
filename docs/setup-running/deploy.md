@@ -22,38 +22,56 @@ Then do **one** of the following:
 ### Continuous Integration (CI) with Concrete + Github
 RECOMMENDED approach!
 
+Variables used in the instructions below; replace appropriately
+
+GIT_NAME Joe Bob
+
+GIT_EMAIL youremail@gmail.com
+
+GIT_REPO_URL https://github.com/jackrabbitsgroup/my-app.git
+
+GIT_REPO_URL_PASS https://lukemadera:somepass@github.com/jackrabbitsgroup/my-app.git
+
+CONCRETE_PATH /var/www/concrete		//this is where on your server you'll install the Concrete CI server to
+
+CONCRETE_PORT 3010					//this MUST match what is set in config.json!
+
+APP_PATH /var/www/my-app			//this is where your app will be put
+
+PERMISSIONS_GROUP developers		//the (optional) linux user group to give access
+
+APP_DOMAIN someurl.com				//this can also be an ip address, i.e. xxx.xxx.xxx.xx
+
 1. create a Github repo on github.com (if you haven't already) and push to it
 2. [on new server] setup git config on the new server for your user
-	1. `git config --global user.name "<your name>"`
-		1. i.e. git config --global user.name "Joe Bob"
-	2. `git config --global user.email "<your email>"`
-		1. i.e. git config --global user.email youremail@email.com
+	1. `git config --global user.name "GIT_NAME"`
+	2. `git config --global user.email "GIT_EMAIL"`
 	3. `git config --global --add color.ui true`
-3. [on new server] install Concrete CI. The regular one/main repo is good but doesn't seem to have auto Git web hooks built in so I used this fork instead: https://github.com/edy/concrete
-	1. `git clone https://github.com/edy/concrete.git /path/to/concrete`
+3. [on new server] install Concrete CI. The regular one/main repo is good but doesn't seem to have auto Git web hooks built in so I used this fork instead: https://github.com/jackrabbitsgroup/concrete
+	1. `git clone https://github.com/jackrabbitsgroup/concrete.git CONCRETE_PATH`
 	2. set permissions for the new `concrete` folder
-		1. `sudo chown -R root:developers /path/to/concrete`
-		2. `sudo chmod -R g+w /path/to/concrete`
-	3. `cd /path/to/concrete`
+		1. `sudo chown -R root:PERMISSIONS_GROUP CONCRETE_PATH`
+		2. `sudo chmod -R g+w CONCRETE_PATH`
+	3. `cd CONCRETE_PATH`
 	4. `npm install`
 		1. NOTE: if you get an EACCESS / permission denied error during the npm install, find the folder that had permissions issues (from the log output) and run `sudo chown -R $USER [path to problematic folder]`.
 			1. http://foohack.com/2010/08/intro-to-npm/#what_no_sudo
 4. [on new server] Do some setup
-	1. clone the github repo (we'll just have to do this manually once) - `git clone [repo URL] [/path/to/cloned/repo]` - make sure to use the HTTPS git url - otherwise will get a 'Permission denied (publickey).' error!
+	1. clone the github repo (we'll just have to do this manually once) - `git clone GIT_REPO_URL APP_PATH` - make sure to use the HTTPS git url - otherwise will get a 'Permission denied (publickey).' error!
 		1. set permissions on this folder (especially if you cloned with `sudo`)
-		2. go into the repo - `cd /path/to/cloned/repo`
-		3. if it prompts you for a username and/or password during git pull or other commands, the CI won't work so set your username and password by doing: `git config remote.origin.url https://{USERNAME}:{PASSWORD}@github.com/{GITHUB USERNAME}/{REPONAME}.git` (basically just prepend [username]:[password] to your existing remote url).
+		2. go into the repo - `cd APP_PATH`
+		3. if it prompts you for a username and/or password during git pull or other commands, the CI won't work so set your username and password by doing: `git config remote.origin.url GIT_REPO_URL_PASS` (basically just prepend [username]:[password] to your existing remote url).
 			1. http://superuser.com/questions/199507/how-do-i-ensure-git-doesnt-ask-me-for-my-github-username-and-password
 	2. copy and set the `config_environment.json` to use this environment with: `cp app/config_environment.json config_environment.json` and then edit the file to set the `environment` key to your new environment (the SAME name you used when creating the new `config-[new-server-environment].json` file earlier - these MUST match!)
 	3. add the concrete runner to the git config so concrete will run: `git config --add concrete.runner "npm install && bower update && bower install && grunt --type=prod"`
 	4. configure git hooks for worked and failed
-		1. create (if not already present) `.git/hooks/build-failed` and add `node ci.js build=failed` to it, i.e. using `echo 'node ci.js build=failed' > /path/to/.git/hooks/build-failed`
-		2. create (if not already present) `.git/hooks/build-worked` and add `node ci.js build=worked` to it, i.e. using `echo 'node ci.js build=worked' > /path/to/.git/hooks/build-worked`
-		3. set permissions so the hooks can be run - `sudo chmod -R +x /path/to/.git/hooks`
-5. [on new server] run concrete server with forever: `forever start /path/to/concrete/bin/concrete -p [concrete port] .`
-	1. Open a browser to `http://[your domain/ip]:[concrete port]` to see your continuous integration server!
+		1. create (if not already present) `.git/hooks/build-failed` and add `node ci.js build=failed` to it, i.e. using `echo 'node ci.js build=failed' > APP_PATH/.git/hooks/build-failed`
+		2. create (if not already present) `.git/hooks/build-worked` and add `node ci.js build=worked` to it, i.e. using `echo 'node ci.js build=worked' > APP_PATH/.git/hooks/build-worked`
+		3. set permissions so the hooks can be run - `sudo chmod -R +x APP_PATH/.git/hooks`
+5. [on new server] run concrete server with forever: `cd APP_PATH && forever start CONCRETE_PATH/bin/concrete -p CONCRETE_PORT .`
+	1. Open a browser to `http://APP_DOMAIN:CONCRETE_PORT` to see your continuous integration server!
 6. On github.com add a webhook to the concrete server so it will run on each git push!
-	1. In your repo on github.com, click on `Settings` then `Service Hooks` then `WebHook URLs` and add a URL: `http://[your domain/ip]:[concrete port]/webhook`
+	1. In your repo on github.com, click on `Settings` then `Service Hooks` then `WebHook URLs` and add a URL: `http://APP_DOMAIN:CONCRETE_PORT/webhook`
 7. [locally / on original server] Do a Git push (i.e. `git push origin master`) and then refresh your Concrete page and you should see a new build running!
 	1. Now each time you (locally) do a `git push` to github, your 2nd server will automatically get updated, tests run, etc.!
 
