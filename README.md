@@ -22,7 +22,7 @@
 	1. `npm install && bower install` (if not already run successfully by Yeoman or any time `package.json` or `bower.json` change)
 		1. If any bower issues (sometimes 1 or more packages will timeout), just re-run `bower update && bower install`
 		2. If any npm issues, run `npm cache clean` (and optionally delete the troublesome package folders from the `node_modules` folder) then re-run `npm install`
-	2. `./node_modules/protractor/bin/install_selenium_standalone` (if not already run successfully by Yeoman)
+	2. `./node_modules/protractor/bin/webdriver-manager update` (if not already run successfully by Yeoman)
 	3. `grunt q` to build assets (if not already run successfully by Yeoman and any time a `*.less` (or `*.scss`) or `*.html` file changes)
 3. start server and view app
 	1. `node run.js` to start node server (make sure MongoDB is already running first)
@@ -36,6 +36,14 @@
 
 ## Setup + Running (Longer Version)
 - see [setup-detailed.md](docs/setup-running/setup-detailed.md) and [running.md](docs/setup-running/running.md) in the `docs` folder
+
+
+## Generators
+Make sure to leverage the available (sub)generators - i.e. for creating new pages/routes/controllers, directives, and services!
+Run generators with `yo mean-seed` and then select the sub-generator you want to use!
+
+https://github.com/jackrabbitsgroup/generator-mean-seed/blob/master/docs/generators/modules.md
+
 
 
 ## Updating

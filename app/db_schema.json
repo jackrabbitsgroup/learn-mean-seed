@@ -24,24 +24,30 @@
 				"primary":"{Number} 1"
 			}
 		],
+		"social":{
+			"google":{
+				"id": "{String}",
+				"token":"{String}"
+			},
+			"facebook":{
+				"id": "{String}",
+				"token":"{String}"
+			},
+			"twitter": {
+				"id": "{String}",
+				"token": "{String}",
+				"token_secret": "{String}"
+			}
+		},
 		"first_name":"{String} John",
 		"last_name":"{String} Smith",
 		"password":"{String} [encrypted salt + encrypted password] lkj3lkrjlfkjlk3j4",
 		"password_salt":"{String} [string of password salt] 3lkfsajlf93kfakf",
 		"sess_id":"{String} [string of current session id] 3l4klaskj3",
 		"password_reset_key":"{String} [string of random string to allow resetting password] lk3jlkja",
-		"facebook_id":"128333",
 		"signup": "{String} [timestamp YYYY-MM-DD HH:mm:ssZ] 2013-06-13 15:30:00-07:00",
 		"last_login": "{String} [timestamp YYYY-MM-DD HH:mm:ssZ] 2013-06-13 02:30:00+03:30",
 		"status": "{String} member",
-		"super_admin": "{Number} 1",
-		"social":{
-			"google":{
-				"token":"{String}"
-			},
-			"facebook":{
-				"token":"{String}"
-			}
-		}
+		"super_admin": "{Number} 1"
 	}
 }

@@ -500,6 +500,28 @@
 							}
 						},
 						{
+							"name": "callback",
+							"dirs": [
+								{
+									"name": "twitter-auth-callback",
+									"files": {
+										"js": [
+											"TwitterAuthCallbackCtrl.js"
+										],
+										"html": [
+											"twitter-auth-callback.html"
+										],
+										"less": [
+											"twitter-auth-callback.less"
+										],
+										"testUnit": [
+											"TwitterAuthCallbackCtrl.spec.js"
+										]
+									}
+								}
+							]
+						},
+						{
 							"name": "dev-test",
 							"dirs": [
 								{

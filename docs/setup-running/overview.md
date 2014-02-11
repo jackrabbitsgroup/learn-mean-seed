@@ -13,7 +13,9 @@
 4. Run the app
 	1. See [running.md](running.md)
 5. Make code changes
-	1. See [workflow.md](workflow.md)
+	1. Use the generator-mean-seed [generators](https://github.com/jackrabbitsgroup/generator-mean-seed/blob/master/docs/generators/modules.md)
+		1. Run generators with `yo mean-seed` from the command line
+	2. See [workflow.md](workflow.md)
 6. Go live
 	1. To deploy to a (linux) server so others can see your code at a public website URL (up until now, everything has been on 'localhost' so is only visible on YOUR personal computer), do the following:
 		1. Purchase hosting (i.e. from Digital Ocean, Rackspace, AWS)
