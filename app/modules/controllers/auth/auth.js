@@ -486,7 +486,7 @@ Auth.prototype.changePassword = function(db, data, params) {
 Creates a guest user
 @toc 1.5.
 @method createGuest
-@param {Object} guest New user object. Must contain an email field. May contain other user information.
+@param {Object} guest New user object. Must contain an email field OR a social.[type].id field (which will then create a dummy/random email to keep things consistent and easy). May contain other user information.
 	@param {String} email New user's email
 @param {Object} params
 @return {Promise}
@@ -497,7 +497,14 @@ Auth.prototype.createGuest = function(db, guest, params)
 	var deferred =Q.defer();
 	var ret = {'code': 0, 'msg': 'Auth.createGuest ', 'user': {} };
 	
-	guest.password = StringMod.random(20, {});
+	var randStr =StringMod.random(20, {});
+	
+	//if social key, allow no email and just create a random/dummy one
+	if(guest.email ===undefined && guest.social !==undefined) {
+		guest.email =randStr+'@email.com';
+	}
+	
+	guest.password = randStr;
 	guest.status = 'guest';
 	var creation_promise = self.create(db, guest, params);
 	creation_promise.then(
@@ -587,7 +594,7 @@ Checks if a user exists. If not, creates a guest user.
 @toc 1.7.
 @method userImport
 @param {Object} data
-	@param {Object} user New user object. Must contain an email, phone, or _id field. May contain other user information.
+	@param {Object} user New user object. Should have one of the following defined: '_id', 'email', 'phone', 'social.[type].id'. May contain other user information.
 @param {Object} params
 @return {Promise}
 	@param {Object} ret
@@ -648,7 +655,7 @@ Checks if a user exists. If not, creates a guest user.
 @method userImport
 @param {Object} data
 	@param {String} user_id Id of the user doing the importing, if applicable.
-	@param {Array} users Array of new user objects. Each must contain an email, phone, or _id field. May contain other user information.
+	@param {Array} users Array of new user objects. Each must have one of the following defined: '_id', 'email', 'phone', 'social.[type].id'. May contain other user information.
 	@param {Number} follow 1 iff the new users should be followed by the user doing the importing.
 @param {Object} params
 @return {Promise}
@@ -721,18 +728,21 @@ Auth.prototype.usersImport = function(db, data, params)
 Check if a user exists in the database, based on the given _id, email, or phone field. 
 @toc 1.8.
 @method userExists
-@param {Object} user A user object. Should have '_id', 'email', or 'phone' defined
+@param {Object} user A user object. Should have one of the following defined: '_id', 'email', 'phone', 'social.[type].id'
 @param {Object} params
 
-@return {Promise}
-	@param {Object} ret
-		@param {Boolean} exists True iff the member already exists
-		@param {String} user The user's database object, if the user already exists
+@return {Object} (via Promise)
+	@param {Boolean} exists True iff the member already exists
+	@param {String} user The user's database object, if the user already exists
+	@param {Number} code
+	@param {String} msg
 **/
 Auth.prototype.userExists = function(db, user, params)
 {
 	var deferred = Q.defer();
-	var ret = {'exists': false, 'user': {}};
+	var ret = {code:0, msg:'Auth.userExists ', 'exists': false, 'user': {}};
+	
+	var xx, query, valid =false;
 	
 	//DRY phone checking function
 	var checkPhone = function()
@@ -770,6 +780,7 @@ Auth.prototype.userExists = function(db, user, params)
 	//If the user already has an _id, it must exist. We're done.
 	if(user._id !== undefined)
 	{
+		valid =true;
 		ret.user = user;
 		ret.exists = true;
 		deferred.resolve(ret);
@@ -777,6 +788,7 @@ Auth.prototype.userExists = function(db, user, params)
 	//Id may also be under the user_id field, allow both
 	else if(user.user_id !== undefined)
 	{
+		valid =true;
 		ret.user = user;
 		ret.user._id = ret.user.user_id;
 		ret.exists = true;
@@ -785,6 +797,7 @@ Auth.prototype.userExists = function(db, user, params)
 	//No _id field. Check email
 	else if(user.email !== undefined)
 	{
+		valid =true;
 		var email_promise = UserMod.searchByEmail(db, {'email': user.email, 'fields': {'_id': 1}}, {});
 		email_promise.then(
 			function(ret1)
@@ -816,10 +829,45 @@ Auth.prototype.userExists = function(db, user, params)
 	}
 	else if(user.phone !== undefined)
 	{
+		valid =true;
 		checkPhone();
 	}
-	else
-	{
+	else if(user.social !==undefined) {
+		query ={
+			$or: []
+		};
+		var key, curPushObj;
+		for(xx in user.social) {
+			if(user.social[xx].id !==undefined) {
+				key ='social.'+xx+'.id';
+				curPushObj ={};
+				curPushObj[key] =user.social[xx].id;		//MUST set it this way otherwise will look for a 'key' field!!
+				query.$or.push(curPushObj);
+			}
+		}
+		if(query.$or.length >0) {
+			valid =true;
+			db.user.findOne(query, function(err, record) {
+				if(err) {
+					ret.code =1;
+					ret.msg +=err;
+					deferred.reject(ret);
+				}
+				else if(!record) {
+					ret.exists = false;
+					deferred.resolve(ret);
+				}
+				else {
+					ret.exists = true;
+					ret.user =record;
+					ret.user._id = ret.user._id.toHexString();
+					deferred.resolve(ret);
+				}
+			});
+		}
+	}
+	
+	if(!valid) {
 		//No data given. Impossible to check if the user exists.
 		console.log("Auth.userExists: Error: No _id, email, or phone given. Cannot check if user exists");
 		deferred.reject(ret);		
@@ -833,7 +881,7 @@ Auth.prototype.userExists = function(db, user, params)
 @toc 13.
 @method socialLogin
 @param {Object} data
-	@param {Object} user A user object. Should have '_id', 'email', or 'phone' defined
+	@param {Object} user A user object. Can have one of the following defined: '_id', 'email', 'phone', 'social.[type].id' BUT social.[type].id will be autofilled as a backup so this can be empty.
 	@param {Object} socialData The social data to save, i.e.
 		@param {String} [token] The social login token to save.
 		@param {String} [id] The social platform user id for this user.
@@ -849,6 +897,14 @@ Auth.prototype.socialLogin = function(db, data, params)
 {	
 	var deferred =Q.defer();
 	var ret = {'code': 0, 'msg': 'Auth.socialLogin ', 'user': {}, 'already_exists': false };
+	
+	//add social data into user.social key
+	if(data.user.social ===undefined) {
+		data.user.social ={};
+	}
+	data.user.social[data.type] ={
+		id: data.socialData.id
+	};
 	
 	var import_promise = self.userImport(db, {'user': data.user}, {});
 	import_promise.then(

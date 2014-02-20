@@ -33,7 +33,8 @@ Other calls (relatively in order of importantance / most used). Scroll to the bo
 	`grunt e2e` to run protractor/selenium e2e frontend tests
 	`grunt test-frontend` - run all frontend tests (unit & e2e)
 	`grunt node-cov` to run just backend node tests AND do coverage (show report and fail if below threshold) - only this task will actually show coverage and fail on the CONSOLE but the coverage report will always be written
-	`grunt test-backend` to just test backend - NOTE: there's really no reason to use this; just use `node-cov` instead.
+	`grunt test-backend` to just test backend - NOTE: there's really no reason to use this; just use `node-cov` or `test-backend-dev` instead.
+	`grunt test-backend-dev` to just test backend WITHOUT running/require'ing run.js - you'll have to manually run `node run.js config=test` in a separate command prompt window first. This is mostly for development so it runs a bit faster and the test output is all together in one command prompt window rather than interspersed with the server output.
 	`grunt test` - runs ALL tests
 	`grunt test-cov` - runs ALL tests AND guarantees (node) test coverage validation/console output BUT won't always (ever?) complete grunt so won't get "done, without errors" and Continuous Integration won't complete so only use this in development
 - build / lint
@@ -166,10 +167,13 @@ module.exports = function(grunt) {
 
 		// hardcoded paths
 		var protractorPath ='node_modules/protractor/bin/protractor';		//non-Windows
-		var seleniumStartupParts =['java', '-jar', 'selenium/selenium-server-standalone-2.35.0.jar', '-p', '4444', '-Dwebdriver.chrome.driver=selenium/chromedriver'];
+		var pathPrefix ='';
+		pathPrefix ='node_modules/protractor/';
+		var seleniumStartupParts =['java', '-jar', pathPrefix+'selenium/selenium-server-standalone-2.39.0.jar', '-p', '4444', '-Dwebdriver.chrome.driver='+pathPrefix+'selenium/chromedriver'];
 		if(cfgJson.operatingSystem !==undefined && cfgJson.operatingSystem =='windows') {
+			pathPrefix ='node_modules\\protractor\\';
 			protractorPath ='node_modules\\.bin\\protractor';		//Windows
-			seleniumStartupParts =['java', '-jar', 'selenium\\selenium-server-standalone-2.35.0.jar', '-p', '4444', '-Dwebdriver.chrome.driver=selenium\\chromedriver.exe'];
+			seleniumStartupParts =['java', '-jar', pathPrefix+'selenium\\selenium-server-standalone-2.39.0.jar', '-p', '4444', '-Dwebdriver.chrome.driver='+pathPrefix+'selenium\\chromedriver.exe'];
 		}
 		var seleniumStartup =seleniumStartupParts.join(' ');
 		var seleniumStartupCmd =seleniumStartupParts[0];
@@ -1047,6 +1051,12 @@ module.exports = function(grunt) {
 		grunt.registerTask('node-test-server', ['http:nodeShutdown', 'shell:nodeServer']);
 		
 		grunt.registerTask('test-backend', ['http:nodeShutdown', 'jasmine_node']);
+		
+		//faster / dev test task
+		grunt.registerTask('test-backend-dev', 'run backend tests', function() {
+			process.argv.push('runjs=no');		//add command line argument to NOT require / run run.js
+			grunt.task.run(['jasmine_node']);
+		});
 		
 		//need to exit otherwise coverage report doesn't display on the console..
 		grunt.registerTask('node-cov', ['test-backend', 'exit']);

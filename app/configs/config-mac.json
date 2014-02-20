@@ -4,7 +4,7 @@
 		"pkg": "0.0.0"
 	},
 	"env": "development",
-	"operatingSystem":"windows",
+	"operatingSystem":"mac",
 	"operatingSystemComment":"One of: 'windows', 'mac', 'linux'",
 	"forever": 0,
 	"app": {
@@ -14,9 +14,9 @@
 	"platform":"",
 	"server": {
 		"domain": "localhost",
-		"port": 3005,
+		"port": 3000,
 		"httpsPort": 443,
-		"socketPort": 3006,
+		"socketPort": 3001,
 		"serverPath": "/",
 		"appPath": "/",
 		"staticFilePath": "/src/",
@@ -30,7 +30,7 @@
 		"fullURI": "",
 		"host": "localhost",
 		"port": 27017,
-		"database": "test_temp",
+		"database": "learn-mean-seed",
 		"username": false,
 		"password": false
 	},
@@ -49,7 +49,7 @@
 	},
 	"test_coverage":{
 		"jasmine_node":{
-			"failTask": true,
+			"failTask": false,
 			"branches": 40,
 			"functions": 60,
 			"statements": 60,
@@ -79,7 +79,7 @@
 			"noReply": "noreply"
 		},
 		"from": "admin@learn-mean-seed.com",
-		"from_name": "Admin TEST",
+		"from_name": "Admin",
 		"mandrillApiKey": "8X-1bNRWtA4rbneppkqahw",
 		"mandrillApiKeyComment":"Make sure to CHANGE this!"
 	},

@@ -125,6 +125,15 @@ config(['$routeProvider', '$locationProvider', 'appConfigProvider', '$compilePro
 		}
 	});
 	
+	//3rd party redirect/callback routes
+	$routeProvider.when(appPathRoute+'twitter-auth-callback', {templateUrl: pagesPath+'callback/twitter-auth-callback/twitter-auth-callback.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
+	
 	//dev-test
 	// $routeProvider.when(appPathRoute+'test', {templateUrl: pagesPath+'test/test.html'});
 	$routeProvider.when(appPathRoute+'dev-test/test', {templateUrl: pagesPath+'dev-test/test/test.html',

@@ -4,7 +4,7 @@
 		"pkg": "0.0.0"
 	},
 	"env": "development",
-	"operatingSystem":"windows",
+	"operatingSystem":"mac",
 	"operatingSystemComment":"One of: 'windows', 'mac', 'linux'",
 	"forever": 0,
 	"app": {

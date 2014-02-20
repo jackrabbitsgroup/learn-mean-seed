@@ -23,7 +23,7 @@ There's LOTS of different testing definitions but in general we use 5:
 	- PhantomJS
 - Protractor (AngularJS E2E tests)
 	- Selenium
-		- install: AFTER installing Protractor (locally - run `npm install`) - `./node_modules/protractor/bin/install_selenium_standalone`
+		- install: AFTER installing Protractor (locally - run `npm install`) - `./node_modules/protractor/bin/webdriver-manager update`
 - Browsers / browser drivers
 	- PhantomJS
 		- install: download it from the web or for linux: npm install phantomjs (may need to do it locally - in which case put it in package.json)
@@ -43,7 +43,7 @@ See [test-coverage.md](test-coverage.md)
 ### Jasmine / Protractor for end-to-end (E2E) tests
 - Protractor
 	- install Selenium server (for standalone / local running)
-		- `./node_modules/protractor/bin/install_selenium_standalone`
+		- `./node_modules/protractor/bin/webdriver-manager update`
 	- install JRE (Java Runtime Environment) and add it to your system PATH if you don't already have it - so you can run `java` commands from the command line.
 		- http://www.oracle.com/technetwork/java/javase/downloads/index.html
 			- click the 'JRE' download button then select the version that matches your environment / operating system
@@ -54,7 +54,7 @@ See [test-coverage.md](test-coverage.md)
 			- `node_modules/protractor/bin/protractor app/src/config/protractor.conf.js`
 		- web address to Selenium server (can be local or remote)
 			- for local:
-				- in 1 command prompt window, start the selenium server: `java -jar selenium/selenium-server-standalone-2.35.0.jar -p 4444 -Dwebdriver.chrome.driver=selenium/chromedriver`
+				- in 1 command prompt window, start the selenium server: `java -jar selenium/selenium-server-standalone-2.39.0.jar -p 4444 -Dwebdriver.chrome.driver=selenium/chromedriver`
 					- NOTE: on Windows, need to put '.exe' at the end of chromedriver otherwise it won't work
 				- then in the 2nd command prompt window, run protractor as usual (once you've updated the protractor config file to use the selenium address - use the address that is displayed when running the standalone server directly from above) `node_modules/protractor/bin/protractor app/src/config/protractor.conf.js`
 					- NOTE: on Windows, can usually just use 'http://localhost:4444/wd/hub' even if the standalone starting url is not that (i.e. if it's 'http://192.168.1.6:4444/wd/hub')

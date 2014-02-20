@@ -67,7 +67,7 @@ var inst ={
 	@method saveUrlLocation
 	*/
 	saveUrlLocation: function(params) {
-		var skipPages =['login', 'signup', 'user-delete'];
+		var skipPages =['login', 'signup', 'user-delete', 'twitter-auth-callback'];
 		//var curPage =$location.path().replace(appConfig.dirPaths.appPath, '');		//$location doesn't have url & path defined yet??
 		// var appPath =window.location.host+appConfig.dirPaths.appPath;
 		var appPath =appConfig.dirPaths.appPath;

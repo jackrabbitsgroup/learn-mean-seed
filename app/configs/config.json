@@ -56,10 +56,10 @@
 			"lines": 60
 		},
 		"angular_karma":{
-			"branches": 85,
-			"functions": 85,
-			"statements": 85,
-			"lines": 85
+			"branches": 50,
+			"functions": 50,
+			"statements": 50,
+			"lines": 50
 		}
 	},
 	"ci":{
@@ -91,6 +91,10 @@
 		"appIdComment":"Make sure to CHANGE this!"
 	},
 	"twitter": {
+		"consumerKey": "UXIdAIpFP0YSkZpo09Eejg",
+		"consumerSecret": "eNVTzCAFmLLEUmGXSyLVWfAuMoBXvnylefa5AFvqyc",
+		"consumerComment":"Make sure to CHANGE the key and secret!",
+		"callback_url": "http://127.0.0.1:3000/twitter-auth-callback",
 		"handle": ""
 	},
 	"google":{

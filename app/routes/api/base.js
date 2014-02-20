@@ -150,7 +150,8 @@ RpcApiBase.prototype = {
 	@param {Object} params
 	*/
 	handleError: function(out, err, params) {
-		out.fail(500, err.msg || err);
+		// out.fail(500, err.msg || err);
+		out.fail(500, err);
     }
 };
 
