@@ -1571,6 +1571,40 @@
 											}
 										}
 									]
+								},
+								{
+									"name": "ang-scope-inheritance",
+									"files": {
+										"html": [
+											"ang-scope-inheritance.html"
+										],
+										"js": [
+											"AngScopeInheritanceCtrl.js"
+										],
+										"testUnit": [
+											"AngScopeInheritanceCtrl.spec.js"
+										],
+										"less": [
+											"ang-scope-inheritance.less"
+										]
+									}
+								},
+								{
+									"name": "ang-events",
+									"files": {
+										"html": [
+											"ang-events.html"
+										],
+										"js": [
+											"AngEventsCtrl.js"
+										],
+										"testUnit": [
+											"AngEventsCtrl.spec.js"
+										],
+										"less": [
+											"ang-events.less"
+										]
+									}
 								}
 							]
 						}

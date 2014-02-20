@@ -1,0 +1,77 @@
+<div class = 'lesson' ng-controller='AngScopeInheritanceCtrl'>
+	<div class = 'lesson-title'> Angular Basics: Scope Inheritance</div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'angular-basics/ang-scope-inheritance'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		Angular allows you to attach controllers (using <code>ng-controller</code>) to elements inside the scope of another controller.
+		The controller attached to the child element is known as the 'child controller',
+		while the controller attached to the parent element is known as the 'parent controller'. (Surprised?)
+		<br/><br/>
+		Recall that every controller has its own <code>$scope</code>,
+		and properties defined on the <code>$scope</code> can be referenced in HTML, but <i>only</i> inside the controller's element.
+		Thus, since a child controller's element is completely contained inside of the parent's element,
+		it makes perfect sense that you can reference the parent's <code>$scope</code> properties from inside the child element in HTML,
+		and that you cannot reference the child's <code>$scope</code> properties from inside the parent but outside the child.
+		<br/><br/>
+		This relationship extends to Javascript as well, in what we call Scope Inheritance:
+		the parent's <code>$scope</code> properties are 'inherited' by the child controller.
+		That means that if the parent has <code>$scope.my_variable</code> defined,
+		the child will also have <code>$scope.my_variable</code> defined,
+		and any changes that the parent makes to this variable will be immediately reflected in the child's variable.
+		The reverse, of course, is NOT true: the parent controller has no knowledge whatsoever of the child's <code>$scope</code> properties;
+		it cannot alter or even see them.
+		<br/><br/>
+		The confusing part comes when you try to alter a parent's <code>$scope</code> property from within the child controller.
+		Doing so triggers a desynchronization of the two, so that changes made to the property from the parent are no longer reflected in the child.
+		This will probably seem strange at first, but it actually makes quite a lot of sense when you think about the nested nature of HTML.
+		<br/><br/>
+		This desynchronization behavior stems from the need for a child to be able to create its own <code>$scope</code> properties
+		without worrying about the properties of its parents.
+		When you sit down to write a controller, you should be able to define <code>$scope.my_variable</code> to whatever you like.
+		The possibility that some other coder on your team may have also defined <code>$scope.my_variable</code> in their own controller,
+		which happens to be, say, the great-grandparent of your controller, should not prevent you from using that variable name.
+		<br/><br/>
+		Angular solves this through desynchronization: children inherit the properties of their parents,
+		but the moment a child controller changes such a property, it gets its own, separate version of it.
+		That way, child controllers can't break parent controllers by accidentally messing with their <code>$scope</code>.
+		Be careful, though; once desynchronized, there's no going back.
+		The child no longer has any knowledge of the parent's version of the variable.
+		<br/><br/>
+		Below is an example of scope inheritance and desynchronization.
+		
+		<div class = 'ang-scope-inheritance-parent' ng-controller='AngScopeInheritanceParentCtrl'>
+			This is the parent controller's element.
+			<br/><br/>
+			<code>$scope.parent_count</code>: {{parent_count}}
+			<br/>
+			<code>$scope.child_count</code>: {{child_count}} (undefined)
+			<br/>
+			<div class = 'btn btn-info' ng-click = 'incrementParentCount()'> Add to Parent's counter</div>
+			<br/><br/>
+			
+			<div class = 'ang-scope-inheritance-child' ng-controller='AngScopeInheritanceChildCtrl'>
+				This is the child controller's element.
+				<br/><br/>
+				<code>$scope.parent_count</code>: {{parent_count}}
+				<br/>
+				<code>$scope.child_count</code>: {{child_count}}
+				<br/>
+				
+				<div class = 'btn btn-info' ng-click = 'incrementParentCount()'> Add to Parent's counter (using Parent's function)</div>
+				<div class = 'btn btn-info' ng-click = 'incrementChildCount()'> Add to Child's counter</div>
+				<div class = 'btn btn-danger' ng-click = 'incrementBoth()'> Add to Both (using Child's function)</div>
+			</div>
+		</div>
+		<br/><br/>
+		You may be wondering at this point how a parent can get access to a child's variables, or how a child can alter a parent's variables.
+		<a ng-href = '{{appPathLink + "ang-events"}}' target = '_blank'>Event Listeners</a> are usually a good solution for that sort of problem.
+	</div>
+		
+	<div class = 'lesson-challenges'>
+
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+
+	</div>
+</div>

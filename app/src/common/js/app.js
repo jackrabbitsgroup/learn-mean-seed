@@ -521,6 +521,20 @@ $routeProvider.when(appPathRoute+'ang-directives-show-if', {templateUrl: pagesPa
 			}
 		}
 	});
+$routeProvider.when(appPathRoute+'ang-scope-inheritance', {templateUrl: pagesPath+'angular-basics/ang-scope-inheritance/ang-scope-inheritance.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'ang-events', {templateUrl: pagesPath+'angular-basics/ang-events/ang-events.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
 //end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 

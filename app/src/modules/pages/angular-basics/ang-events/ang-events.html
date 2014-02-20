@@ -1,0 +1,74 @@
+<div class = 'lesson' ng-controller='AngEventsCtrl'>
+	<div class = 'lesson-title'> Angular Basics: Event Listeners</div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'angular-basics/ang-events'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		In Angular, it is not uncommon to have to communicate between controllers as users navigate your app and perform various actions.
+		To this end, Angular allows you to create your own event listeners and trigger them whenever you like.
+		The relevant methods are <code>$scope.$on</code>, <code>$scope.$broadcast</code>, and <code>$scope.$emit</code>.
+		<br/><br/>
+		<code>$scope.$on</code> creates an event listener.
+		You give it a string (an 'event name') to watch for and a function.
+		When the specified event name is triggered, the given function is executed.
+		<br/><br/>
+		<code>$scope.$broadcast</code> and <code>$scope.$emit</code> trigger an event.
+		You give them an event name and a parameters object, and listeners for that event (created by <code>$scope.$on</code>) are triggered.
+		The listeners' functions will be executed, and will receive the parameters object as input.
+		<br/><br/>
+		The only difference between <code>$scope.$broadcast</code> and <code>$scope.$emit</code> is the direction in which the message is sent.
+		<code>$scope.$broadcast</code> targets event listeners defined in any child controllers as well as the current controller.
+		<code>$scope.$emit</code> targets event listeners defined in any parent controllers as well as the current controller.
+		<br/><br/>
+		In this way, you can use event listeners to pass data between controllers or trigger actions defined in other controllers,
+		effectively overcoming the potential shortcomings of <a ng-href = '{{appPathLink + "ang-scope-inheritance"}}' target = '_blank'>Scope Inheritance</a>.
+		<br/><br/>
+		Side note: <code>$scope.$broadcast</code> and <code>$scope.$emit</code> target only direct ancestor or descendent controllers,
+		which means they cannot, for example, trigger events defined in sibling controllers.
+		You can get around this sort of problem by emitting an event to their nearest common ancestor and then broadcasting back down,
+		but it's usually easier to just use <code>$rootScope.$broadcast</code>.<br/>
+		<code>$rootScope</code> is a service that you can inject into your controller (just like <code>$scope</code>),
+		and it represents the app's top-level controller's <code>$scope</code>.
+		Since every other controller in the app is a descendant of this controller,
+		<code>$rootScope.$broadcast</code> can trigger events anywhere.
+	</div>
+		
+	<div class = 'lesson-challenges'>
+		<h4>Challenges</h4>
+		1. Some examples have been set up for you in the sandbox.
+		Once you understand them, fill in the <code>sandboxFunction</code> (which is activated via the button labeled 'Sandbox Button')
+		and create any necessary event listeners so that clicking the button adds both children's counters to the parent counter at once.
+		(Optional bonus: solve this problem by creating no more than one new event trigger and no more than one new event listener.)
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+		<div class = 'ang-events-parent' ng-controller='AngEventsParentCtrl'>
+			This is the parent controller's element.
+			<br/><br/>
+			<code>$scope.parent_count</code>: {{parent_count}}
+			<br/>
+			<div class = 'btn btn-info' ng-click = 'increaseChildCount()'> Add parent_count to both childrens' counters</div>
+			<br/><br/>
+			
+			<div class = 'ang-events-child' ng-controller='AngEventsChildCtrl'>
+				This is the first child controller's element.
+				<br/><br/>
+				<code>$scope.child_count</code> (1): {{child_count}}
+				<br/>
+				
+				<div class = 'btn btn-info' ng-click = 'increaseParentCount()'> Add child_count to Parent's counter</div>
+				<div class = 'btn btn-info' ng-click = 'child_count = child_count + 1'> Increment this Child's counter</div>
+				<div class = 'btn btn-info' ng-click = 'sandboxFunction()'> Sandbox Button</div>
+			</div>
+			<br/><br/>
+			<div class = 'ang-events-child' ng-controller='AngEventsChildCtrl'>
+				This is the second child controller's element.
+				<br/><br/>
+				<code>$scope.child_count</code> (2): {{child_count}}
+				<br/>
+				
+				<div class = 'btn btn-info' ng-click = 'increaseParentCount()'> Add child_count to Parent's counter</div>
+				<div class = 'btn btn-info' ng-click = 'incrementBoth()'> Increment both children's counters</div>
+			</div>
+		</div>
+	</div>
+</div>
