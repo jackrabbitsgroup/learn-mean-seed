@@ -1481,6 +1481,57 @@
 											"js-recursion.less"
 										]
 									}
+								},
+								{
+									"name": "js-promises",
+									"files": {
+										"html": [
+											"js-promises.html"
+										],
+										"js": [
+											"JsPromisesCtrl.js"
+										],
+										"testUnit": [
+											"JsPromisesCtrl.spec.js"
+										],
+										"less": [
+											"js-promises.less"
+										]
+									}
+								},
+								{
+									"name": "js-callbacks",
+									"files": {
+										"html": [
+											"js-callbacks.html"
+										],
+										"js": [
+											"JsCallbacksCtrl.js"
+										],
+										"testUnit": [
+											"JsCallbacksCtrl.spec.js"
+										],
+										"less": [
+											"js-callbacks.less"
+										]
+									}
+								},
+								{
+									"name": "js-async",
+									"files": {
+										"html": [
+											"js-async.html"
+										],
+										"js": [
+											"JsAsyncCtrl.js"
+										],
+										"testUnit": [
+											"JsAsyncCtrl.spec.js"
+										],
+										"less": [
+											"js-async.less"
+										]
+									}
 								}
 							]
 						},

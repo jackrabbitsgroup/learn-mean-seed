@@ -1,0 +1,35 @@
+<div class = 'lesson' ng-controller='JsPromisesCtrl'>
+	<div class = 'lesson-title'> JS: Promises </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'js/js-promises'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		Promises are a programming technique for handling asynchronous code blocks;
+		they perform much the same function as <a ng-href = '{{appPathLink + "js-callbacks"}}' target = '_blank'>callbacks</a> in this regard.
+		<br/><br/>
+		Using promises tends to be a bit more flexible and syntactically simpler than using callbacks,
+		but they're more complicated to understand.
+		In Mean Seed, we use a library called <a ng-href = 'https://github.com/kriskowal/q' target = '_blank'>Q</a> to do most of the heavy lifting for us.
+		Nevertheless, promises will still seem more difficult than callbacks at first,
+		because you still need to learn how to use Q's promise structure
+		(as compared to callbacks, where a basic understanding of functions is all you need to put everything together on your own).
+		Once you learn how to use Q's promises, though, you'll probably find them more convenient than callbacks for many situations.
+		<br/><br/>
+		The basic concept behind a promise to have your function return not a result, but a promise to return a result at a later time.
+		You may then specify functions to execute when the promise does return
+		(typically, you'll have a function to handle successful computations and a function to handle failures or errors).
+		Then, you make the function that returned the promise 'resolve' upon successful completion, or 'reject' upon failure,
+		and Q directs the code to execute your success function or failure function as appropriate.		
+		<br/><br/>
+		That's really all there is to the basics of promises; the rest is just syntax.
+		See this page's Ctrl file for examples.
+	</div>
+		
+	<div class = 'lesson-challenges'>
+		<h4> Challenges: </h4>
+		1. In the Ctrl file, create your own call to <code>example_promise_function</code>, and write your own success and failure functions.
+		Make your call results in your failure function being executed. Use <code>console.log</code> to check your work.
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
+</div>

@@ -544,6 +544,27 @@ $routeProvider.when(appPathRoute+'ang-events', {templateUrl: pagesPath+'angular-
 			}
 		}
 	});
+$routeProvider.when(appPathRoute+'js-promises', {templateUrl: pagesPath+'js/js-promises/js-promises.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'js-callbacks', {templateUrl: pagesPath+'js/js-callbacks/js-callbacks.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
+$routeProvider.when(appPathRoute+'js-async', {templateUrl: pagesPath+'js/js-async/js-async.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({noLoginRequired:true});
+			}
+		}
+	});
 //end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	
 
