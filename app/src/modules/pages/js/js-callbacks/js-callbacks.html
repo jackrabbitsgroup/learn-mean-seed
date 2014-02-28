@@ -1,3 +1,42 @@
-<div ng-controller='JsCallbacksCtrl'>
-	js-callbacks
+<div class = 'lesson' ng-controller='JsCallbacksCtrl'>
+	<div class = 'lesson-title'> JS: Callbacks </div>
+	<div class = 'lesson-location'> {{pagesFullPath + 'js/js-callbacks'}} </div>
+	<div class = 'lesson-prereqs'> </div> 
+	<div class = 'lesson-body'>
+		Typically, when you write code in Javascript,
+		you expect those lines of code to be executed in order, one after the other,
+		with future lines waiting for previous ones to complete before executing.
+		This is 'synchronous' behavior, and it's usually what happens.
+		<br/><br/>
+		However, you will occasionally encounter operations that do not follow this pattern.
+		Queries to the server or to some another external source, for example,
+		will tend to take far longer than internalized operations because they must communicate with a completely different computer and wait for that computer's response.
+		In such cases, Javascript by default does not just twiddle its thumbs while waiting for a response
+		(many websites would take much, much longer to load if it did!).
+		Instead, it goes ahead and executes the rest of the code.
+		<br/><br/>
+		This kind of behavior is called 'asynchronous'.
+		Though more efficient, asynchronous code requires some method of handling the results -
+		we need some way to specify what to do next after the response is made.
+		Callback functions are a simple, common way to do just that.
+		<br/><br/>
+		In a callback system, the function (possibly asynchronous) being executed takes a function as one of its inputs, known as the callback function.
+		When the first function is done with its computations, it calls the callback function, as opposed to <code>return</code>ing some data.
+		Thus, we can put code in the callback function and be sure that that code will not run until after the first function completes.		
+		<br/><br/>
+		See this page's Ctrl file for examples.
+	</div>
+		
+	<div class = 'lesson-challenges'>
+		<h4> Challenges: </h4>
+		1. Write a function that takes two numbers, does some mathematical operation of your choosing, and uses a callback system to return the data.
+		Invoke your function, and <code>console.log</code> your result from within your callback.
+		Your function need not be asynchronous.
+		<br/>
+		(Callbacks are typically not used with synchronous functions because there is no need - a simple <code>return</code> would suffice in such cases -
+		but they still work.)
+	</div>
+	
+	<div class = 'lesson-sandbox'>
+	</div>
 </div>

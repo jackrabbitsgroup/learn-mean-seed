@@ -1515,23 +1515,6 @@
 											"js-callbacks.less"
 										]
 									}
-								},
-								{
-									"name": "js-async",
-									"files": {
-										"html": [
-											"js-async.html"
-										],
-										"js": [
-											"JsAsyncCtrl.js"
-										],
-										"testUnit": [
-											"JsAsyncCtrl.spec.js"
-										],
-										"less": [
-											"js-async.less"
-										]
-									}
 								}
 							]
 						},
